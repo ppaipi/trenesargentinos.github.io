@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Trenes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #fff;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 5px;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+    select {
+      background: #fff;
+      color: #333;
+    }
+    button {
+      cursor: pointer;
+      background: #0056b3;
+      color: #fff;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #003f8a;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+    .horario {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      background: #f1f1f1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .horario h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #0056b3;
+    }
+    .horario p {
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #333;
+    }
+    #loginStatus {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Consulta de Trenes</h1>
+  <div id="loginStatus">Autenticando...</div>
+  <div id="menu" style="display: none;">
+    <label for="origin">Estación de Origen:</label>
+    <select id="origin"></select>
+    <label for="destination">Estación de Destino:</label>
+    <select id="destination"></select>
+    <button id="buscarBtn">Buscar Horarios</button>
+  </div>
+  <div id="result"></div>
+
+  <script>
+    const estaciones = [
+    { "id": 353, "nombre": "San Andrés", "nombreCorto": "San Andrés", "publico": true },
+      { "id": 35, "nombre": "Belgrano R", "nombreCorto": "Belgrano R", "publico": true },
+      { "id": 150, "nombre": "General Urquiza", "nombreCorto": "Gral. Urquiza", "publico": true },
+      { "id": 360, "nombre": "San Martín", "nombreCorto": "San Martín", "publico": true },
+      { "id": 91, "nombre": "Colegiales", "nombreCorto": "Colegiales", "publico": true },
+      { "id": 332, "nombre": "Retiro LM", "nombreCorto": "Retiro - Mitre", "publico": true },
+      { "id": 271, "nombre": "Miguelete", "nombreCorto": "Miguelete", "publico": true },
+      { "id": 272, "nombre": "Ministro Carranza", "nombreCorto": "Ministro Carranza", "publico": true },
+      { "id": 412, "nombre": "Villa Ballester", "nombreCorto": "Villa Ballester", "publico": true },
+      { "id": 190, "nombre": "J. L. Suárez", "nombreCorto": "J. L. Suarez", "publico": true },
+      { "id": 318, "nombre": "Pueyrredón", "nombreCorto": "Pueyrredón", "publico": true },
+      { "id": 236, "nombre": "L. M. Drago", "nombreCorto": "L. M. Drago", "publico": true },
+      { "id": 90,  "nombre": "Coghlan", "nombreCorto": "Coghlan", "publico": true },
+      { "id": 249, "nombre": "Malaver", "nombreCorto": "Malaver", "publico": true },
+      { "id": 79, "nombre": "Chilavert", "nombreCorto": "Chilavert", "publico": true }
+    ];
+
+    let token = ""; // Aquí se almacenará el token obtenido
+    let intervalId; // ID del intervalo para detenerlo cuando sea necesario
+
+    function obtenerCredenciales() {
+      const fecha = new Date();
+      const yyyymmdd = fecha.getFullYear() + String(fecha.getMonth() + 1).padStart(2, '0') + String(fecha.getDate()).padStart(2, '0');
+      const baseString = yyyymmdd + "sofse";
+
+      const user = btoa(baseString); // Codificación base64 para USER
+
+      const pass = encriptarContrasena(user); // Encriptación para PASS
+
+      return { user, pass };
+    }
+
+    function encriptarContrasena(contrasena) {
+      let texto = btoa(contrasena);
+      const reemplazosPrimeraCapa = {
+        "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
+      };
+      for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
+        texto = texto.replaceAll(key, value);
+      }
+
+      texto = texto.split("").reverse().join("");
+
+      texto = btoa(texto);
+      const reemplazosSegundaCapa = {
+        "a": "#j", "e": "#p", "i": "#w", "o": "#8", "u": "#0", "=": "32%v"
+      };
+      for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
+        texto = texto.replaceAll(key, value);
+      }
+      texto = encodeURIComponent(texto.split("").reverse().join(""))
+
+      return texto;
+    }
+
+    function login() {
+      const { user, pass } = obtenerCredenciales();
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://apiarribos.sofse.gob.ar/v1/auth/authorize", true);
+      xhr.setRequestHeader("Accept-Encoding", "gzip");
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            token = response.token;
+            document.getElementById("loginStatus").innerText = "Autenticado correctamente.";
+            document.getElementById("menu").style.display = "block";
+          } else {
+            document.getElementById("loginStatus").innerText = "Error en laautenticación. Por favor, verifica tus credenciales."; } } };
+            const data = `username=${user}&password=${pass}`;
+  xhr.send(data);
+}
+
+function obtenerDatos() {
+  if (!token) {
+    document.getElementById("datosStatus").innerText = "Por favor, inicia sesión primero.";
+    return;
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://apiarribos.sofse.gob.ar/v1/data", true);
+  xhr.setRequestHeader("Authorization", `${token}`);
+  xhr.setRequestHeader("Accept-Encoding", "gzip");
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        document.getElementById("datosStatus").innerText = "Datos obtenidos correctamente.";
+        renderizarDatos(response);
+      } else {
+        document.getElementById("datosStatus").innerText = "Error al obtener datos.";
+      }
+    }
+  };
+
+  xhr.send();
+}
+
+
+function populateDropdowns() {
+  const originSelect = document.getElementById("origin");
+  const destinationSelect = document.getElementById("destination");
+
+  // Agregar opción predeterminada en "origin"
+  const defaultOptionOrigin = new Option("- Elija un valor -", "", true, true);
+  defaultOptionOrigin.disabled = true; // Desactivar la opción para que no se pueda seleccionar
+  originSelect.add(defaultOptionOrigin);
+
+  // Agregar opción predeterminada en "destination"
+  const defaultOptionDestination = new Option("- Elija un valor -", "", true, true);
+  defaultOptionDestination.disabled = true; // Desactivar la opción para que no se pueda seleccionar
+  destinationSelect.add(defaultOptionDestination);
+
+  // Añadir las estaciones a los select
+  estaciones.forEach(estacion => {
+    if (estacion.publico) {
+      const option1 = new Option(estacion.nombreCorto, estacion.id);
+      originSelect.add(option1);
+
+      const option2 = new Option(estacion.nombreCorto, estacion.id);
+      destinationSelect.add(option2);
+    }
+  });
+}
+
+
+    function buscarHorarios() {
+      const origin = document.getElementById("origin").value;
+      const destination = document.getElementById("destination").value;
+      const resultDiv = document.getElementById("result");
+
+      if (!origin || !destination) {
+        resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
+        return;
+      }
+
+      // Detenemos el intervalo anterior (si existe)
+      if (intervalId) clearInterval(intervalId);
+
+      // Hacemos la primera búsqueda y luego configuramos el intervalo
+      obtenerHorarios(origin, destination);
+      intervalId = setInterval(() => obtenerHorarios(origin, destination), 1000);
+    }
+
+    function obtenerHorarios(origin, destination) {
+      const xhr = new XMLHttpRequest();
+      const fields = "results%28desde%2Chasta%2Cservicio%29";
+      xhr.open(
+        "GET",
+        `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=5`,
+        true
+      );
+      xhr.setRequestHeader("Authorization", `${token}`);
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            mostrarHorarios(response.results);
+          } else {
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
+          }
+        }
+      };
+
+      xhr.send();
+    }
+    
+    function mostrarHorarios(horarios) {
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+      if (!horarios || horarios.length === 0) {
+        resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
+        return;
+      }
+
+      horarios.forEach(horario => {
+        const servicio = horario.servicio?.ramal?.nombre;
+        const desde = horario.desde.nombreCorto;
+        const hasta = horario.hasta.nombreCorto;
+
+        const llegadaDesde = new Date(horario.desde.llegada);
+        const llegadaHasta = new Date(horario.hasta.llegada);
+
+        const tiempoRestanteDesde = calcularTiempoRestante(llegadaDesde);
+        const tiempoDeViaje = calcularTiempoDeViaje(llegadaDesde,llegadaHasta)
+
+        const div = document.createElement("div");
+        div.className = "horario";
+        div.innerHTML = `
+          <h3>Servicio: ${servicio}</h3>
+          <p>Desde: ${desde} (Llegada: ${llegadaDesde.toLocaleTimeString()})</p>
+          <p>Hasta: ${hasta} (Llegada: ${llegadaHasta.toLocaleTimeString()})</p>
+          <h4>Llegando en: ${tiempoRestanteDesde}</h4>
+          <h4>Tiempo de viaje: ${tiempoDeViaje}</h4>
+        `;
+        resultDiv.appendChild(div);
+      });
+    }
+
+    function calcularTiempoDeViaje(llegadaDesde, llegadaHasta) {
+      const diferencia = llegadaHasta - llegadaDesde;
+      const minutos = Math.floor(diferencia / 60000);
+      const segundos = Math.floor((diferencia % 60000) / 1000);
+      return `${minutos}m ${segundos}s`;
+    }
+
+    function calcularTiempoRestante(llegada) {
+      const ahora = new Date();
+      const diferencia = llegada - ahora;
+
+      if (diferencia <= 0) return "Tren en andén.";
+
+      const minutos = Math.floor(diferencia / 60000);
+      const segundos = Math.floor((diferencia % 60000) / 1000);
+      return `${minutos}m ${segundos}s`;
+    }
+
+    login();
+    populateDropdowns();
+    document.getElementById("buscarBtn").addEventListener("click", buscarHorarios);
+  </script>
+</body>
+</html>
