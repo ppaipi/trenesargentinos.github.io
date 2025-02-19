@@ -253,12 +253,12 @@ function populateDropdowns() {
   const destinationSelect = document.getElementById("destination");
 
   // Agregar opción predeterminada en "origin"
-  const defaultOptionOrigin = new Option("- Elija un valor -", "", true, true);
+  const defaultOptionOrigin = new Option("- Elija una estacion -", "", true, true);
   defaultOptionOrigin.disabled = true; // Desactivar la opción para que no se pueda seleccionar
   originSelect.add(defaultOptionOrigin);
 
   // Agregar opción predeterminada en "destination"
-  const defaultOptionDestination = new Option("- Elija un valor -", "", true, true);
+  const defaultOptionDestination = new Option("- Elija una estacion -", "", true, true);
   defaultOptionDestination.disabled = true; // Desactivar la opción para que no se pueda seleccionar
   destinationSelect.add(defaultOptionDestination);
 
