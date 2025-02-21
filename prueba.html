@@ -34,7 +34,6 @@
         <option value="Rufino">Rufino</option>
         <option value="Cabred">Cabred</option>
     </select>
-    <pre id="output"></pre>
 </body>
 
 <script>
@@ -51,9 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     const estaciones = data.split('\n').map(line => {
                         return line.trim() ? JSON.parse(line) : null; // Convierte cada línea en un objeto JSON
                     }).filter(item => item !== null); // Filtra las líneas vacías
-
-                    // Muestra el array de estaciones en el elemento <pre>
-                    document.getElementById('output').textContent = JSON.stringify(estaciones, null, 2);
+                    return(estaciones)
                 } catch (error) {
                     console.error(error);
                     document.getElementById('output').textContent = 'Error al cargar las estaciones.';
@@ -61,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             // Llama a la función para cargar las estaciones
-            cargarEstaciones();
+            estaciones = cargarEstaciones();
     const estaciones1 = [
     { "id": 353, "nombre": "San Andrés", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
     { "id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
