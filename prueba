@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .ocultar{
+        display: none;
+    }
+    .mostrar{
+        display: block;
+    }
+</style>
+<body>
+    <label for="origin">Estación de Origen:</label>
+    <select id="origin"></select>
+    <select name="Linea" id="Linea">
+        <option value="1">Mitre</option>
+        <option value="2">San martin</option>
+        <option value="3">Sarmiento</option>
+        <option value="4">Roca</option>
+    </select>
+
+    <select name="RamalMitre"  id="Ramal" class="ocultar RamalMitre">
+        <option value="J. L. Suárez">J. L. Suárez</option>
+        <option value="Mitre">Mitre</option>
+        <option value="Tigre">Tigre</option>
+    </select>
+    <select name="RamalSanma"  id="Ramal" class="ocultar RamalSanma">
+        <option value="Pilar">Pilar</option>
+        <option value="Cabred">Cabred</option>
+        <option value="Rufino">Rufino</option>
+        <option value="Cabred">Cabred</option>
+    </select>
+</body>
+
+<script>
+            async function cargarEstaciones() {
+            try {
+                const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
+                if (!response.ok) {
+                    throw new Error('Error al cargar el archivo: ' + response.statusText);
+                }
+
+                const data = await response.text(); // Lee el contenido del archivo como texto
+                const estaciones = data.split('\n').map(line => {
+                    return line.trim() ? JSON.parse(line) : null; // Convierte cada línea en un objeto JSON
+                }).filter(item => item !== null); // Filtra las líneas vacías
+
+                // Muestra el array de estaciones en el elemento <pre>
+                document.getElementById('output').textContent = JSON.stringify(estaciones, null, 2);
+            } catch (error) {
+                console.error(error);
+                document.getElementById('output').textContent = 'Error al cargar las estaciones.';
+            }
+        }
+        cargarEstaciones()
+
+
+    const estaciones1 = [
+    { "id": 353, "nombre": "San Andrés", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
+    { "id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
+    { "id": 35, "nombre": "Coghlan", "Linea": "Mitre", "Ramal": "Mitre", "publico": true },
+    { "id": 35, "nombre": "Tigre", "Linea": "Mitre", "Ramal": "Tigre", "publico": true },
+    { "id": 353, "nombre": "Devoto", "Linea": "San martin", "publico": true },
+    { "id": 35, "nombre": "Paternal", "Linea": "San martin", "publico": true },]
+    
+    const LineaMitre = estaciones.filter(x => x.Linea == "Mitre")
+    const LineaSanma = estaciones.filter(x => x.Linea == "San martin")
+    function populateDropdowns(ramal) {
+
+        let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
+
+        const originSelect = document.getElementById("origin");
+        originSelect.options.length = 0;
+        RamalSeleccionado.forEach(estacion => {
+        if (estacion.publico) {
+        const option1 = new Option(estacion.nombre, estacion.id);
+        originSelect.add(option1);
+        }
+});
+    }
+    const Linea = document.querySelector("#Linea");
+    const RamalMitre = document.querySelector('.RamalMitre');
+    const RamalSanma = document.querySelector('.RamalSanma');
+    Linea.addEventListener('change', () => {
+        let valorOption = Linea.value;
+        console.log(valorOption);
+        if (valorOption==1){
+            RamalMitre.classList.replace('ocultar','mostrar')
+            RamalSanma.classList.replace('mostrar','ocultar')
+        }
+        else if(valorOption==2){
+            RamalSanma.classList.replace('ocultar','mostrar')
+            RamalMitre.classList.replace('mostrar','ocultar')
+        }
+
+    }
+    )
+    const Ramal = document.querySelector("#Ramal");
+    Ramal.addEventListener('change', ()=>{
+        let valorOption = Ramal.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+
+    
+</script>
+</html>
