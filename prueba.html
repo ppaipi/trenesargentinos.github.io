@@ -37,7 +37,8 @@
 </body>
 
 <script>
-            async function cargarEstaciones() {
+// Función para leer el archivo de texto
+        async function cargarEstaciones() {
             try {
                 const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
                 if (!response.ok) {
@@ -56,9 +57,9 @@
                 document.getElementById('output').textContent = 'Error al cargar las estaciones.';
             }
         }
-        cargarEstaciones()
 
-
+        // Llama a la función para cargar las estaciones
+        cargarEstaciones();
     const estaciones1 = [
     { "id": 353, "nombre": "San Andrés", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
     { "id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
@@ -67,8 +68,8 @@
     { "id": 353, "nombre": "Devoto", "Linea": "San martin", "publico": true },
     { "id": 35, "nombre": "Paternal", "Linea": "San martin", "publico": true },]
     
-    const LineaMitre = estaciones.filter(x => x.Linea == "Mitre")
-    const LineaSanma = estaciones.filter(x => x.Linea == "San martin")
+    const LineaMitre = estaciones1.filter(x => x.Linea == "Mitre")
+    const LineaSanma = estaciones1.filter(x => x.Linea == "San martin")
     function populateDropdowns(ramal) {
 
         let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
