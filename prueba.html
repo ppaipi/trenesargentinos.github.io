@@ -15,7 +15,9 @@
 </style>
 <body>
     <label for="origin">Estación de Origen:</label>
-    <select id="origin"></select>
+    <select id="origin">
+         <option value="0">- Elija una Linea -</option>
+    </select>
     <select name="Linea" id="Linea">
         <option value="0" selected>- Elija una linea -</option>
         <option value="1">Mitre</option>
@@ -41,6 +43,7 @@
 <script>
     
     document.getElementById('RamalSanma').value=0;
+    document.getElementById('origin').value=0;
     document.getElementById('RamalMitre').value=0;
     document.getElementById('Linea').value=0;
         let estaciones = [];
@@ -83,7 +86,8 @@
     function populateDropdowns(ramal) {
 
         let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
-
+        
+        document.getElementById('origin').value=0;
         const originSelect = document.getElementById("origin");
         originSelect.options.length = 0;
         RamalSeleccionado.forEach(estacion => {
