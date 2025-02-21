@@ -1,0 +1,534 @@
+{"id": 526, "nombre": "20 de Junio", "Linea": "Belgrano Sur", "Ramal": "Marcos Paz", "publico": true}
+{"id": 1, "nombre": "3 de Febrero", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 1, "nombre": "3 de Febrero", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 3, "nombre": "Abbot", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 3, "nombre": "Abbot", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 5, "nombre": "Acassuso", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 8, "nombre": "Adrogué", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 9, "nombre": "Agustín de Elía", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 12, "nombre": "Aldo Bonzi", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 12, "nombre": "Aldo Bonzi", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 12, "nombre": "Aldo Bonzi", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 13, "nombre": "Alejandro Korn", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 13, "nombre": "Alejandro Korn", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 13, "nombre": "Alejandro Korn", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 13, "nombre": "Alejandro Korn", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 14, "nombre": "Alejandro Petión", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 14, "nombre": "Alejandro Petión", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 21, "nombre": "Apeadero Kloosterman", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 21, "nombre": "Apeadero Kloosterman", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 22, "nombre": "Apeadero Km. 12", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 22, "nombre": "Apeadero Km. 12", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 25, "nombre": "Arquitectura", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 5976, "nombre": "Avenida 7", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 29, "nombre": "Bancalari", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 29, "nombre": "Bancalari", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 29, "nombre": "Bancalari", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 29, "nombre": "Bancalari", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 30, "nombre": "Banfield", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 30, "nombre": "Banfield", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 30, "nombre": "Banfield", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 30, "nombre": "Banfield", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 32, "nombre": "Béccar", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 34, "nombre": "Belgrano C", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 36, "nombre": "Bella Vista", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 36, "nombre": "Bella Vista", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 37, "nombre": "Benavídez", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 37, "nombre": "Benavídez", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 37, "nombre": "Benavídez", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 37, "nombre": "Benavídez", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 38, "nombre": "Berazategui", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 38, "nombre": "Berazategui", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 39, "nombre": "Bernal", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 39, "nombre": "Bernal", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 42, "nombre": "Borges", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 43, "nombre": "Bosques", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 43, "nombre": "Bosques", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 43, "nombre": "Bosques", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 43, "nombre": "Bosques", "Linea": "Trenes de Terceros", "Ramal": "La Plata", "publico": true}
+{"id": 43, "nombre": "Bosques", "Linea": "Trenes de Terceros", "Ramal": "La Plata", "publico": true}
+{"id": 49, "nombre": "Burzaco", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 50, "nombre": "Caballito", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 50, "nombre": "Caballito", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 51, "nombre": "Cabred", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 51, "nombre": "Cabred", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 51, "nombre": "Cabred", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 55, "nombre": "Campana", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 55, "nombre": "Campana", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 55, "nombre": "Campana", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 55, "nombre": "Campana", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 58, "nombre": "Canal San Fernando", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 60, "nombre": "Cañuelas", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 60, "nombre": "Cañuelas", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 60, "nombre": "Cañuelas", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 60, "nombre": "Cañuelas", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 60, "nombre": "Cañuelas", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 60, "nombre": "Cañuelas", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 61, "nombre": "Capilla del Señor", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 64, "nombre": "Carlos Spegazzini", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 64, "nombre": "Carlos Spegazzini", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 64, "nombre": "Carlos Spegazzini", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 65, "nombre": "Carupá", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 67, "nombre": "Caseros", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 67, "nombre": "Caseros", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 67, "nombre": "Caseros", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 70, "nombre": "Castelar", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 70, "nombre": "Castelar", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 78, "nombre": "Chascomús", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 78, "nombre": "Chascomús", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 78, "nombre": "Chascomús", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 79, "nombre": "Chilavert", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 5977, "nombre": "Circunvalación", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 83, "nombre": "City Bell", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 84, "nombre": "Ciudadela", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 84, "nombre": "Ciudadela", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 85, "nombre": "Claypole", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 85, "nombre": "Claypole", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 86, "nombre": "Cnel. Brandsen", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 86, "nombre": "Cnel. Brandsen", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 86, "nombre": "Cnel. Brandsen", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 90, "nombre": "Coghlan", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 91, "nombre": "Colegiales", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 91, "nombre": "Colegiales", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 93, "nombre": "Constitución", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 102, "nombre": "Dante Ardigó", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 102, "nombre": "Dante Ardigó", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 104, "nombre": "Delta", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 106, "nombre": "Derqui", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 106, "nombre": "Derqui", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 106, "nombre": "Derqui", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 112, "nombre": "Devoto", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 112, "nombre": "Devoto", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 113, "nombre": "Diagonal 73", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 117, "nombre": "Domselaar", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 117, "nombre": "Domselaar", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 117, "nombre": "Domselaar", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 115, "nombre": "Don Bosco", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 115, "nombre": "Don Bosco", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 118, "nombre": "Dr. A. Schweitzer", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 119, "nombre": "Dr. Cetrángolo", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 121, "nombre": "Dr. Sáenz Prov.", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 525, "nombre": "Dr. Sáenz Viad.", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 125, "nombre": "El Jagüel", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 125, "nombre": "El Jagüel", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 125, "nombre": "El Jagüel", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 127, "nombre": "El Palomar", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 127, "nombre": "El Palomar", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 128, "nombre": "El Talar", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 129, "nombre": "Empalme Lobos", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 129, "nombre": "Empalme Lobos", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 130, "nombre": "Escobar", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 130, "nombre": "Escobar", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 130, "nombre": "Escobar", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 130, "nombre": "Escobar", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 132, "nombre": "Ezeiza", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 133, "nombre": "Ezpeleta", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 133, "nombre": "Ezpeleta", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 134, "nombre": "F. Álvarez", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 134, "nombre": "F. Álvarez", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 137, "nombre": "Ferrari", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 138, "nombre": "Florencio Varela", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 138, "nombre": "Florencio Varela", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 139, "nombre": "Flores", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 139, "nombre": "Flores", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 140, "nombre": "Floresta", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 140, "nombre": "Floresta", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 141, "nombre": "Florida", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 141, "nombre": "Florida", "Linea": "Belgrano Norte", "Ramal": "Villa Rosa", "publico": true}
+{"id": 146, "nombre": "Gándara", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 146, "nombre": "Gándara", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 146, "nombre": "Gándara", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 147, "nombre": "Garín", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 150, "nombre": "General Urquiza", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 151, "nombre": "Gerli", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 151, "nombre": "Gerli", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 151, "nombre": "Gerli", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 151, "nombre": "Gerli", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 152, "nombre": "Glew", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 153, "nombre": "Gonnet", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 154, "nombre": "González Catán", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 154, "nombre": "González Catán", "Linea": "Belgrano Sur", "Ramal": "Marcos Paz", "publico": true}
+{"id": 155, "nombre": "Gowland", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 155, "nombre": "Gowland", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 163, "nombre": "Gral. Rodríguez", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 163, "nombre": "Gral. Rodríguez", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 165, "nombre": "Guernica", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 168, "nombre": "Gutiérrez", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 169, "nombre": "Haedo", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 169, "nombre": "Haedo", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 169, "nombre": "Haedo", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 172, "nombre": "Hipólito Yrigoyen", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 172, "nombre": "Hipólito Yrigoyen", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 172, "nombre": "Hipólito Yrigoyen", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 172, "nombre": "Hipólito Yrigoyen", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 173, "nombre": "Hornos", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 5980, "nombre": "Hospital Cuenca Alta", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 174, "nombre": "Hospital Español", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 5979, "nombre": "Hospital.San Juan de Dios", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 176, "nombre": "Hudson", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 177, "nombre": "Hurlingham", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 177, "nombre": "Hurlingham", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 177, "nombre": "Hurlingham", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 178, "nombre": "Independencia", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 179, "nombre": "Informática", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 180, "nombre": "Ing. Budge", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 180, "nombre": "Ing. Budge", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 181, "nombre": "Ingeniero Castello", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 182, "nombre": "Ingeniero S. Brian", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 184, "nombre": "Isidro Casanova", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 184, "nombre": "Isidro Casanova", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 186, "nombre": "Ituzaingó", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 186, "nombre": "Ituzaingó", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 188, "nombre": "Jáuregui", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 188, "nombre": "Jáuregui", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 189, "nombre": "Jeppener", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 189, "nombre": "Jeppener", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 189, "nombre": "Jeppener", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 190, "nombre": "J. L. Suárez", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 194, "nombre": "José C. Paz", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 194, "nombre": "José C. Paz", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 194, "nombre": "José C. Paz", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 195, "nombre": "José Ingenieros", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 195, "nombre": "José Ingenieros", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 197, "nombre": "José Mármol", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 197, "nombre": "José Mármol", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 198, "nombre": "Juan Anchorena", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 200, "nombre": "Juan B. Justo", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 201, "nombre": "Juan XXIII", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 203, "nombre": "Justo Villegas", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 203, "nombre": "Justo Villegas", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 204, "nombre": "Kilometro 83", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 205, "nombre": "Km. 34", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 464, "nombre": "Km. 34,5", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 209, "nombre": "Laferrere", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 210, "nombre": "La Fraternidad", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 210, "nombre": "La Fraternidad", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 212, "nombre": "La Lucila", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 214, "nombre": "La Noria", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 214, "nombre": "La Noria", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 215, "nombre": "Lanús", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 215, "nombre": "Lanús", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 215, "nombre": "Lanús", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 215, "nombre": "Lanús", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 216, "nombre": "La Paternal", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 216, "nombre": "La Paternal", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 217, "nombre": "La Plata", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 217, "nombre": "La Plata", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 218, "nombre": "La Reja", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 218, "nombre": "La Reja", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 220, "nombre": "La Salada", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 220, "nombre": "La Salada", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 222, "nombre": "Las Barrancas", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 225, "nombre": "Las Heras", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 226, "nombre": "Las Malvinas", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 226, "nombre": "Las Malvinas", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 229, "nombre": "L. de la Torre", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 230, "nombre": "Lezama", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 230, "nombre": "Lezama", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 230, "nombre": "Lezama", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 231, "nombre": "Lezica y Torrezuri", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 231, "nombre": "Lezica y Torrezuri", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 232, "nombre": "Libertad", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 232, "nombre": "Libertad", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 233, "nombre": "Libertador", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 234, "nombre": "Liniers", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 234, "nombre": "Liniers", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 235, "nombre": "Llavallol", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 236, "nombre": "L. M. Drago", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 237, "nombre": "Lobos", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 237, "nombre": "Lobos", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 237, "nombre": "Lobos", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 238, "nombre": "Lomas de Zamora", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 238, "nombre": "Lomas de Zamora", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 238, "nombre": "Lomas de Zamora", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 238, "nombre": "Lomas de Zamora", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 239, "nombre": "Longchamps", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 240, "nombre": "López Camelo", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 243, "nombre": "Los Cardales", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 246, "nombre": "Luis Guillón", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 246, "nombre": "Luis Guillón", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 246, "nombre": "Luis Guillón", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 247, "nombre": "Luján", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 247, "nombre": "Luján", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 248, "nombre": "Maipú", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 249, "nombre": "Malaver", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 252, "nombre": "Manzanares", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 252, "nombre": "Manzanares", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 252, "nombre": "Manzanares", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 253, "nombre": "Maq. Savio", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 4601, "nombre": "Maquinista Ricardo Cal", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 3700, "nombre": "Marcos Paz", "Linea": "Belgrano Sur", "Ramal": "Marcos Paz", "publico": true}
+{"id": 254, "nombre": "Marcos Paz", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 256, "nombre": "María Eva Duarte", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 257, "nombre": "Mariano Acosta", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 258, "nombre": "Marina Nueva", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 259, "nombre": "Marinos C. G. Belgrano", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 259, "nombre": "Marinos C. G. Belgrano", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 260, "nombre": "Marinos del Fournier", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 260, "nombre": "Marinos del Fournier", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 262, "nombre": "Martínez", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 263, "nombre": "Maschwitz", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 263, "nombre": "Maschwitz", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 263, "nombre": "Maschwitz", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 263, "nombre": "Maschwitz", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 264, "nombre": "Matheu", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 265, "nombre": "Máximo Paz", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 265, "nombre": "Máximo Paz", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 267, "nombre": "Medicina", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 268, "nombre": "Mercedes", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 268, "nombre": "Mercedes", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 5978, "nombre": "Meridiano V", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 269, "nombre": "Merlo", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 269, "nombre": "Merlo", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 269, "nombre": "Merlo", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 270, "nombre": "Merlo Gómez", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 270, "nombre": "Merlo Gómez", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 271, "nombre": "Miguelete", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 271, "nombre": "Miguelete", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 271, "nombre": "Miguelete", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 271, "nombre": "Miguelete", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 272, "nombre": "Ministro Carranza", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 272, "nombre": "Ministro Carranza", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 273, "nombre": "Mitre", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 275, "nombre": "Monasterio", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 275, "nombre": "Monasterio", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 275, "nombre": "Monasterio", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 276, "nombre": "Monte", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 276, "nombre": "Monte", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 277, "nombre": "Monte Grande", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 277, "nombre": "Monte Grande", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 277, "nombre": "Monte Grande", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 278, "nombre": "Moreno", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 278, "nombre": "Moreno", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 278, "nombre": "Moreno", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 279, "nombre": "Morón", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 279, "nombre": "Morón", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 283, "nombre": "Muñiz", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 283, "nombre": "Muñiz", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 287, "nombre": "Núñez", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 290, "nombre": "Olivera", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 290, "nombre": "Olivera", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 291, "nombre": "Olivos", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 293, "nombre": "Once", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 293, "nombre": "Once", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 294, "nombre": "Otamendi", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 294, "nombre": "Otamendi", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 294, "nombre": "Otamendi", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 294, "nombre": "Otamendi", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 296, "nombre": "Pacheco", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 296, "nombre": "Pacheco", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 296, "nombre": "Pacheco", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 296, "nombre": "Pacheco", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 297, "nombre": "Palermo", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 297, "nombre": "Palermo", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 297, "nombre": "Palermo", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 300, "nombre": "Paso del Rey", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 300, "nombre": "Paso del Rey", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 303, "nombre": "Pereyra", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 304, "nombre": "Periodismo", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 306, "nombre": "Pilar", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 306, "nombre": "Pilar", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 306, "nombre": "Pilar", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 306, "nombre": "Pilar", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 306, "nombre": "Pilar", "Linea": "Regionales", "Ramal": "Villa María", "publico": true}
+{"id": 309, "nombre": "Plátanos", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 310, "nombre": "P. Marín", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 310, "nombre": "P. Marín", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 311, "nombre": "Policlínico", "Linea": "Roca", "Ramal": "Universitario", "publico": true}
+{"id": 313, "nombre": "Presidente Illia", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 313, "nombre": "Presidente Illia", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 314, "nombre": "P. Turner", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 315, "nombre": "Puente Alsina", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 315, "nombre": "Puente Alsina", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 318, "nombre": "Pueyrredón", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 319, "nombre": "Punta Chica", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 321, "nombre": "Querandí", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 322, "nombre": "Quilmes", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 322, "nombre": "Quilmes", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 324, "nombre": "Rafael Calzada", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 324, "nombre": "Rafael Calzada", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 325, "nombre": "Rafael Castillo", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 325, "nombre": "Rafael Castillo", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 327, "nombre": "Ramos Mejía", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 327, "nombre": "Ramos Mejía", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 328, "nombre": "Ranelagh", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 329, "nombre": "Remedios de Escalada", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Belgrano Norte", "Ramal": "Villa Rosa", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 332, "nombre": "Retiro LM", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 463, "nombre": "Retiro LSM", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 463, "nombre": "Retiro LSM", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 463, "nombre": "Retiro LSM", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 333, "nombre": "Ricardo Levene", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 333, "nombre": "Ricardo Levene", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 333, "nombre": "Ricardo Levene", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 333, "nombre": "Ricardo Levene", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 333, "nombre": "Ricardo Levene", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 333, "nombre": "Ricardo Levene", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 334, "nombre": "Ringuelet", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 335, "nombre": "Rio Lujan", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 335, "nombre": "Rio Lujan", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 335, "nombre": "Rio Lujan", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 335, "nombre": "Rio Lujan", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 337, "nombre": "Rivadavia", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 346, "nombre": "Saavedra", "Linea": "Mitre", "Ramal": "Mitre", "publico": true}
+{"id": 347, "nombre": "S. A. de Padua", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 347, "nombre": "S. A. de Padua", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 348, "nombre": "Sáenz Peña", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 348, "nombre": "Sáenz Peña", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 348, "nombre": "Sáenz Peña", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 353, "nombre": "San Andrés", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 354, "nombre": "Sánchez de Mendeville", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 354, "nombre": "Sánchez de Mendeville", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 355, "nombre": "San Fernando C", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 356, "nombre": "San Fernando R", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 357, "nombre": "San Isidro C", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 358, "nombre": "San Isidro R", "Linea": "Tren de la Costa", "Ramal": "Tren de la Costa", "publico": true}
+{"id": 359, "nombre": "San Justo", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 360, "nombre": "San Martín", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 361, "nombre": "San Miguel", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 361, "nombre": "San Miguel", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 365, "nombre": "Santa Catalina", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 367, "nombre": "Santa Sofía", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 369, "nombre": "Santos Lugares", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 369, "nombre": "Santos Lugares", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 370, "nombre": "Sarandí", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 370, "nombre": "Sarandí", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 378, "nombre": "Sol y Verde", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 378, "nombre": "Sol y Verde", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 380, "nombre": "Sourigues", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 381, "nombre": "Speratti", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 368, "nombre": "S. y Kosteki", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 383, "nombre": "Tablada", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 385, "nombre": "Tapiales", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 385, "nombre": "Tapiales", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Alejandro Korn", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Haedo", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Chascomús", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Mar del Plata", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Lezama", "publico": true}
+{"id": 386, "nombre": "Temperley", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 389, "nombre": "Tigre", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 392, "nombre": "Tolosa", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 396, "nombre": "Tristán Suárez", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 396, "nombre": "Tristán Suárez", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 396, "nombre": "Tristán Suárez", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 396, "nombre": "Tristán Suárez", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 396, "nombre": "Tristán Suárez", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 396, "nombre": "Tristán Suárez", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 399, "nombre": "Turdera", "Linea": "Roca", "Ramal": "Ezeiza", "publico": true}
+{"id": 399, "nombre": "Turdera", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 399, "nombre": "Turdera", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 400, "nombre": "Unión Ferroviaria", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 400, "nombre": "Unión Ferroviaria", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 401, "nombre": "Univ. Luján", "Linea": "Sarmiento", "Ramal": "Mercedes", "publico": true}
+{"id": 401, "nombre": "Univ. Luján", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 402, "nombre": "Uribelarrea", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 402, "nombre": "Uribelarrea", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 407, "nombre": "Vicente Casares", "Linea": "Roca", "Ramal": "Cañuelas", "publico": true}
+{"id": 407, "nombre": "Vicente Casares", "Linea": "Roca", "Ramal": "Cañuelas Esp", "publico": true}
+{"id": 407, "nombre": "Vicente Casares", "Linea": "Roca", "Ramal": "Alvear", "publico": true}
+{"id": 407, "nombre": "Vicente Casares", "Linea": "Roca", "Ramal": "Monte", "publico": true}
+{"id": 407, "nombre": "Vicente Casares", "Linea": "Roca", "Ramal": "Lobos", "publico": true}
+{"id": 407, "nombre": "Vicente Casares", "Linea": "Roca", "Ramal": "Bahía Blanca", "publico": true}
+{"id": 408, "nombre": "Vicente López", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 409, "nombre": "Victoria", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 409, "nombre": "Victoria", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
+{"id": 411, "nombre": "Villa Astolfi", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 411, "nombre": "Villa Astolfi", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 412, "nombre": "Villa Ballester", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true}
+{"id": 412, "nombre": "Villa Ballester", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 412, "nombre": "Villa Ballester", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 412, "nombre": "Villa Ballester", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 412, "nombre": "Villa Ballester", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 413, "nombre": "Villa Caraza", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 413, "nombre": "Villa Caraza", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 414, "nombre": "Villa Crespo", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 414, "nombre": "Villa Crespo", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 415, "nombre": "Villa del Parque", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 415, "nombre": "Villa del Parque", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 415, "nombre": "Villa del Parque", "Linea": "San Martín", "Ramal": "Rufino", "publico": true}
+{"id": 417, "nombre": "Villa Diamante", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 417, "nombre": "Villa Diamante", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 418, "nombre": "Villa Domínico", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 418, "nombre": "Villa Domínico", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 419, "nombre": "Villa Elisa", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 420, "nombre": "Villa España", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 421, "nombre": "Villa Fiorito", "Linea": "Belgrano Sur", "Ramal": "Pte Alsina", "publico": true}
+{"id": 421, "nombre": "Villa Fiorito", "Linea": "Belgrano Sur", "Ramal": "Apeadero Km 12", "publico": true}
+{"id": 422, "nombre": "Villa Lugano", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 422, "nombre": "Villa Lugano", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 423, "nombre": "Villa Luro", "Linea": "Sarmiento", "Ramal": "Moreno", "publico": true}
+{"id": 423, "nombre": "Villa Luro", "Linea": "Sarmiento", "Ramal": "Pehuajó", "publico": true}
+{"id": 424, "nombre": "Villa Madero", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 424, "nombre": "Villa Madero", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 427, "nombre": "Villa Soldati", "Linea": "Belgrano Sur", "Ramal": "M.C.G. Belgrano", "publico": true}
+{"id": 427, "nombre": "Villa Soldati", "Linea": "Belgrano Sur", "Ramal": "Gonzalez Catán", "publico": true}
+{"id": 428, "nombre": "Virreyes", "Linea": "Mitre", "Ramal": "Tigre", "publico": true}
+{"id": 430, "nombre": "Wilde", "Linea": "Roca", "Ramal": "La Plata", "publico": true}
+{"id": 430, "nombre": "Wilde", "Linea": "Roca", "Ramal": "Bosques-Q", "publico": true}
+{"id": 431, "nombre": "William Morris", "Linea": "San Martín", "Ramal": "Pilar", "publico": true}
+{"id": 431, "nombre": "William Morris", "Linea": "San Martín", "Ramal": "Cabred", "publico": true}
+{"id": 432, "nombre": "Zamudio", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 433, "nombre": "Zapiola", "Linea": "Sarmiento", "Ramal": "Lobos", "publico": true}
+{"id": 434, "nombre": "Zárate", "Linea": "Mitre", "Ramal": "Zarate", "publico": true}
+{"id": 434, "nombre": "Zárate", "Linea": "Mitre", "Ramal": "Rosario Norte", "publico": true}
+{"id": 434, "nombre": "Zárate", "Linea": "Mitre", "Ramal": "Córdoba", "publico": true}
+{"id": 434, "nombre": "Zárate", "Linea": "Mitre", "Ramal": "Tucumán", "publico": true}
+{"id": 435, "nombre": "Zeballos", "Linea": "Roca", "Ramal": "Bosques-T", "publico": true}
+{"id": 435, "nombre": "Zeballos", "Linea": "Roca", "Ramal": "Gutiérrez", "publico": true}
+{"id": 436, "nombre": "Zelaya", "Linea": "Mitre", "Ramal": "Capilla del Señor", "publico": true}
