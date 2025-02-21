@@ -23,12 +23,12 @@
         <option value="4">Roca</option>
     </select>
 
-    <select name="RamalMitre"  id="RamalMitre" class="ocultar">
+    <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre">
         <option value="J. L. Suárez">J. L. Suárez</option>
         <option value="Mitre">Mitre</option>
         <option value="Tigre">Tigre</option>
     </select>
-    <select name="RamalSanma"  id="RamalSanma" class="ocultar">
+    <select name="RamalSanma"  id="RamalSanma" class="ocultar RamalSanma">
         <option value="Pilar">Pilar</option>
         <option value="Cabred">Cabred</option>
         <option value="Rufino">Rufino</option>
@@ -105,14 +105,12 @@
 
     }
     )
-    const RamalMitre = document.querySelector("#RamalMitre");
-    Ramal.addEventListener('change', ()=>{
+    RamalMitre.addEventListener('change', ()=>{
         let valorOption = Ramal.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
-    const RamalSanma = document.querySelector("#RamalSanma");
-    Ramal.addEventListener('change', ()=>{
+    RamalSanma.addEventListener('change', ()=>{
         let valorOption = Ramal.value
         console.log(valorOption)
         populateDropdowns(valorOption)
