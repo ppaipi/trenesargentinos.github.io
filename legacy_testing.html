@@ -261,7 +261,7 @@ function encriptarContrasena(contrasena) {
     const username = encodeURIComponent(user);
     const password = encodeURIComponent(pass); // Codifica el carácter '#'
 
-    const data = `username=${username}&password=${password}`;
+    var data = 'username=' + username + '&password=' + password;
     xhr.send(data);
 }
 
