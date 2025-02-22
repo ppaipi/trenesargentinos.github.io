@@ -142,7 +142,7 @@ button:hover {
     ];
     var token = ""; 
     var intervalId; // ID del intervalo para detenerlo cuando sea necesario
-    function replace1(str, search, replacement) {
+function replace1(str, search, replacement) {
     // Verificamos si 'search' es una cadena o una expresión regular
     if (typeof search === 'string') {
         // Escapamos caracteres especiales en 'search' para usarlo en la expresión regular
@@ -153,6 +153,7 @@ button:hover {
     // Usamos el método replace con la expresión regular
     return str.replace(search, replacement);
 }
+
 
 
     
