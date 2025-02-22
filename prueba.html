@@ -87,9 +87,9 @@
 
         let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
         
-        document.getElementById('origin').value=0;
         const originSelect = document.getElementById("origin");
-        originSelect.options.length = 0;
+        originSelect.options.length = 1;
+        document.getElementById('origin').value=0;
         RamalSeleccionado.forEach(estacion => {
         if (estacion.publico) {
         const option1 = new Option(estacion.nombre, estacion.id);
