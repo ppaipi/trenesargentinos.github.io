@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="icon" href="Tren.ico" type="image/x-icon>
+  <link rel="icon" href="Tren.ico" type="image/x-icon">
   <meta charset="UTF-8">
   <title>Consulta de Trenes</title>
   <style>
@@ -164,6 +164,18 @@ button:hover {
 
     let token = ""; // Aquí se almacenará el token obtenido
     let intervalId; // ID del intervalo para detenerlo cuando sea necesario
+    function replace1(str, search, replacement) {
+    // Verificamos si 'search' es una cadena o una expresión regular
+    if (typeof search === 'string') {
+        // Escapamos caracteres especiales en 'search' para usarlo en la expresión regular
+        search = search.replace(/([.*+?^${}()|$$$$\\])/g, '\\$1');
+        search = new RegExp(search, 'g'); // Creamos una expresión regular global
+    }
+    
+    // Usamos el método replace con la expresión regular
+    return str.replace(search, replacement);
+}
+
 
     function obtenerCredenciales() {
       const fecha = new Date();
@@ -183,7 +195,7 @@ button:hover {
         "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
       };
       for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
-        texto = texto.replaceAll(key, value);
+        texto = replace1(texto,key, value);
       }
 
       texto = texto.split("").reverse().join("");
@@ -193,7 +205,7 @@ button:hover {
         "a": "32%j", "e": "32%p", "i": "32%w", "o": "32%8", "u": "#0", "=": "32%v"
       };
       for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
-        texto = texto.replaceAll(key, value);
+        texto = replace1(texto, key, value);
       }
       texto = encodeURIComponent(texto.split("").reverse().join(""))
 
@@ -328,7 +340,7 @@ function populateDropdowns() {
       }
 
       horarios.forEach(horario => {
-        const servicio = horario.servicio?.ramal?.nombre;
+        const servicio = horario.servicio.ramal.nombre;
         const desde = horario.desde.nombreCorto;
         const hasta = horario.hasta.nombreCorto;
 
