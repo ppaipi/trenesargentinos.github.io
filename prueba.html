@@ -18,13 +18,21 @@
     <select id="origin">
          <option value="0">- Elija una Linea -</option>
     </select>
-    <select name="Linea" id="Linea">
+<!--     <select>
         <option value="0" selected>- Elija una linea -</option>
         <option value="1">Mitre</option>
         <option value="2">San Martín</option>
         <option value="3">Sarmiento</option>
         <option value="4">Roca</option>
-    </select>
+    </select> -->
+    <div id="Linea">
+    <button value="Mitre" onclick="Clicklinea(1)">Mitre</button>
+    <button value="San Martín" onclick="Clicklinea(2)">San Martín</button>
+    <button value="Sarmiento" onclick="Clicklinea(3)">Sarmiento</button>
+    <button value="Roca" onclick="Clicklinea(4)">Roca</button>
+    <button value="Tren De la costa" onclick="Clicklinea(5)">Tren de la costa</button>
+    <button value="Belgrano Sur" onclick="Clicklinea(6)">Belgrano sur</button>
+</div>
 
     <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre">
         <option value="0" selected>- Elija un ramal -</option>
@@ -32,54 +40,99 @@
         <option value="Mitre">Mitre</option>
         <option value="Tigre">Tigre</option>
     </select>
+
     <select name="RamalSanma"  id="RamalSanma" class="ocultar RamalSanma">
         <option value="0" selected>- Elija un ramal -</option>
         <option value="Pilar">Pilar</option>
         <option value="Cabred">Cabred</option>
         <option value="Rufino">Rufino</option>
     </select>
+
+    <select name="RamalSar"  id="RamalSar" class="ocultar RamalSar">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Lobos">Lobos</option>
+        <option value="Moreno">Moreno</option>
+        <option value="Pehuajó">Pehuajó</option>
+    </select>
+
+    <select name="RamalRoca"  id="RamalRoca" class="ocultar RamalRoca">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Cañuelas Esp">Cañuelas Esp</option>
+        <option value="Bosques-T">Bosques-T</option>
+        <option value="Bosques-Q">Bosques-Q</option>
+        <option value="Ezeiza">Ezeiza</option>
+        <option value="La Plata">La Plata</option>
+        <option value="Alejandro Korn">Alejandro Korn</option>
+        <option value="Cañuelas">Cañuelas</option>
+        <option value="Haedo">Haedo</option>
+        <option value="Universitario">Universitario</option>
+        <option value="Gutiérrez">Gutiérrez</option>
+        <option value="Chascomús">Chascomús</option>
+        <option value="Monte">Monte</option>
+        <option value="Lobos">Lobos</option>
+        
+    </select>
+
+    <select name="RamalTDLC"  id="RamalTDLC" class="ocultar RamalTDLC">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Tren de la Costa">Tren de la Costa</option>
+    </select>
+
+    <select name="RamalSS"  id="RamalBS" class="ocultar RamalBS">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Gonzalez Catán">Gonzalez Catán</option>
+        <option value="M.C.G. Belgrano">M.C.G. Belgrano</option>
+        <option value="Pte Alsina">Pte Alsina</option>
+        <option value="Marcos Paz">Marcos Paz</option>
+    </select>
 </body>
 
 <script>
     
-    document.getElementById('RamalSanma').value=0;
-    document.getElementById('origin').value=0;
     document.getElementById('RamalMitre').value=0;
+    document.getElementById('RamalSanma').value=0;
+    document.getElementById('RamalSar').value=0;
+    document.getElementById('RamalRoca').value=0;
+    document.getElementById('RamalTDLC').value=0;
+    document.getElementById('RamalBS').value=0;
+    document.getElementById('origin').value=0;
     document.getElementById('Linea').value=0;
+
         let estaciones = [];
 
         // Función para leer el archivo de texto
-        async function cargarEstaciones() {
-            try {
-                const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
-                if (!response.ok) {
-                    throw new Error('Error al cargar el archivo: ' + response.statusText);
-                }
+    async function cargarEstaciones() {
+    try {
+    const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
+    if (!response.ok) {
+    throw new Error('Error al cargar el archivo: ' + response.statusText);
+    }
 
-                const data = await response.text(); // Lee el contenido del archivo como texto
-                estaciones = data.split('\n').map(line => {
-                    return line.trim() ? JSON.parse(line) : null; // Convierte cada línea en un objeto JSON
-                }).filter(item => item !== null); // Filtra las líneas vacías
+    const data = await response.text(); // Lee el contenido del archivo como texto
+    estaciones = data.split('\n').map(line => {
+    return line.trim() ? JSON.parse(line) : null; // Convierte cada línea en un objeto JSON
+    }).filter(item => item !== null); // Filtra las líneas vacías
 
-                // Muestra el array de estaciones en el elemento <pre>
+    // Muestra el array de estaciones en el elemento <pre>
 
-                // Muestra las estaciones en la consola
-                console.log(estaciones);
-            } catch (error) {
-                console.error(error);
-                document.getElementById('output').textContent = 'Error al cargar las estaciones.';
-            }
-        }
+    // Muestra las estaciones en la consola
+    console.log(estaciones);
+    } catch (error) {
+    console.error(error);
+    document.getElementById('output').textContent = 'Error al cargar las estaciones.';
+    }
+    }
 
-        // Llama a la función para cargar las estaciones
-        cargarEstaciones();
+    // Llama a la función para cargar las estaciones
+    cargarEstaciones();
     const estaciones1 = [
     { "id": 353, "nombre": "San Andrés", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
     { "id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
     { "id": 35, "nombre": "Coghlan", "Linea": "Mitre", "Ramal": "Mitre", "publico": true },
     { "id": 35, "nombre": "Tigre", "Linea": "Mitre", "Ramal": "Tigre", "publico": true },
-    { "id": 353, "nombre": "Devoto", "Linea": "San martin", "publico": true },
-    { "id": 35, "nombre": "Paternal", "Linea": "San martin", "publico": true },]
+    { "id": 353, "nombre": "Devoto", "Linea": "San martin", "Ramal": "Cabred", "publico": true },
+    { "id": 35, "nombre": "Paternal", "Linea": "San martin", "Ramal": "Pilar", "publico": true },]
     
     const LineaMitre = estaciones1.filter(x => x.Linea == "Mitre")
     const LineaSanma = estaciones1.filter(x => x.Linea == "San martin")
@@ -100,20 +153,63 @@
     const Linea = document.querySelector("#Linea");
     const RamalMitre = document.querySelector('.RamalMitre');
     const RamalSanma = document.querySelector('.RamalSanma');
-    Linea.addEventListener('change', () => {
-        let valorOption = Linea.value;
+    const RamalSar = document.querySelector('.RamalSar');
+    const RamalRoca = document.querySelector('.RamalRoca');
+    const RamalTDLC = document.querySelector('.RamalTDLC');
+    const RamalBS = document.querySelector('.RamalBS');
+    function Clicklinea(valorOption) {
         console.log(valorOption);
-        if (valorOption==1){
+        if (valorOption=="1"){
             RamalMitre.classList.replace('ocultar','mostrar')
             RamalSanma.classList.replace('mostrar','ocultar')
+            RamalSar.classList.replace('mostrar','ocultar')
+            RamalRoca.classList.replace('mostrar','ocultar')
+            RamalTDLC.classList.replace('mostrar','ocultar')
+            RamalBS.classList.replace('mostrar','ocultar')
         }
-        else if(valorOption==2){
-            RamalSanma.classList.replace('ocultar','mostrar')
+        else if(valorOption=="2"){
             RamalMitre.classList.replace('mostrar','ocultar')
+            RamalSanma.classList.replace('ocultar','mostrar')
+            RamalSar.classList.replace('mostrar','ocultar')
+            RamalRoca.classList.replace('mostrar','ocultar')
+            RamalTDLC.classList.replace('mostrar','ocultar')
+            RamalBS.classList.replace('mostrar','ocultar')
+        }
+        else if(valorOption=="3"){
+            RamalMitre.classList.replace('mostrar','ocultar')
+            RamalSanma.classList.replace('mostrar','ocultar')
+            RamalSar.classList.replace('ocultar','mostrar')
+            RamalRoca.classList.replace('mostrar','ocultar')
+            RamalTDLC.classList.replace('mostrar','ocultar')
+            RamalBS.classList.replace('mostrar','ocultar')
+        }
+        else if(valorOption=="4"){
+            RamalMitre.classList.replace('mostrar','ocultar')
+            RamalSanma.classList.replace('mostrar','ocultar')
+            RamalSar.classList.replace('mostrar','ocultar')
+            RamalRoca.classList.replace('ocultar','mostrar')
+            RamalTDLC.classList.replace('mostrar','ocultar')
+            RamalBS.classList.replace('mostrar','ocultar')
+        }
+        else if(valorOption=="5"){
+            RamalMitre.classList.replace('mostrar','ocultar')
+            RamalSanma.classList.replace('mostrar','ocultar')
+            RamalSar.classList.replace('mostrar','ocultar')
+            RamalRoca.classList.replace('mostrar','ocultar')
+            RamalTDLC.classList.replace('ocultar','mostrar')
+            RamalBS.classList.replace('mostrar','ocultar')
+        }
+        else if(valorOption=="6"){
+            RamalMitre.classList.replace('mostrar','ocultar')
+            RamalSanma.classList.replace('mostrar','ocultar')
+            RamalSar.classList.replace('mostrar','ocultar')
+            RamalRoca.classList.replace('mostrar','ocultar')
+            RamalTDLC.classList.replace('mostrar','ocultar')
+            RamalBS.classList.replace('ocultar','mostrar')
         }
 
     }
-    )
+    
     RamalMitre.addEventListener('change', ()=>{
         let valorOption = RamalMitre.value
         console.log(valorOption)
@@ -124,6 +220,27 @@
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
+    RamalSar.addEventListener('change', ()=>{
+        let valorOption = RamalSanma.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalRoca.addEventListener('change', ()=>{
+        let valorOption = RamalSanma.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalTDLC.addEventListener('change', ()=>{
+        let valorOption = RamalSanma.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalBS.addEventListener('change', ()=>{
+        let valorOption = RamalSanma.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+
 
     
 </script>
