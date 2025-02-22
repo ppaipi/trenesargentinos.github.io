@@ -154,18 +154,42 @@ button:hover {
     return str.replace(search, replacement);
 }
 
-
-    function obtenerCredenciales() {
-      const fecha = new Date();
-      const yyyymmdd = fecha.getFullYear() + String(fecha.getMonth() + 1).padStart(2, '0') + String(fecha.getDate()).padStart(2, '0');
-      const baseString = yyyymmdd + "sofse";
-
-      const user = btoa(baseString); // Codificación base64 para USER
-
-      const pass = encriptarContrasena(user); // Encriptación para PASS
-
-      return { user, pass };
+// Función padStart personalizada
+function padStart(str, targetLength, padString) {
+    str = String(str);
+    padString = padString || ' ';
+    if (str.length >= targetLength) {
+        return str;
     }
+    const padLength = targetLength - str.length;
+    const padded = padString.repeat(Math.ceil(padLength / padString.length)).slice(0, padLength);
+    return padded + str;
+}
+
+// Función padStart personalizada
+function padStart(str, targetLength, padString) {
+    str = String(str);
+    padString = padString || ' ';
+    if (str.length >= targetLength) {
+        return str;
+    }
+    const padLength = targetLength - str.length;
+    const padded = padString.repeat(Math.ceil(padLength / padString.length)).slice(0, padLength);
+    return padded + str;
+}
+
+function obtenerCredenciales() {
+    const fecha = new Date();
+    const yyyymmdd = fecha.getFullYear() + padStart(fecha.getMonth() + 1, 2, '0') + padStart(fecha.getDate(), 2, '0');
+    const baseString = yyyymmdd + "sofse";
+
+    const user = btoa(baseString); // Codificación base64 para USER
+
+    const pass = encriptarContrasena(user); // Encriptación para PASS
+
+    return { user, pass };
+}
+
 
     function encriptarContrasena(contrasena) {
       var texto = btoa(contrasena);
