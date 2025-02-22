@@ -375,7 +375,7 @@ function populateDropdowns() {
     return;
   }
 
-  horarios.forEach(horario => {
+  horarios.forEach(function(horario) {
     const servicio = horario.servicio.ramal.nombre;
     const desde = horario.desde.nombreCorto;
     const hasta = horario.hasta.nombreCorto;
