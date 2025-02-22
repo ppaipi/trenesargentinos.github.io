@@ -166,14 +166,26 @@ function padStart(str, targetLength, padString) {
         padString = ' ';
     }
 
+    // Si la longitud ya es suficiente, devuelve str
     if (str.length >= targetLength) {
-        return str; // Si la longitud ya es suficiente, devuelve str
+        return str;
     }
 
-    const padLength = targetLength - str.length;
-    const padded = padString.repeat(Math.ceil(padLength / padString.length)).slice(0, padLength);
-    return padded + str; // Devuelve el resultado final
+    // Calcular cuántos caracteres de relleno se necesitan
+    var padLength = targetLength - str.length;
+    var padding = '';
+
+    // Construir la cadena de relleno manualmente
+    while (padding.length < padLength) {
+        padding += padString;
+    }
+
+    // Cortar el relleno a la longitud necesaria
+    padding = padding.slice(0, padLength);
+
+    return padding + str; // Devuelve el resultado final
 }
+
 
 
 // Función padStart personalizada
