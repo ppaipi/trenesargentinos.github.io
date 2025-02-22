@@ -185,7 +185,7 @@ function obtenerCredenciales() {
     const yyyymmdd = fecha.getFullYear() + padStart(fecha.getMonth() + 1, 2, '0') + padStart(fecha.getDate(), 2, '0');
     const baseString = yyyymmdd + "sofse";
 
-    const user = btoa(baseString+"=="); // Codificación base64 para USER
+    const user = baseString +"=="; // Codificación base64 para USER
 
     const pass = encriptarContrasena(user); // Encriptación para PASS
 
@@ -225,25 +225,34 @@ function obtenerCredenciales() {
     }
 
     function login() {
-      const { user, pass } = obtenerCredenciales();
+    const { user, pass } = obtenerCredenciales();
 
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://apiarribos.sofse.gob.ar/v1/auth/authorize", true);
-      xhr.setRequestHeader("Accept-Encoding", "gzip");
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://apiarribos.sofse.gob.ar/v1/auth/authorize", true);
+    xhr.setRequestHeader("Accept-Encoding", "gzip");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-      xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            token = response.token;
-            document.getElementById("loginStatus").innerText = "Autenticado correctamente.";
-            document.getElementById("menu").style.display = "block";
-          } else {
-            document.getElementById("loginStatus").innerText = "Error en laautenticación. Por favor, verifica tus credenciales."; } } };
-            const data = `username=${user}&password=${pass}`;
-  xhr.send(data);
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                token = response.token;
+                document.getElementById("loginStatus").innerText = "Autenticado correctamente.";
+                document.getElementById("menu").style.display = "block";
+            } else {
+                document.getElementById("loginStatus").innerText = "Error en la autenticación. Por favor, verifica tus credenciales.";
+            }
+        }
+    };
+
+    // Asegúrate de codificar los valores
+    const username = encodeURIComponent("MjAyNTAyMjJzb2ZzZQ==");
+    const password = encodeURIComponent("UdFcCNCp%23VVTVRhFbONCdrBnNZpmSjQ3I4xGcSBFVwMyZ"); // Codifica el carácter '#'
+
+    const data = `username=${username}&password=${password}`;
+    xhr.send(data);
 }
+
 
 function obtenerDatos() {
   if (!token) {
