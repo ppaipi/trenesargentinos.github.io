@@ -158,14 +158,21 @@ function replace1(str, search, replacement) {
 
 // Función padStart personalizada
 function padStart(str, targetLength, padString) {
-    str = String(str);
-    padString = padString || ' ';
-    if (str.length >= targetLength) {
-        return str;
+    str = String(str); // Asegúrate de que str sea una cadena
+    padString = padString || ' '; // Si padString es undefined, usa un espacio por defecto
+
+    // Asegúrate de que padString sea una cadena
+    if (typeof padString !== 'string') {
+        padString = ' '; // Si no es una cadena, usa un espacio por defecto
     }
+
+    if (str.length >= targetLength) {
+        return str; // Si la longitud ya es suficiente, devuelve str
+    }
+
     const padLength = targetLength - str.length;
     const padded = padString.repeat(Math.ceil(padLength / padString.length)).slice(0, padLength);
-    return padded + str;
+    return padded + str; // Devuelve el resultado final
 }
 
 // Función padStart personalizada
