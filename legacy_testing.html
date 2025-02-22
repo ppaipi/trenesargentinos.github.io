@@ -336,7 +336,9 @@ function populateDropdowns() {
 
       // Hacemos la primera búsqueda y luego configuramos el intervalo
       obtenerHorarios(origin, destination);
-      intervalId = setInterval(() => obtenerHorarios(origin, destination), 1000);
+      intervalId = setInterval(function() {
+    obtenerHorarios(origin, destination);
+}, 1000);
     }
 
     function obtenerHorarios(origin, destination) {
