@@ -395,7 +395,7 @@ function populateDropdowns() {
       const diferencia = llegadaHasta - llegadaDesde;
       const minutos = Math.floor(diferencia / 60000);
       const segundos = Math.floor((diferencia % 60000) / 1000);
-      return `${minutos}m ${segundos}s`;
+      return minutos + "m " + segundos + "s"; 
     }
 
     function calcularTiempoRestante(llegada) {
@@ -406,7 +406,7 @@ function populateDropdowns() {
 
       const minutos = Math.floor(diferencia / 60000);
       const segundos = Math.floor((diferencia % 60000) / 1000);
-      return `${minutos}m ${segundos}s`;
+      return minutos + "m " + segundos + "s";
     }
 
     login();
