@@ -363,56 +363,58 @@ function populateDropdowns() {
     }
     
     function mostrarHorarios(horarios) {
-      const resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = "";
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = "";
 
-      if (!horarios || horarios.length === 0) {
-        resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
-        return;
-      }
-
-      horarios.forEach(horario => {
-        const servicio = horario.servicio.ramal.nombre;
-        const desde = horario.desde.nombreCorto;
-        const hasta = horario.hasta.nombreCorto;
-
-        const llegadaDesde = new Date(horario.desde.llegada);
-        const llegadaHasta = new Date(horario.hasta.llegada);
-
-        const tiempoRestanteDesde = calcularTiempoRestante(llegadaDesde);
-        const tiempoDeViaje = calcularTiempoDeViaje(llegadaDesde,llegadaHasta)
-
-        const div = document.createElement("div");
-        div.className = "horario";
-        div.innerHTML = 
-  "<h3>Servicio: " + servicio + "</h3>" +
-  "<p>Desde: " + desde + " (Llegada: " + llegadaDesde.toLocaleTimeString() + ")</p>" +
-  "<p>Hasta: " + hasta + " (Llegada: " + llegadaHasta.toLocaleTimeString() + ")</p>" +
-  "<h4>Llegando en: " + tiempoRestanteDesde + "</h4>" +
-  "<h4>Tiempo de viaje: " + tiempoDeViaje + "</h4>";
-
-    function calcularTiempoDeViaje(llegadaDesde, llegadaHasta) {
-      const diferencia = llegadaHasta - llegadaDesde;
-      const minutos = Math.floor(diferencia / 60000);
-      const segundos = Math.floor((diferencia % 60000) / 1000);
-      return minutos + "m " + segundos + "s"; 
-    }
-
-    function calcularTiempoRestante(llegada) {
-      const ahora = new Date();
-      const diferencia = llegada - ahora;
-
-      if (diferencia <= 0) return "Tren en andén.";
-
-      const minutos = Math.floor(diferencia / 60000);
-      const segundos = Math.floor((diferencia % 60000) / 1000);
-      return minutos + "m " + segundos + "s";
-    }
-
-    login();
-    populateDropdowns();
-    document.getElementById("buscarBtn").addEventListener("click", buscarHorarios);
+  if (!horarios || horarios.length === 0) {
+    resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
+    return;
   }
-}</script>
+
+  horarios.forEach(horario => {
+    const servicio = horario.servicio.ramal.nombre;
+    const desde = horario.desde.nombreCorto;
+    const hasta = horario.hasta.nombreCorto;
+
+    const llegadaDesde = new Date(horario.desde.llegada);
+    const llegadaHasta = new Date(horario.hasta.llegada);
+
+    const tiempoRestanteDesde = calcularTiempoRestante(llegadaDesde);
+    const tiempoDeViaje = calcularTiempoDeViaje(llegadaDesde, llegadaHasta);
+
+    const div = document.createElement("div");
+    div.className = "horario";
+    div.innerHTML = 
+      "<h3>Servicio: " + servicio + "</h3>" +
+      "<p>Desde: " + desde + " (Llegada: " + llegadaDesde.toLocaleTimeString() + ")</p>" +
+      "<p>Hasta: " + hasta + " (Llegada: " + llegadaHasta.toLocaleTimeString() + ")</p>" +
+      "<h4>Llegando en: " + tiempoRestanteDesde + "</h4>" +
+      "<h4>Tiempo de viaje: " + tiempoDeViaje + "</h4>";
+
+    resultDiv.appendChild(div); // Asegúrate de agregar el div al resultDiv
+  });
+}
+
+function calcularTiempoDeViaje(llegadaDesde, llegadaHasta) {
+  const diferencia = llegadaHasta - llegadaDesde;
+  const minutos = Math.floor(diferencia / 60000);
+  const segundos = Math.floor((diferencia % 60000) / 1000);
+  return minutos + "m " + segundos + "s"; 
+}
+function calcularTiempoRestante(llegada) {
+  const ahora = new Date();
+  const diferencia = llegada - ahora;
+
+  if (diferencia <= 0) return "Tren en andén.";
+
+  const minutos = Math.floor(diferencia / 60000);
+  const segundos = Math.floor((diferencia % 60000) / 1000);
+  return minutos + "m " + segundos + "s";
+}
+
+login();
+populateDropdowns();
+document.getElementById("buscarBtn").addEventListener("click", buscarHorarios);
+</script>
 </body>
 </html>
