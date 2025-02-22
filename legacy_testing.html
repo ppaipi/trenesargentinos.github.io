@@ -295,29 +295,29 @@ function obtenerDatos() {
 
 
 function populateDropdowns() {
-  const originSelect = document.getElementById("origin");
-  const destinationSelect = document.getElementById("destination");
+    const originSelect = document.getElementById("origin");
+    const destinationSelect = document.getElementById("destination");
 
-  // Agregar opción predeterminada en "origin"
-  const defaultOptionOrigin = new Option("- Elija una estacion -", "", true, true);
-  defaultOptionOrigin.disabled = true; // Desactivar la opción para que no se pueda seleccionar
-  originSelect.add(defaultOptionOrigin);
+    // Agregar opción predeterminada en "origin"
+    const defaultOptionOrigin = new Option("- Elija una estacion -", "", true, true);
+    defaultOptionOrigin.disabled = true; // Desactivar la opción para que no se pueda seleccionar
+    originSelect.add(defaultOptionOrigin);
 
-  // Agregar opción predeterminada en "destination"
-  const defaultOptionDestination = new Option("- Elija una estacion -", "", true, true);
-  defaultOptionDestination.disabled = true; // Desactivar la opción para que no se pueda seleccionar
-  destinationSelect.add(defaultOptionDestination);
+    // Agregar opción predeterminada en "destination"
+    const defaultOptionDestination = new Option("- Elija una estacion -", "", true, true);
+    defaultOptionDestination.disabled = true; // Desactivar la opción para que no se pueda seleccionar
+    destinationSelect.add(defaultOptionDestination);
 
-  // Añadir las estaciones a los select
-  estaciones.forEach(estacion => {
-    if (estacion.publico) {
-      const option1 = new Option(estacion.nombreCorto, estacion.id);
-      originSelect.add(option1);
+    // Añadir las estaciones a los select
+    estaciones.forEach(function(estacion) {
+        if (estacion.publico) {
+            const option1 = new Option(estacion.nombreCorto, estacion.id);
+            originSelect.add(option1);
 
-      const option2 = new Option(estacion.nombreCorto, estacion.id);
-      destinationSelect.add(option2);
-    }
-  });
+            const option2 = new Option(estacion.nombreCorto, estacion.id);
+            destinationSelect.add(option2);
+        }
+    });
 }
 
 
