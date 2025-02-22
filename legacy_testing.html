@@ -345,7 +345,7 @@ function populateDropdowns() {
   "https://apiarribos.sofse.gob.ar/v1/estaciones/" + origin + "/horarios?hasta=" + destination + "&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=5",
   true
 );
-      xhr.setRequestHeader("Authorization", `${token}`);
+      xhr.setRequestHeader("Authorization", token);
 
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
