@@ -274,7 +274,7 @@ function obtenerDatos() {
 
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "https://apiarribos.sofse.gob.ar/v1/data", true);
-  xhr.setRequestHeader("Authorization", `${token}`);
+  xhr.setRequestHeader("Authorization", token);
   xhr.setRequestHeader("Accept-Encoding", "gzip");
 
   xhr.onreadystatechange = function() {
