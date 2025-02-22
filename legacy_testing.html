@@ -243,7 +243,6 @@ function encriptarContrasena(contrasena) {
     xhr.open("POST", "https://apiarribos.sofse.gob.ar/v1/auth/authorize", true);
     xhr.setRequestHeader("Accept-Encoding", "gzip");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
@@ -342,10 +341,10 @@ function populateDropdowns() {
       const xhr = new XMLHttpRequest();
       const fields = "results%28desde%2Chasta%2Cservicio%29";
       xhr.open(
-        "GET",
-        `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=5`,
-        true
-      );
+  "GET",
+  "https://apiarribos.sofse.gob.ar/v1/estaciones/" + origin + "/horarios?hasta=" + destination + "&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=5",
+  true
+);
       xhr.setRequestHeader("Authorization", `${token}`);
 
       xhr.onreadystatechange = function() {
