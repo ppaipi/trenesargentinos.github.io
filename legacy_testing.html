@@ -354,7 +354,7 @@ function populateDropdowns() {
             mostrarHorarios(response.results);
           } else {
             const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
+            resultDiv.innerHTML = "<p>Error al obtener horarios: " + xhr.status + "</p>";
           }
         }
       };
