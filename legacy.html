@@ -185,7 +185,7 @@ function obtenerCredenciales() {
     const yyyymmdd = fecha.getFullYear() + padStart(fecha.getMonth() + 1, 2, '0') + padStart(fecha.getDate(), 2, '0');
     const baseString = yyyymmdd + "sofse";
 
-    const user = btoa(baseString); // Codificación base64 para USER
+    const user = btoa(baseString+"=="); // Codificación base64 para USER
 
     const pass = encriptarContrasena(user); // Encriptación para PASS
 
