@@ -172,9 +172,13 @@ button:hover {
       const reemplazosPrimeraCapa = {
         "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
       };
-      for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
-        texto = replace1(texto,key, value);
+      for (var key in reemplazosPrimeraCapa) {
+          if (reemplazosPrimeraCapa.hasOwnProperty(key)) {
+              var value = reemplazosPrimeraCapa[key];
+              texto = replace1(texto, key, value);
+          }
       }
+
 
       texto = texto.split("").reverse().join("");
 
@@ -182,9 +186,13 @@ button:hover {
       const reemplazosSegundaCapa = {
         "a": "32%j", "e": "32%p", "i": "32%w", "o": "32%8", "u": "#0", "=": "32%v"
       };
-      for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
-        texto = replace1(texto, key, value);
+      for (var key in reemplazosPrimeraCapa) {
+          if (reemplazosPrimeraCapa.hasOwnProperty(key)) {
+              var value = reemplazosPrimeraCapa[key];
+              texto = replace1(texto, key, value);
+          }
       }
+
       texto = encodeURIComponent(texto.split("").reverse().join(""))
 
       return texto;
