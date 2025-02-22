@@ -146,9 +146,14 @@ button:hover {
     // Verificamos si 'search' es una cadena o una expresión regular
     if (typeof search === 'string') {
         // Escapamos caracteres especiales en 'search' para usarlo en la expresión regular
-        search = search.replace(/([.*+?^${}()|$$$$\\])/g, '\\$1');
+        search = search.replace(/([.*+?^${}()|[\]\\])/g, '\\$1');
         search = new RegExp(search, 'g'); // Creamos una expresión regular global
     }
+
+    // Usamos el método replace con la expresión regular
+    return str.replace(search, replacement);
+}
+
     
     // Usamos el método replace con la expresión regular
     return str.replace(search, replacement);
@@ -194,7 +199,7 @@ function obtenerCredenciales() {
     function encriptarContrasena(contrasena) {
       var texto = btoa(contrasena);
       const reemplazosPrimeraCapa = {
-        "a": "#t", "e": "32%x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
+        "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
       };
       for (var key in reemplazosPrimeraCapa) {
           if (reemplazosPrimeraCapa.hasOwnProperty(key)) {
