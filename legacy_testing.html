@@ -384,16 +384,12 @@ function populateDropdowns() {
 
         const div = document.createElement("div");
         div.className = "horario";
-        div.innerHTML = `
-          <h3>Servicio: ${servicio}</h3>
-          <p>Desde: ${desde} (Llegada: ${llegadaDesde.toLocaleTimeString()})</p>
-          <p>Hasta: ${hasta} (Llegada: ${llegadaHasta.toLocaleTimeString()})</p>
-          <h4>Llegando en: ${tiempoRestanteDesde}</h4>
-          <h4>Tiempo de viaje: ${tiempoDeViaje}</h4>
-        `;
-        resultDiv.appendChild(div);
-      });
-    }
+        div.innerHTML = 
+  "<h3>Servicio: " + servicio + "</h3>" +
+  "<p>Desde: " + desde + " (Llegada: " + llegadaDesde.toLocaleTimeString() + ")</p>" +
+  "<p>Hasta: " + hasta + " (Llegada: " + llegadaHasta.toLocaleTimeString() + ")</p>" +
+  "<h4>Llegando en: " + tiempoRestanteDesde + "</h4>" +
+  "<h4>Tiempo de viaje: " + tiempoDeViaje + "</h4>";
 
     function calcularTiempoDeViaje(llegadaDesde, llegadaHasta) {
       const diferencia = llegadaHasta - llegadaDesde;
