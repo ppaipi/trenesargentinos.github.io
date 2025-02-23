@@ -147,6 +147,20 @@ button:hover {
     padding: 12px;
 
 }
+#botonEspecial{
+  display: block;
+
+  margin-inline: auto;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.1rem;
+  padding-inline: 0.5rem;
+  max-width: 40px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+
+}
 
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -220,9 +234,10 @@ button:hover {
     </select>
 
     <label for="origin">Estación de Origen:</label>
-    <select id="origin">Debe seleccionar una Linea y Ramal</select>
+    <select id="origin"></select>
+    <button id="botonEspecial" onclick="botonEspecial()"><b>⇅</b></button>
     <label for="destination">Estación de Destino:</label>
-    <select id="destination">Debe seleccionar una Linea y Ramal</select>
+    <select id="destination"></select>
     <br>
     <button id="buscarBtn">Buscar Horarios</button>
   </div>
@@ -272,54 +287,45 @@ button:hover {
     function Clicklinea(valorOption) {
         console.log(valorOption);
         if (valorOption=="1"){
+          
+          borrarTodo()
             RamalMitre.classList.replace('ocultar','mostrar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+
         }
         else if(valorOption=="2"){
-            RamalMitre.classList.replace('mostrar','ocultar')
+
+          borrarTodo()
             RamalSanma.classList.replace('ocultar','mostrar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+
         }
         else if(valorOption=="3"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
+
+          borrarTodo()
             RamalSar.classList.replace('ocultar','mostrar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+
         }
         else if(valorOption=="4"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
+          
+          borrarTodo()
             RamalRoca.classList.replace('ocultar','mostrar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
         }
         else if(valorOption=="5"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
+          borrarTodo()
             RamalTDLC.classList.replace('ocultar','mostrar')
-            RamalBS.classList.replace('mostrar','ocultar')
         }
         else if(valorOption=="6"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
+            borrarTodo()
             RamalBS.classList.replace('ocultar','mostrar')
         }
 
+    }
+    function borrarTodo(){
+      RamalMitre.classList.replace('mostrar','ocultar')
+      RamalSanma.classList.replace('mostrar','ocultar')
+      RamalSar.classList.replace('mostrar','ocultar')
+      RamalRoca.classList.replace('mostrar','ocultar')
+      RamalTDLC.classList.replace('mostrar','ocultar')
+      RamalBS.classList.replace('mostrar','ocultar')
     }
     
     RamalMitre.addEventListener('change', ()=>{
@@ -330,7 +336,7 @@ button:hover {
         populateDropdowns(valorOption)
     })
     RamalSanma.addEventListener('change', ()=>{
-        linea = 35;
+        linea = 31;
         let valorOption = RamalSanma.value
         console.log(valorOption)
         populateDropdowns(valorOption)
@@ -430,7 +436,16 @@ button:hover {
             const data = `username=${user}&password=${pass}`;
   xhr.send(data);
 }
-
+function botonEspecial(){
+  const destinationSelect = document.getElementById("destination");
+  const originSelect = document.getElementById("origin");
+  
+  const origin = document.getElementById("origin").value;
+  const destination = document.getElementById("destination").value;
+  originSelect.value=destination
+  destinationSelect.value=origin
+  
+}
 function obtenerDatos() {
   if (!token) {
     document.getElementById("datosStatus").innerText = "Por favor, inicia sesión primero.";
