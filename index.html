@@ -125,7 +125,42 @@ button:hover {
     padding: 12px; /* Ajustar padding sin exagerar */
   }
 }
+.ocultar{
+        display: none;
+    }
+.mostrar{
+    display: flex;
+}
+#Linea{
+    display: block;
+}
+#Linea button{
+    margin: 1rem;
+}
+.botonClickeado{
+   background-color: #003f8a;
+   box-shadow: #333;
+}
+.ramal{
+    margin: auto;
+    font-size: 1.2rem;
+    padding: 12px;
 
+}
+#botonEspecial{
+  display: block;
+
+  margin-inline: auto;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.1rem;
+  padding-inline: 0.5rem;
+  max-width: 40px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+
+}
 
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,32 +170,238 @@ button:hover {
   <h1>Consulta de Trenes</h1>
   <div id="loginStatus">Autenticando...</div>
   <div id="menu" style="display: none;">
+    <div id="Linea">
+    <button value="Mitre" class="botonMitre" onclick="Clicklinea(1)">Mitre</button>
+    <button value="San Martín" class="botonSanma" onclick="Clicklinea(2)">San Martín</button>
+    <button value="Sarmiento" class="botonS" onclick="Clicklinea(3)">Sarmiento</button>
+    <button value="Roca" class="botonRoca" onclick="Clicklinea(4)">Roca</button>
+    <button value="Tren De la costa" class="botonTDLC" onclick="Clicklinea(5)">Tren de la costa</button>
+    <button value="Belgrano Sur" class="botonBS" onclick="Clicklinea(6)">Belgrano sur</button>
+</div>
+      
+  <label for="origin" id="RAMALES" class="ocultar">Ramal:</label>
+    <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre ramal">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="J. L. Suárez">J. L. Suárez</option>
+        <option value="Mitre">Mitre</option>
+        <option value="Tigre">Tigre</option>
+    </select>
+
+    <select name="RamalSanma"  id="RamalSanma" class="ocultar RamalSanma ramal">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Pilar">Pilar</option>
+        <option value="Cabred">Cabred</option>
+    </select>
+
+    <select name="RamalSar"  id="RamalSar" class="ocultar RamalSar ramal">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="Lobos">Lobos</option>
+        <option value="Moreno">Moreno</option>
+        <option value="Pehuajó">Pehuajó</option>
+    </select>
+
+    <select name="RamalRoca"  id="RamalRoca" class="ocultar RamalRoca ramal">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Cañuelas Esp">Cañuelas Esp</option>
+        <option value="Bosques-T">Bosques-T</option>
+        <option value="Bosques-Q">Bosques-Q</option>
+        <option value="Ezeiza">Ezeiza</option>
+        <option value="La Plata">La Plata</option>
+        <option value="Alejandro Korn">Alejandro Korn</option>
+        <option value="Cañuelas">Cañuelas</option>
+        <option value="Haedo">Haedo</option>
+        <option value="Universitario">Universitario</option>
+        <option value="Gutiérrez">Gutiérrez</option>
+        <option value="Chascomús">Chascomús</option>
+        <option value="Monte">Monte</option>
+        <option value="Lobos">Lobos</option>
+        
+    </select>
+
+    <select name="RamalTDLC"  id="RamalTDLC" class="ocultar RamalTDLC ramal">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Tren de la Costa">Tren de la Costa</option>
+    </select>
+    
+    <select name="RamalSS"  id="RamalBS" class="ocultar RamalBS ramal">
+        <option value="0" selected>- Elija un ramal -</option>
+        <option value="Gonzalez Catán">Gonzalez Catán</option>
+        <option value="M.C.G. Belgrano">M.C.G. Belgrano</option>
+        <option value="Pte Alsina">Pte Alsina</option>
+        <option value="Marcos Paz">Marcos Paz</option>
+    </select>
+
+    <div id="ESTACIONES" class="ocultar">
     <label for="origin">Estación de Origen:</label>
     <select id="origin"></select>
+    <button id="botonEspecial" onclick="botonEspecial()"><b>⇅</b></button>
     <label for="destination">Estación de Destino:</label>
     <select id="destination"></select>
+    <br>
     <button id="buscarBtn">Buscar Horarios</button>
-  </div>
-  <div id="result"></div>
+  </div> </div>
+  <div id="result" class="ocultar"></div>
 
   <script>
-    const estaciones = [
-    { "id": 353, "nombre": "San Andrés", "nombreCorto": "San Andrés", "publico": true },
-      { "id": 35, "nombre": "Belgrano R", "nombreCorto": "Belgrano R", "publico": true },
-      { "id": 150, "nombre": "General Urquiza", "nombreCorto": "Gral. Urquiza", "publico": true },
-      { "id": 360, "nombre": "San Martín", "nombreCorto": "San Martín", "publico": true },
-      { "id": 91, "nombre": "Colegiales", "nombreCorto": "Colegiales", "publico": true },
-      { "id": 332, "nombre": "Retiro LM", "nombreCorto": "Retiro - Mitre", "publico": true },
-      { "id": 271, "nombre": "Miguelete", "nombreCorto": "Miguelete", "publico": true },
-      { "id": 272, "nombre": "Ministro Carranza", "nombreCorto": "Ministro Carranza", "publico": true },
-      { "id": 412, "nombre": "Villa Ballester", "nombreCorto": "Villa Ballester", "publico": true },
-      { "id": 190, "nombre": "J. L. Suárez", "nombreCorto": "J. L. Suarez", "publico": true },
-      { "id": 318, "nombre": "Pueyrredón", "nombreCorto": "Pueyrredón", "publico": true },
-      { "id": 236, "nombre": "L. M. Drago", "nombreCorto": "L. M. Drago", "publico": true },
-      { "id": 90,  "nombre": "Coghlan", "nombreCorto": "Coghlan", "publico": true },
-      { "id": 249, "nombre": "Malaver", "nombreCorto": "Malaver", "publico": true },
-      { "id": 79, "nombre": "Chilavert", "nombreCorto": "Chilavert", "publico": true }
-    ];
+    let linea;
+    function valorCero() {
+      document.getElementById('RamalMitre').value=0;
+      document.getElementById('RamalSanma').value=0;
+      document.getElementById('RamalSar').value=0;
+      document.getElementById('RamalRoca').value=0;
+      document.getElementById('RamalTDLC').value=0;
+      document.getElementById('RamalBS').value=0;
+      document.getElementById('Linea').value=0; 
+   }
+   valorCero()
+   scroll(0,0)
+
+        let estaciones = [];
+
+        // Función para leer el archivo de texto
+    async function cargarEstaciones() {
+    try {
+    const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
+    if (!response.ok) {
+    throw new Error('Error al cargar el archivo: ' + response.statusText);
+    }
+
+    const data = await response.text(); // Lee el contenido del archivo como texto
+    estaciones = data.split('\n').map(line => {
+    return line.trim() ? JSON.parse(line) : null; // Convierte cada línea en un objeto JSON
+    }).filter(item => item !== null); // Filtra las líneas vacías
+
+    // Muestra las estaciones en la consola
+    } catch (error) {
+    console.error(error);
+    document.getElementById('output').textContent = 'Error al cargar las estaciones.';
+    }
+    }
+
+    // Llama a la función para cargar las estaciones
+    const botonMitre = document.querySelector(".botonMitre");
+    const botonSanma = document.querySelector(".botonSanma");
+    const botonS = document.querySelector(".botonS");
+    const botonRoca = document.querySelector(".botonRoca");
+    const botonTDLC = document.querySelector(".botonTDLC");
+    const botonBS = document.querySelector(".botonBS");
+
+    cargarEstaciones();
+    const Linea = document.querySelector("#Linea");
+    const RamalMitre = document.querySelector('.RamalMitre');
+    const RamalSanma = document.querySelector('.RamalSanma');
+    const RamalSar = document.querySelector('.RamalSar');
+    const RamalRoca = document.querySelector('.RamalRoca');
+    const RamalTDLC = document.querySelector('.RamalTDLC');
+    const RamalBS = document.querySelector('.RamalBS');
+
+
+    function Clicklinea(valorOption) {
+
+      const estaciones = document.getElementById("ESTACIONES")
+      estaciones.classList.add("ocultar")
+      const result = document.getElementById("result")
+      result.classList.add("ocultar")
+
+        console.log(valorOption);
+        botonClickeado(valorOption)
+        valorCero()
+        const ramales = document.getElementById("RAMALES")
+        document.getElementById("RAMALES").scrollIntoView({ behavior: "smooth"});
+        ramales.classList.remove("ocultar");
+        if (valorOption=="1"){
+          
+          borrarTodo()
+            RamalMitre.classList.replace('ocultar','mostrar')
+            botonMitre.classList.add("botonClickeado")
+        }
+        else if(valorOption=="2"){
+
+          borrarTodo()
+            RamalSanma.classList.replace('ocultar','mostrar')
+            botonSanma.classList.add("botonClickeado")
+        }
+        else if(valorOption=="3"){
+
+          borrarTodo()
+            RamalSar.classList.replace('ocultar','mostrar')
+            botonS.classList.add("botonClickeado")
+        }
+        else if(valorOption=="4"){
+          
+          borrarTodo()
+            RamalRoca.classList.replace('ocultar','mostrar')
+            botonRoca.classList.add("botonClickeado")
+        }
+        else if(valorOption=="5"){
+          borrarTodo()
+            RamalTDLC.classList.replace('ocultar','mostrar')
+            botonTDLC.classList.add("botonClickeado")
+        }
+        else if(valorOption=="6"){
+            borrarTodo()
+            RamalBS.classList.replace('ocultar','mostrar')
+            botonBS.classList.add("botonClickeado")
+        }
+
+    }
+    function botonClickeado(valorOption){
+
+    }
+    function borrarTodo(){
+      botonMitre.classList.remove('botonClickeado')
+      botonS.classList.remove('botonClickeado')
+      botonRoca.classList.remove('botonClickeado')
+      botonSanma.classList.remove('botonClickeado')
+      botonTDLC.classList.remove('botonClickeado')
+      botonBS.classList.remove('botonClickeado')
+
+      RamalMitre.classList.replace('mostrar','ocultar')
+      RamalSanma.classList.replace('mostrar','ocultar')
+      RamalSar.classList.replace('mostrar','ocultar')
+      RamalRoca.classList.replace('mostrar','ocultar')
+      RamalTDLC.classList.replace('mostrar','ocultar')
+      RamalBS.classList.replace('mostrar','ocultar')
+    }
+    
+    RamalMitre.addEventListener('change', ()=>{
+        linea = 5;
+        console.log(linea)
+        let valorOption = RamalMitre.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalSanma.addEventListener('change', ()=>{
+        linea = 31;
+        let valorOption = RamalSanma.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalSar.addEventListener('change', ()=>{
+        linea = 1;
+        let valorOption = RamalSar.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalRoca.addEventListener('change', ()=>{
+        linea = 11;
+        let valorOption = RamalRoca.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalTDLC.addEventListener('change', ()=>{
+        linea = 41;
+        let valorOption = RamalTDLC.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
+    RamalBS.addEventListener('change', ()=>{
+        linea = 35;
+        let valorOption = RamalBS.value
+        console.log(valorOption)
+        populateDropdowns(valorOption)
+    })
 
     let token = ""; // Aquí se almacenará el token obtenido
     let intervalId; // ID del intervalo para detenerlo cuando sea necesario
@@ -232,7 +473,16 @@ button:hover {
             const data = `username=${user}&password=${pass}`;
   xhr.send(data);
 }
-
+function botonEspecial(){
+  const destinationSelect = document.getElementById("destination");
+  const originSelect = document.getElementById("origin");
+  
+  const origin = document.getElementById("origin").value;
+  const destination = document.getElementById("destination").value;
+  originSelect.value=destination
+  destinationSelect.value=origin
+  
+}
 function obtenerDatos() {
   if (!token) {
     document.getElementById("datosStatus").innerText = "Por favor, inicia sesión primero.";
@@ -260,57 +510,58 @@ function obtenerDatos() {
 }
 
 
-function populateDropdowns() {
-  const originSelect = document.getElementById("origin");
-  const destinationSelect = document.getElementById("destination");
+function populateDropdowns(ramal) {
+    
+    const ESTACIONES = document.getElementById("ESTACIONES")
+    ESTACIONES.classList.remove("ocultar")
+    document.getElementById("result").classList.add("ocultar")
+    let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
 
-  // Agregar opción predeterminada en "origin"
-  const defaultOptionOrigin = new Option("- Elija una estacion -", "", true, true);
-  defaultOptionOrigin.disabled = true; // Desactivar la opción para que no se pueda seleccionar
-  originSelect.add(defaultOptionOrigin);
-
-  // Agregar opción predeterminada en "destination"
-  const defaultOptionDestination = new Option("- Elija una estacion -", "", true, true);
-  defaultOptionDestination.disabled = true; // Desactivar la opción para que no se pueda seleccionar
-  destinationSelect.add(defaultOptionDestination);
-
-  // Añadir las estaciones a los select
-  estaciones.forEach(estacion => {
+    const destinationSelect = document.getElementById("destination");
+    const originSelect = document.getElementById("origin");
+    destinationSelect.options.length = 0;
+    originSelect.options.length = 0;
+    document.getElementById("buscarBtn").scrollIntoView({ behavior: "smooth"})
+    RamalSeleccionado.forEach(estacion => {
     if (estacion.publico) {
-      const option1 = new Option(estacion.nombreCorto, estacion.id);
-      originSelect.add(option1);
-
-      const option2 = new Option(estacion.nombreCorto, estacion.id);
-      destinationSelect.add(option2);
+    const option1 = new Option(estacion.nombre, estacion.id);
+    originSelect.add(option1);
+    const option2 = new Option(estacion.nombre, estacion.id);
+    destinationSelect.add(option2);
     }
   });
 }
 
 
-    function buscarHorarios() {
+    function buscarHorarios(linea) {
       const origin = document.getElementById("origin").value;
       const destination = document.getElementById("destination").value;
       const resultDiv = document.getElementById("result");
-
+      resultDiv.classList.remove("ocultar")
       if (!origin || !destination) {
         resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
+        resultDiv.scrollIntoView({ behavior: "smooth"})
         return;
       }
 
       // Detenemos el intervalo anterior (si existe)
       if (intervalId) clearInterval(intervalId);
-
+      
       // Hacemos la primera búsqueda y luego configuramos el intervalo
-      obtenerHorarios(origin, destination);
-      intervalId = setInterval(() => obtenerHorarios(origin, destination), 1000);
+      obtenerHorarios(origin, destination, linea);
+      intervalId = setInterval(() => obtenerHorarios(origin, destination, linea), 1000);
+      
+      setTimeout(() => {
+        
+        resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
     }
 
-    function obtenerHorarios(origin, destination) {
+    function obtenerHorarios(origin, destination, linea) {
       const xhr = new XMLHttpRequest();
       const fields = "results%28desde%2Chasta%2Cservicio%29";
       xhr.open(
         "GET",
-        `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=5`,
+        `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=${linea}`,
         true
       );
       xhr.setRequestHeader("Authorization", `${token}`);
@@ -336,6 +587,7 @@ function populateDropdowns() {
 
       if (!horarios || horarios.length === 0) {
         resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
+        resultDiv.scrollIntoView({ behavior: "smooth"})
         return;
       }
 
@@ -382,8 +634,13 @@ function populateDropdowns() {
     }
 
     login();
-    populateDropdowns();
-    document.getElementById("buscarBtn").addEventListener("click", buscarHorarios);
+    document.getElementById('buscarBtn').addEventListener('click', () => {
+            if (linea) {
+                buscarHorarios(linea); // Llamar a la función con el valor de línea
+            } else {
+                alert('Por favor, seleccione un ramal antes de buscar.');
+            }
+        });
   </script>
 </body>
 </html>
