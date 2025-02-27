@@ -583,21 +583,20 @@ destinationSelect.addEventListener('change', ()=>{
         return;
       }
 
-
+      
+      horarios = obtenerHorarios(origin, destination, linea);
       // Detenemos el intervalo anterior (si existe)
       if (intervalId) clearInterval(intervalId);
       
+      buscandoHorarios = true;
       // Hacemos la primera búsqueda y luego configuramos el intervalo
-      horarios = obtenerHorarios(origin, destination, linea);
-      intervalId = setInterval(() =>
-      horarios = obtenerHorarios(origin, destination, linea), 1000);
+      intervalId = setInterval(() => horarios = obtenerHorarios(origin, destination, linea), 1000);
       
       setTimeout(() => {
-        buscandoHorarios = true;
-        resultDiv.scrollIntoView({ behavior: "smooth"})}, 500); 
-      if(linea == 'stop') {
+        resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
+      if(linea == 'stop')
         return
-      }
+      
     }
 
     function obtenerHorarios(origin, destination, linea) {
@@ -683,13 +682,13 @@ destinationSelect.addEventListener('change', ()=>{
       function buscandohorario(value){
 
       }
-    document.getElementById('buscarBtn').addEventListener('click', () => {
-            if (linea) {
-                buscarHorarios(linea); // Llamar a la función con el valor de línea
-            } else {
-                alert('Por favor, seleccione un ramal antes de buscar.');
+    document.getElementById('buscarBtn').addEventListener('click', () => {  
+      
+      buscandoHorarios=true
+        buscarHorarios(linea)
+
             }
-        });
+        );
   </script>
 </body>
 </html>
