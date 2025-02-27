@@ -3,6 +3,9 @@
 <head>
   <link rel="icon" href="Tren.ico" type="image/x-icon">
   <meta charset="UTF-8">
+  <meta name="geo.region" content="AR-BUE" /> <!-- Buenos Aires, Argentina -->
+  <meta name="geo.placename" content="Buenos Aires" />
+  <meta name="geo.position" content="-34.6037;-58.3816" />
   <meta name="description" content="Obten los Horarios en Tiempo Real de los Trenes Argentinos. Planifica tus viajes. Mira cuando llega el tren y cuanto tiempo de viaje tienes. Muy facil de usar.">
   <title>Consulta de horarios Trenes Argentinos</title>
   <style>
@@ -167,8 +170,13 @@ button:hover {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
+
 <body>
+  <header>
   <h1>Consulta de horarios Trenes Argentinos</h1>
+</header>
+  
+  <main>
   <div id="loginStatus">Autenticando...</div>
   <div id="menu" style="display: none;">
     <div id="Linea">
@@ -232,7 +240,7 @@ button:hover {
         <option value="Pte Alsina">Pte Alsina</option>
         <option value="Marcos Paz">Marcos Paz</option>
     </select>
-
+  </main>
     <div id="ESTACIONES" class="ocultar">
     <label for="origin">Estación de Origen:</label>
     <select id="origin"></select>
@@ -243,7 +251,7 @@ button:hover {
     <button id="buscarBtn">Buscar Horarios</button>
   </div> </div>
   <div id="result" class="ocultar"></div>
-
+    
   <script>
     let buscandoHorarios;
     let linea;
