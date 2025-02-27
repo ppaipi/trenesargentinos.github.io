@@ -3,7 +3,8 @@
 <head>
   <link rel="icon" href="Tren.ico" type="image/x-icon">
   <meta charset="UTF-8">
-  <title>Consulta de Trenes Argentinos</title>
+  <meta name="description" content="Obten los Horarios en Tiempo Real de los Trenes Argentinos. Planifica tus viajes. Mira cuando llega el tren y cuanto tiempo de viaje tienes. Muy facil de usar.">
+  <title>Consulta de horarios Trenes Argentinos</title>
   <style>
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -167,7 +168,7 @@ button:hover {
 
 </head>
 <body>
-  <h1>Consulta de Trenes Argentinos</h1>
+  <h1>Consulta de horarios Trenes Argentinos</h1>
   <div id="loginStatus">Autenticando...</div>
   <div id="menu" style="display: none;">
     <div id="Linea">
@@ -181,20 +182,20 @@ button:hover {
       
   <label for="origin" id="RAMALES" class="ocultar">Ramal:</label>
     <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre ramal">
-        <option value="0" selected>- Elija un ramal -</option>
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="J. L. Suárez">J. L. Suárez</option>
         <option value="Mitre">Mitre</option>
         <option value="Tigre">Tigre</option>
     </select>
 
     <select name="RamalSanma"  id="RamalSanma" class="ocultar RamalSanma ramal">
-        <option value="0" selected>- Elija un ramal -</option>
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Pilar">Pilar</option>
         <option value="Cabred">Cabred</option>
     </select>
 
     <select name="RamalSar"  id="RamalSar" class="ocultar RamalSar ramal">
-        <option value="0" selected>- Elija un ramal -</option>
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Mercedes">Mercedes</option>
         <option value="Lobos">Lobos</option>
         <option value="Moreno">Moreno</option>
@@ -202,7 +203,7 @@ button:hover {
     </select>
 
     <select name="RamalRoca"  id="RamalRoca" class="ocultar RamalRoca ramal">
-        <option value="0" selected>- Elija un ramal -</option>
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Cañuelas Esp">Cañuelas Esp</option>
         <option value="Bosques-T">Bosques-T</option>
         <option value="Bosques-Q">Bosques-Q</option>
@@ -220,12 +221,12 @@ button:hover {
     </select>
 
     <select name="RamalTDLC"  id="RamalTDLC" class="ocultar RamalTDLC ramal">
-        <option value="0" selected>- Elija un ramal -</option>
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Tren de la Costa">Tren de la Costa</option>
     </select>
     
     <select name="RamalSS"  id="RamalBS" class="ocultar RamalBS ramal">
-        <option value="0" selected>- Elija un ramal -</option>
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Gonzalez Catán">Gonzalez Catán</option>
         <option value="M.C.G. Belgrano">M.C.G. Belgrano</option>
         <option value="Pte Alsina">Pte Alsina</option>
@@ -244,6 +245,7 @@ button:hover {
   <div id="result" class="ocultar"></div>
 
   <script>
+    let buscandoHorarios;
     let linea;
     function valorCero() {
       document.getElementById('RamalMitre').value=0;
@@ -252,7 +254,14 @@ button:hover {
       document.getElementById('RamalRoca').value=0;
       document.getElementById('RamalTDLC').value=0;
       document.getElementById('RamalBS').value=0;
-      document.getElementById('Linea').value=0; 
+      document.getElementById('Linea').value=0;
+      
+      document.getElementById('RamalMitre').options[0].disabled = true;
+      document.getElementById('RamalSanma').options[0].disabled = true;
+      document.getElementById('RamalSar').options[0].disabled = true;
+      document.getElementById('RamalRoca').options[0].disabled = true;
+      document.getElementById('RamalTDLC').options[0].disabled = true;
+      document.getElementById('RamalBS').options[0].disabled = true;
    }
    valorCero()
    scroll(0,0)
@@ -309,6 +318,8 @@ button:hover {
         valorCero()
         const ramales = document.getElementById("RAMALES")
         document.getElementById("RAMALES").scrollIntoView({ behavior: "smooth"});
+        buscarHorarios("stop");
+        buscandoHorarios = false;
         ramales.classList.remove("ocultar");
         if (valorOption=="1"){
           
@@ -481,6 +492,9 @@ function botonEspecial(){
   const destination = document.getElementById("destination").value;
   originSelect.value=destination
   destinationSelect.value=origin
+  if (buscandoHorarios==true)
+    buscarHorarios(linea)
+
   
 }
 function obtenerDatos() {
@@ -522,6 +536,14 @@ function populateDropdowns(ramal) {
     destinationSelect.options.length = 0;
     originSelect.options.length = 0;
     document.getElementById("buscarBtn").scrollIntoView({ behavior: "smooth"})
+    buscarHorarios("stop");
+    buscandoHorarios = false;
+    var defaultEstacion = document.createElement("option");
+    defaultEstacion.value = "";
+    defaultEstacion.text = '- Seleccione una Estacion -'
+    
+    originSelect.appendChild(defaultEstacion.cloneNode(true));
+    destinationSelect.appendChild(defaultEstacion.cloneNode(true));
     RamalSeleccionado.forEach(estacion => {
     if (estacion.publico) {
     const option1 = new Option(estacion.nombre, estacion.id);
@@ -529,34 +551,59 @@ function populateDropdowns(ramal) {
     const option2 = new Option(estacion.nombre, estacion.id);
     destinationSelect.add(option2);
     }
+    originSelect.options[0].disabled = true;
+    destinationSelect.options[0].disabled = true;
   });
 }
 
+const originSelect = document.getElementById("origin");
+const destinationSelect = document.getElementById("destination");
+originSelect.addEventListener('change', ()=>{
+  if(buscandoHorarios==true)
+    buscarHorarios(linea)
+})
+destinationSelect.addEventListener('change', ()=>{
+  if(buscandoHorarios==true)
+    buscarHorarios(linea)
+})
+
 
     function buscarHorarios(linea) {
+
       const origin = document.getElementById("origin").value;
       const destination = document.getElementById("destination").value;
+      if(linea == 'stop') 
+        return;
+
       const resultDiv = document.getElementById("result");
       resultDiv.classList.remove("ocultar")
+
       if (!origin || !destination) {
         resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
         resultDiv.scrollIntoView({ behavior: "smooth"})
         return;
       }
 
+      
+      horarios = obtenerHorarios(origin, destination, linea);
       // Detenemos el intervalo anterior (si existe)
       if (intervalId) clearInterval(intervalId);
       
+      buscandoHorarios = true;
       // Hacemos la primera búsqueda y luego configuramos el intervalo
-      obtenerHorarios(origin, destination, linea);
-      intervalId = setInterval(() => obtenerHorarios(origin, destination, linea), 1000);
+      intervalId = setInterval(() => horarios = obtenerHorarios(origin, destination, linea), 1000);
       
       setTimeout(() => {
-        
         resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
+      if(linea == 'stop')
+        return
+      
     }
 
     function obtenerHorarios(origin, destination, linea) {
+      if(buscandoHorarios==false){
+          return "stop";
+        }
       const xhr = new XMLHttpRequest();
       const fields = "results%28desde%2Chasta%2Cservicio%29";
       xhr.open(
@@ -587,7 +634,6 @@ function populateDropdowns(ramal) {
 
       if (!horarios || horarios.length === 0) {
         resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
-        resultDiv.scrollIntoView({ behavior: "smooth"})
         return;
       }
 
@@ -608,8 +654,8 @@ function populateDropdowns(ramal) {
           <h3>Servicio: ${servicio}</h3>
           <p>Desde: ${desde} (Llegada: ${llegadaDesde.toLocaleTimeString()})</p>
           <p>Hasta: ${hasta} (Llegada: ${llegadaHasta.toLocaleTimeString()})</p>
-          <h2>Llegando en: ${tiempoRestanteDesde}</h2>
           <h4>Tiempo de viaje: ${tiempoDeViaje}</h4>
+          <h2>Llegando en: ${tiempoRestanteDesde}</h2>
         `;
         resultDiv.appendChild(div);
       });
@@ -634,13 +680,16 @@ function populateDropdowns(ramal) {
     }
 
     login();
-    document.getElementById('buscarBtn').addEventListener('click', () => {
-            if (linea) {
-                buscarHorarios(linea); // Llamar a la función con el valor de línea
-            } else {
-                alert('Por favor, seleccione un ramal antes de buscar.');
+      function buscandohorario(value){
+
+      }
+    document.getElementById('buscarBtn').addEventListener('click', () => {  
+      
+      buscandoHorarios=true
+        buscarHorarios(linea)
+
             }
-        });
+        );
   </script>
 </body>
 </html>
