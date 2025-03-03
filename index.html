@@ -180,6 +180,7 @@ button:hover {
   <main>
   <div id="loginStatus">Autenticando...</div>
   <div id="menu" style="display: none;">
+    <!-- Botones Lineas -->
     <div id="Linea">
     <button value="Mitre" class="botonMitre" onclick="Clicklinea(1)">Mitre</button>
     <button value="San Martín" class="botonSanma" onclick="Clicklinea(2)">San Martín</button>
@@ -188,7 +189,7 @@ button:hover {
     <button value="Tren De la costa" class="botonTDLC" onclick="Clicklinea(5)">Tren de la costa</button>
     <button value="Belgrano Sur" class="botonBS" onclick="Clicklinea(6)">Belgrano sur</button>
 </div>
-      
+      <!-- Opciones Ramales -->
   <label for="origin" id="RAMALES" class="ocultar">Ramal:</label>
     <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre ramal">
         <option value="0" selected>- Seleccione un ramal -</option>
@@ -242,21 +243,27 @@ button:hover {
         <option value="Marcos Paz">Marcos Paz</option>
     </select>
   </main>
+
     <div id="ESTACIONES" class="ocultar">
-    <label for="origin">Estación de Origen:</label>
+
+    <label for="origin">Estación de Origen:</label> <!-- Selector de Estacion de Origen -->
     <select id="origin"></select>
-    <button id="botonEspecial" onclick="botonEspecial()"><b>⇅</b></button>
-    <label for="destination">Estación de Destino:</label>
+    <button id="botonEspecial" onclick="botonEspecial()"><b>⇅</b></button> <!-- Boton de Cambio de Estacion -->
+    <label for="destination">Estación de Destino:</label> <!-- Selector de Estacion de Destino -->
     <select id="destination"></select>
     <br>
+    <!-- Resultados -->
     <button id="buscarBtn">Buscar Horarios</button>
   </div> </div>
   <div id="result" class="ocultar"></div>
     
   <script>
-    let buscandoHorarios;
-    let linea;
+    let buscandoHorarios; /* Variable Buscando horarios Puede ser True o False */
+    let linea; /* Variable Linea, es la linea seleccionada */
+
+    /* Esta funcion resetea los valores de los selectores de Ramales */
     function valorCero() {
+      /* Value = 0 para que siempre diga "selecciona un ramal" */
       document.getElementById('RamalMitre').value=0;
       document.getElementById('RamalSanma').value=0;
       document.getElementById('RamalSar').value=0;
@@ -265,6 +272,7 @@ button:hover {
       document.getElementById('RamalBS').value=0;
       document.getElementById('Linea').value=0;
       
+      /* Opcion disabled para que "selecciona un ramal" no se pueda seleccionar */
       document.getElementById('RamalMitre').options[0].disabled = true;
       document.getElementById('RamalSanma').options[0].disabled = true;
       document.getElementById('RamalSar').options[0].disabled = true;
@@ -272,18 +280,21 @@ button:hover {
       document.getElementById('RamalTDLC').options[0].disabled = true;
       document.getElementById('RamalBS').options[0].disabled = true;
    }
-   valorCero()
-   scroll(0,0)
 
-        let estaciones = [];
+   /* Ejecutar valorCero para que todo quede deafult */
+  valorCero()
+   /* Scrollear arriba de todo */
+  scroll(0,0)
 
-        // Función para leer el archivo de texto
-    async function cargarEstaciones() {
-    try {
-    const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
-    if (!response.ok) {
-    throw new Error('Error al cargar el archivo: ' + response.statusText);
-    }
+  let estaciones = [];
+
+  // Función para leer el archivo de texto
+  async function cargarEstaciones() {
+  try {
+  const response = await fetch('estaciones.txt'); // Leo estaciones.txt
+  if (!response.ok) {
+  throw new Error('Error al cargar el archivo: ' + response.statusText);
+  }
 
     const data = await response.text(); // Lee el contenido del archivo como texto
     estaciones = data.split('\n').map(line => {
@@ -297,7 +308,7 @@ button:hover {
     }
     }
 
-    // Llama a la función para cargar las estaciones
+    
     const botonMitre = document.querySelector(".botonMitre");
     const botonSanma = document.querySelector(".botonSanma");
     const botonS = document.querySelector(".botonS");
@@ -317,58 +328,65 @@ button:hover {
 
     function Clicklinea(valorOption) {
 
+      //ocultar selector de estaciones
       const estaciones = document.getElementById("ESTACIONES")
       estaciones.classList.add("ocultar")
+      //ocultar resultados
       const result = document.getElementById("result")
       result.classList.add("ocultar")
+
 
         console.log(valorOption);
         botonClickeado(valorOption)
         valorCero()
         const ramales = document.getElementById("RAMALES")
+        //scrollear a ramales
         document.getElementById("RAMALES").scrollIntoView({ behavior: "smooth"});
+        //detengo la busqueda de horarios
         buscarHorarios("stop");
         buscandoHorarios = false;
+
+        //muestro ramales
         ramales.classList.remove("ocultar");
         if (valorOption=="1"){
           
           borrarTodo()
-            RamalMitre.classList.replace('ocultar','mostrar')
-            botonMitre.classList.add("botonClickeado")
+          RamalMitre.classList.replace('ocultar','mostrar')
+          botonMitre.classList.add("botonClickeado")
         }
         else if(valorOption=="2"){
 
           borrarTodo()
-            RamalSanma.classList.replace('ocultar','mostrar')
-            botonSanma.classList.add("botonClickeado")
+          RamalSanma.classList.replace('ocultar','mostrar')
+          botonSanma.classList.add("botonClickeado")
         }
         else if(valorOption=="3"){
 
           borrarTodo()
-            RamalSar.classList.replace('ocultar','mostrar')
-            botonS.classList.add("botonClickeado")
+          RamalSar.classList.replace('ocultar','mostrar')
+          botonS.classList.add("botonClickeado")
         }
         else if(valorOption=="4"){
           
           borrarTodo()
-            RamalRoca.classList.replace('ocultar','mostrar')
-            botonRoca.classList.add("botonClickeado")
+          RamalRoca.classList.replace('ocultar','mostrar')
+          botonRoca.classList.add("botonClickeado")
         }
         else if(valorOption=="5"){
           borrarTodo()
-            RamalTDLC.classList.replace('ocultar','mostrar')
-            botonTDLC.classList.add("botonClickeado")
+          RamalTDLC.classList.replace('ocultar','mostrar')
+          botonTDLC.classList.add("botonClickeado")
         }
         else if(valorOption=="6"){
-            borrarTodo()
-            RamalBS.classList.replace('ocultar','mostrar')
-            botonBS.classList.add("botonClickeado")
+          borrarTodo()
+          RamalBS.classList.replace('ocultar','mostrar')
+          botonBS.classList.add("botonClickeado")
         }
 
     }
     function botonClickeado(valorOption){
-
     }
+
     function borrarTodo(){
       botonMitre.classList.remove('botonClickeado')
       botonS.classList.remove('botonClickeado')
@@ -445,33 +463,31 @@ button:hover {
 
       const user = btoa(baseString); // Codificación base64 para USER
 
-      const pass = encriptarContrasena(user); // Encriptación para PASS
-
-      return { user, pass };
-    }
-
-    function encriptarContrasena(contrasena) {
-      let texto = btoa(contrasena);
+       
+      
+      //encriptar contraseña
+      let pass = btoa(user);
       const reemplazosPrimeraCapa = {
         "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
       };
       for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
-        texto = replace1(texto,key, value);
+        pass = replace1(pass,key, value);
       }
 
-      texto = texto.split("").reverse().join("");
+      pass = pass.split("").reverse().join("");
 
-      texto = btoa(texto);
+      pass = btoa(pass);
       const reemplazosSegundaCapa = {
         "a": "32%j", "e": "32%p", "i": "32%w", "o": "32%8", "u": "#0", "=": "32%v"
       };
       for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
-        texto = replace1(texto, key, value);
+        pass = replace1(pass, key, value);
       }
-      texto = encodeURIComponent(texto.split("").reverse().join(""))
+      pass = encodeURIComponent(pass.split("").reverse().join(""))
 
-      return texto;
+      return { user, pass };
     }
+
 
     function login() {
       const { user, pass } = obtenerCredenciales();
@@ -493,7 +509,10 @@ button:hover {
             const data = `username=${user}&password=${pass}`;
   xhr.send(data);
 }
+
+//boton de cambio de estacion
 function botonEspecial(){
+  //intercambia valores
   const destinationSelect = document.getElementById("destination");
   const originSelect = document.getElementById("origin");
   
@@ -501,14 +520,14 @@ function botonEspecial(){
   const destination = document.getElementById("destination").value;
   originSelect.value=destination
   destinationSelect.value=origin
+  //si se estan buscando horarios lo busca denuevo
   if (buscandoHorarios==true)
     buscarHorarios(linea)
-
-  
 }
+
 function obtenerDatos() {
   if (!token) {
-    document.getElementById("datosStatus").innerText = "Por favor, inicia sesión primero.";
+    document.getElementById("datosStatus").innerText = "Error con el Token.";
     return;
   }
 
@@ -534,25 +553,36 @@ function obtenerDatos() {
 
 
 function populateDropdowns(ramal) {
-    
+    //mostrar estaciones
     const ESTACIONES = document.getElementById("ESTACIONES")
     ESTACIONES.classList.remove("ocultar")
+    //oculta resultados
     document.getElementById("result").classList.add("ocultar")
+
+    //filtra estacines segun ramal seleccionado
     let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
 
     const destinationSelect = document.getElementById("destination");
     const originSelect = document.getElementById("origin");
+    
+    //borro lo anteriormente cargado
     destinationSelect.options.length = 0;
     originSelect.options.length = 0;
+    //scroll hasta boton de buscar
     document.getElementById("buscarBtn").scrollIntoView({ behavior: "smooth"})
+    //pauso la busqueda de horarios
     buscarHorarios("stop");
     buscandoHorarios = false;
+
+    //creo la estacion "seleccione una estacion"
     var defaultEstacion = document.createElement("option");
     defaultEstacion.value = "";
     defaultEstacion.text = '- Seleccione una Estacion -'
     
     originSelect.appendChild(defaultEstacion.cloneNode(true));
     destinationSelect.appendChild(defaultEstacion.cloneNode(true));
+
+    //creo las estaciones del ramal seleccionado
     RamalSeleccionado.forEach(estacion => {
     if (estacion.publico) {
     const option1 = new Option(estacion.nombre, estacion.id);
@@ -567,6 +597,7 @@ function populateDropdowns(ramal) {
 
 const originSelect = document.getElementById("origin");
 const destinationSelect = document.getElementById("destination");
+//al cambiar la estacion de origen o de destino, si se esta buscando horarios, que cambie en tiempo ream
 originSelect.addEventListener('change', ()=>{
   if(buscandoHorarios==true)
     buscarHorarios(linea)
@@ -576,66 +607,67 @@ destinationSelect.addEventListener('change', ()=>{
     buscarHorarios(linea)
 })
 
+  //funcion para buscar horarios
+  function buscarHorarios(linea) {
 
-    function buscarHorarios(linea) {
+    const origin = document.getElementById("origin").value;
+    const destination = document.getElementById("destination").value;
+    if(linea == 'stop') 
+      return;
 
-      const origin = document.getElementById("origin").value;
-      const destination = document.getElementById("destination").value;
-      if(linea == 'stop') 
-        return;
+    const resultDiv = document.getElementById("result");
+    resultDiv.classList.remove("ocultar")
 
-      const resultDiv = document.getElementById("result");
-      resultDiv.classList.remove("ocultar")
+    if (!origin || !destination) {
+      resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
+      resultDiv.scrollIntoView({ behavior: "smooth"})
+      return;
+    }
 
-      if (!origin || !destination) {
-        resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
-        resultDiv.scrollIntoView({ behavior: "smooth"})
-        return;
+    
+    horarios = obtenerHorarios(origin, destination, linea);
+    // Detenemos el intervalo anterior (si existe)
+    if (intervalId) clearInterval(intervalId);
+    
+    buscandoHorarios = true;
+    // Hacemos la primera búsqueda y luego configuramos el intervalo
+    intervalId = setInterval(() => horarios = obtenerHorarios(origin, destination, linea), 1000);
+    
+    setTimeout(() => {
+      resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
+    if(linea == 'stop')
+      return
+    
+  }
+
+  //funcion para obtener horarios
+  function obtenerHorarios(origin, destination, linea) {
+    if(buscandoHorarios==false){
+        return "stop";
       }
+    const xhr = new XMLHttpRequest();
+    const fields = "results%28desde%2Chasta%2Cservicio%29";
+    xhr.open(
+      "GET",
+      `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=${linea}`,
+      true
+    );
+    xhr.setRequestHeader("Authorization", `${token}`);
 
-      
-      horarios = obtenerHorarios(origin, destination, linea);
-      // Detenemos el intervalo anterior (si existe)
-      if (intervalId) clearInterval(intervalId);
-      
-      buscandoHorarios = true;
-      // Hacemos la primera búsqueda y luego configuramos el intervalo
-      intervalId = setInterval(() => horarios = obtenerHorarios(origin, destination, linea), 1000);
-      
-      setTimeout(() => {
-        resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
-      if(linea == 'stop')
-        return
-      
-    }
-
-    function obtenerHorarios(origin, destination, linea) {
-      if(buscandoHorarios==false){
-          return "stop";
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          mostrarHorarios(response.results);
+        } else {
+          const resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
         }
-      const xhr = new XMLHttpRequest();
-      const fields = "results%28desde%2Chasta%2Cservicio%29";
-      xhr.open(
-        "GET",
-        `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=${linea}`,
-        true
-      );
-      xhr.setRequestHeader("Authorization", `${token}`);
+      }
+    };
 
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          if (xhr.status === 200) {
-            const response = JSON.parse(xhr.responseText);
-            mostrarHorarios(response.results);
-          } else {
-            const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
-          }
-        }
-      };
-
-      xhr.send();
-    }
+    xhr.send();
+  }
     
     function mostrarHorarios(horarios) {
       const resultDiv = document.getElementById("result");
