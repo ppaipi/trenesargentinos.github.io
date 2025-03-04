@@ -1,61 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .ocultar{
+  <link rel="icon" href="Tren.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="geo.region" content="AR-BUE" /> <!-- Buenos Aires, Argentina -->
+  <meta name="geo.placename" content="Buenos Aires" />
+  <meta name="geo.position" content="-34.6037;-58.3816" />
+  <meta name="google-site-verification" content="pgIVSgq4strcU9SEKpVIDdnZhGr3G9i1tDci9Un9KUU" />
+  <meta name="description" content="Obten los Horarios en Tiempo Real de los Trenes Argentinos. Planifica tus viajes. Mira cuando llega el tren y cuanto tiempo de viaje tienes. Muy facil de usar. Trenes Buenos Aires, CABA, bsas, bs as. Horario Tren.">
+  <title>Consulta de horarios Trenes Argentinos</title>
+  <style>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 15px;
+  text-align: center; /* Asegurar que todo quede centrado */
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 1.8rem; /* Tamaño inicial */
+  transition: font-size 0.3s ease;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+select, button {
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  transition: font-size 0.3s ease, padding 0.3s ease;
+}
+
+select {
+  background: #fff;
+  color: #333;
+}
+
+button {
+  
+  transition: 0.2s;
+  cursor: pointer;
+  background: #0056b3;
+  color: #fff;
+  font-weight: bold;
+  transition: background 0.3s, font-size 0.3s ease, padding 0.3s ease;
+}
+
+button:hover {
+  background: #003f8a;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.horario {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.horario h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #0056b3;
+}
+
+.horario p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#loginStatus {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #fff;
+  text-align: center;
+}
+
+/* Para pantallas pequeñas (768px o menos) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Agrandar un poco el título */
+  }
+
+  select, button {
+    font-size: 1.1rem; /* Agrandar un poco el texto del menú y botón */
+    padding: 11px; /* Incremento moderado del padding */
+  }
+}
+
+/* Para pantallas muy pequeñas (480px o menos) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem; /* Agrandar ligeramente más el título */
+  }
+
+  select, button {
+    font-size: 1.2rem; /* Agrandar un poco más el texto */
+    padding: 12px; /* Ajustar padding sin exagerar */
+  }
+  
+}
+.ocultar{
         display: none;
     }
-    .mostrar{
-        display: flex;
-    }
-</style>
-<body>
-    <label for="origin">Estación de Origen:</label>
-    <select id="origin"></select>
-<!--     <select>
-        <option value="0" selected>- Elija una linea -</option>
-        <option value="1">Mitre</option>
-        <option value="2">San Martín</option>
-        <option value="3">Sarmiento</option>
-        <option value="4">Roca</option>
-    </select> -->
-    <div id="Linea">
-    <button value="Mitre" onclick="Clicklinea(1)">Mitre</button>
-    <button value="San Martín" onclick="Clicklinea(2)">San Martín</button>
-    <button value="Sarmiento" onclick="Clicklinea(3)">Sarmiento</button>
-    <button value="Roca" onclick="Clicklinea(4)">Roca</button>
-    <button value="Tren De la costa" onclick="Clicklinea(5)">Tren de la costa</button>
-    <button value="Belgrano Sur" onclick="Clicklinea(6)">Belgrano sur</button>
-</div>
+.mostrar{
+    display: flex;
+}
+#Linea{
+    display: block;
+}
+#Linea button{
+    margin: 1rem;
+}
+.botonClickeado{
+   background-color: #003f8a;
+   box-shadow: #333;
+   border: 1px solid rgb(65, 65, 65);
+}
+.ramal{
+    margin: auto;
+    font-size: 1.2rem;
+    padding: 12px;
 
-    <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre">
-        <option value="0" selected>- Elija un ramal -</option>
+}
+#botonEspecial{
+  display: block;
+
+  margin-inline: auto;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  padding: 0.1rem;
+  padding-inline: 0.5rem;
+  max-width: 40px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+
+}
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #003539;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Cambiado a center */
+  padding: 0px 100px;
+  margin-bottom: 10%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none; 
+  padding: 0; /* Asegúrate de que no haya padding */
+  margin: 0; /* Asegúrate de que no haya margin */
+}
+
+.navbar ul li {
+  margin: 0 10px; /* Ajusta el margin aquí si es necesario */
+}
+
+.navbar ul li a {
+  display: block;
+  color: white;
+  font-size: 20px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+.navbar ul li a:hover{
+  color: #000000;
+  background-color: #fff;
+
+}
+.navbar ul li a.active{
+  color: #000000;
+  background-color: #fff;
+
+}
+.time-picker {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;  
+  padding: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.time-input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  margin-right: 5px;
+  transition: transform 0.2s ease;
+}
+
+.time-input:focus {
+  transform: scale(1.1);
+}
+
+.separator {
+  font-size: 2%;
+  margin: 0 5px;
+}
+
+
+.date-picker {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  padding: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="date"] {
+  width: 100%; /* Ajusta el ancho según sea necesario */
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  margin-right: 5px;
+  transition: transform 0.2s ease;
+  background-color: transparent; /* Fondo transparente para que coincida con el diseño */
+}
+
+input[type="date"]:focus {
+  transform: scale(1.1);
+}
+
+
+
+
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <header>
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="#" id="DIRECTO" class="active" onclick="trenStatus(1)">En directo</a>
+      </li>
+      <li>
+        <a href="#" id="PROGRAMADA" onclick="trenStatus(2)">Programar trenes</a>
+      </li>
+    </ul>
+  </nav> </header>
+
+
+  <main>
+  <h1>Consulta de horarios Trenes Argentinos</h1>
+
+  <div id="loginStatus">Autenticando...</div>
+  <div id="menu" style="display: none;">
+    <!-- Botones Lineas -->
+    <div id="Linea">
+    <button value="Mitre" class="botonMitre" onclick="Clicklinea(1)">Mitre</button>
+    <button value="San Martín" class="botonSanma" onclick="Clicklinea(2)">San Martín</button>
+    <button value="Sarmiento" class="botonS" onclick="Clicklinea(3)">Sarmiento</button>
+    <button value="Roca" class="botonRoca" onclick="Clicklinea(4)">Roca</button>
+    <button value="Tren De la costa" class="botonTDLC" onclick="Clicklinea(5)">Tren de la costa</button>
+    <button value="Belgrano Sur" class="botonBS" onclick="Clicklinea(6)">Belgrano sur</button>
+</div>
+      <!-- Opciones Ramales -->
+  <label for="origin" id="RAMALES" class="ocultar">Ramal:</label>
+    <select name="RamalMitre"  id="RamalMitre" class="ocultar RamalMitre ramal">
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="J. L. Suárez">J. L. Suárez</option>
         <option value="Mitre">Mitre</option>
         <option value="Tigre">Tigre</option>
     </select>
 
-    <select name="RamalSanma"  id="RamalSanma" class="ocultar RamalSanma">
-        <option value="0" selected>- Elija un ramal -</option>
+    <select name="RamalSanma"  id="RamalSanma" class="ocultar RamalSanma ramal">
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Pilar">Pilar</option>
         <option value="Cabred">Cabred</option>
-        <option value="Rufino">Rufino</option>
     </select>
 
-    <select name="RamalSar"  id="RamalSar" class="ocultar RamalSar">
-        <option value="0" selected>- Elija un ramal -</option>
+    <select name="RamalSar"  id="RamalSar" class="ocultar RamalSar ramal">
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Mercedes">Mercedes</option>
         <option value="Lobos">Lobos</option>
         <option value="Moreno">Moreno</option>
         <option value="Pehuajó">Pehuajó</option>
     </select>
 
-    <select name="RamalRoca"  id="RamalRoca" class="ocultar RamalRoca">
-        <option value="0" selected>- Elija un ramal -</option>
+    <select name="RamalRoca"  id="RamalRoca" class="ocultar RamalRoca ramal">
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Cañuelas Esp">Cañuelas Esp</option>
         <option value="Bosques-T">Bosques-T</option>
         <option value="Bosques-Q">Bosques-Q</option>
@@ -72,81 +340,109 @@
         
     </select>
 
-    <select name="RamalTDLC"  id="RamalTDLC" class="ocultar RamalTDLC">
-        <option value="0" selected>- Elija un ramal -</option>
+    <select name="RamalTDLC"  id="RamalTDLC" class="ocultar RamalTDLC ramal">
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Tren de la Costa">Tren de la Costa</option>
     </select>
-
-    <select name="RamalSS"  id="RamalBS" class="ocultar RamalBS">
-        <option value="0" selected>- Elija un ramal -</option>
+    
+    <select name="RamalSS"  id="RamalBS" class="ocultar RamalBS ramal">
+        <option value="0" selected>- Seleccione un ramal -</option>
         <option value="Gonzalez Catán">Gonzalez Catán</option>
         <option value="M.C.G. Belgrano">M.C.G. Belgrano</option>
         <option value="Pte Alsina">Pte Alsina</option>
         <option value="Marcos Paz">Marcos Paz</option>
     </select>
-</body>
+  </main>
 
-<script>
+    <div id="ESTACIONES" class="ocultar">
+
+    <label for="origin">Estación de Origen:</label> <!-- Selector de Estacion de Origen -->
+    <select id="origin"></select>
+    <button id="botonEspecial" onclick="botonEspecial()"><b>⇅</b></button> <!-- Boton de Cambio de Estacion -->
+    <label for="destination">Estación de Destino:</label> <!-- Selector de Estacion de Destino -->
+    <select id="destination"></select>
+    <br>
+    <br>
+    <div id="fechayhora" class="ocultar">
+    <div class="date-picker">
+      <input type="date" id="date-input">
+  </div>
+    <br>
+    <div class="time-picker">
+      <input type="number" class="time-input" id="hour-input" placeholder="HH" min="0" max="23">
+      <span class="separator">:</span>
+      <input type="number" class="time-input" id="minute-input" placeholder="MM" min="0" max="59">
+
+  </div> 
+  <br>
+  <select id="TipodeBusqueda" for="TipodeBusqueda">
+    <option value="Salida">Salida</option>
+    <option value="Llegada">Llegada</option>
+  </select></div>
+    <br>
+    <!-- Resultados -->
+    <button id="buscarBtn">Buscar Horarios</button>
+  </div> </div>
+  <div id="result" class="ocultar"></div>
     
-    document.getElementById('RamalMitre').value=0;
-    document.getElementById('RamalSanma').value=0;
-    document.getElementById('RamalSar').value=0;
-    document.getElementById('RamalRoca').value=0;
-    document.getElementById('RamalTDLC').value=0;
-    document.getElementById('RamalBS').value=0;
-    document.getElementById('Linea').value=0;
+  <script>
+    let buscandoHorarios; /* Variable Buscando horarios Puede ser True o False */
+    let linea; /* Variable Linea, es la linea seleccionada */
 
-        let estaciones = [];
+    /* Esta funcion resetea los valores de los selectores de Ramales */
+    function valorCero() {
+      /* Value = 0 para que siempre diga "selecciona un ramal" */
+      document.getElementById('RamalMitre').value=0;
+      document.getElementById('RamalSanma').value=0;
+      document.getElementById('RamalSar').value=0;
+      document.getElementById('RamalRoca').value=0;
+      document.getElementById('RamalTDLC').value=0;
+      document.getElementById('RamalBS').value=0;
+      document.getElementById('Linea').value=0;
+      
+      /* Opcion disabled para que "selecciona un ramal" no se pueda seleccionar */
+      document.getElementById('RamalMitre').options[0].disabled = true;
+      document.getElementById('RamalSanma').options[0].disabled = true;
+      document.getElementById('RamalSar').options[0].disabled = true;
+      document.getElementById('RamalRoca').options[0].disabled = true;
+      document.getElementById('RamalTDLC').options[0].disabled = true;
+      document.getElementById('RamalBS').options[0].disabled = true;
+   }
 
-        // Función para leer el archivo de texto
-    async function cargarEstaciones() {
-    try {
-    const response = await fetch('estaciones.txt'); // Cambia 'estaciones.txt' por la ruta real
-    if (!response.ok) {
-    throw new Error('Error al cargar el archivo: ' + response.statusText);
-    }
+   /* Ejecutar valorCero para que todo quede deafult */
+  valorCero()
+   /* Scrollear arriba de todo */
+  scroll(0,0)
+
+  let estaciones = [];
+
+  // Función para leer el archivo de texto
+  async function cargarEstaciones() {
+  try {
+  const response = await fetch('estaciones.txt'); // Leo estaciones.txt
+  if (!response.ok) {
+  throw new Error('Error al cargar el archivo: ' + response.statusText);
+  }
 
     const data = await response.text(); // Lee el contenido del archivo como texto
     estaciones = data.split('\n').map(line => {
     return line.trim() ? JSON.parse(line) : null; // Convierte cada línea en un objeto JSON
     }).filter(item => item !== null); // Filtra las líneas vacías
 
-    // Muestra el array de estaciones en el elemento <pre>
-
     // Muestra las estaciones en la consola
-    console.log(estaciones);
     } catch (error) {
     console.error(error);
     document.getElementById('output').textContent = 'Error al cargar las estaciones.';
     }
     }
+    const botonMitre = document.querySelector(".botonMitre");
+    const botonSanma = document.querySelector(".botonSanma");
+    const botonS = document.querySelector(".botonS");
+    const botonRoca = document.querySelector(".botonRoca");
+    const botonTDLC = document.querySelector(".botonTDLC");
+    const botonBS = document.querySelector(".botonBS");
 
-    // Llama a la función para cargar las estaciones
     cargarEstaciones();
-    const estaciones1 = [
-    { "id": 353, "nombre": "San Andrés", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
-    { "id": 35, "nombre": "Belgrano R", "Linea": "Mitre", "Ramal": "J. L. Suárez", "publico": true },
-    { "id": 35, "nombre": "Coghlan", "Linea": "Mitre", "Ramal": "Mitre", "publico": true },
-    { "id": 35, "nombre": "Tigre", "Linea": "Mitre", "Ramal": "Tigre", "publico": true },
-    { "id": 353, "nombre": "Devoto", "Linea": "San martin", "Ramal": "Cabred", "publico": true },
-    { "id": 35, "nombre": "Paternal", "Linea": "San martin", "Ramal": "Pilar", "publico": true },]
-    
-    const LineaMitre = estaciones1.filter(x => x.Linea == "Mitre")
-    const LineaSanma = estaciones1.filter(x => x.Linea == "San martin")
-    function populateDropdowns(ramal) {
-
-        let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
-        
-        const originSelect = document.getElementById("origin");
-        originSelect.options.length = 1;
-        document.getElementById('origin').value=0;
-        RamalSeleccionado.forEach(estacion => {
-        if (estacion.publico) {
-        const option1 = new Option(estacion.nombre, estacion.id);
-        originSelect.add(option1);
-        }
-});
-    }
     const Linea = document.querySelector("#Linea");
     const RamalMitre = document.querySelector('.RamalMitre');
     const RamalSanma = document.querySelector('.RamalSanma');
@@ -154,91 +450,619 @@
     const RamalRoca = document.querySelector('.RamalRoca');
     const RamalTDLC = document.querySelector('.RamalTDLC');
     const RamalBS = document.querySelector('.RamalBS');
+
+    const hourInput = document.getElementById('hour-input');
+    const minuteInput = document.getElementById('minute-input');
+    const setTimeButton = document.getElementById('set-time');
+
+
+    //RELOJ
+    // Función para establecer la hora actual
+    
+    function setCurrentTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        hourInput.value = hours;
+        minuteInput.value = minutes;
+        return `${hours}:${minutes}`
+    }
+
+    // Llamar a la función para establecer la hora actual al cargar la página
+    
+    let selectedTime = setCurrentTime();
+    hourInput.addEventListener('change', () => cambiaHora() )
+    minuteInput.addEventListener('change', () => cambiaHora() )
+    
+    function cambiaHora(){
+        const hour = hourInput.value.padStart(2, '0');
+        const minute = minuteInput.value.padStart(2, '0');
+        selectedTime = `${hour}:${minute}`;
+        
+        // Mostrar el valor exacto de la hora
+        console.log(`Hora seleccionada: ${selectedTime}`);
+    };
+
+    //FECHA
+    const dateInput = document.getElementById('date-input');
+    const setDateButton = document.getElementById('set-date');
+
+    // Función para establecer la fecha actual como valor predeterminado
+    function setCurrentDate() {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Meses de 0 a 11
+        const day = String(today.getDate()).padStart(2, '0');
+        dateInput.value = `${year}-${month}-${day}`; // Formato YYYY-MM-DD
+        return `${year}-${month}-${day}`;
+    }
+
+    // Llamar a la función para establecer la fecha actual al cargar la página
+    
+    let selectedDate = setCurrentDate();
+    dateInput.addEventListener('change', () => {
+        selectedDate = dateInput.value;
+        console.log(`Fecha seleccionada: ${selectedDate}`);
+    });
+
+
+
     function Clicklinea(valorOption) {
+
+      //ocultar selector de estaciones
+      const estaciones = document.getElementById("ESTACIONES")
+      estaciones.classList.add("ocultar")
+      //ocultar resultados
+      const result = document.getElementById("result")
+      result.classList.add("ocultar")
+
+
         console.log(valorOption);
+        botonClickeado(valorOption)
+        valorCero()
+        const ramales = document.getElementById("RAMALES")
+        //scrollear a ramales
+        setTimeout(() => {
+          document.getElementById("RAMALES").scrollIntoView({ behavior: "smooth"})}, 350); 
+        //detengo la busqueda de horarios
+        buscarHorarios("stop");
+        buscandoHorarios = false;
+
+        //muestro ramales
+        ramales.classList.remove("ocultar");
         if (valorOption=="1"){
-            RamalMitre.classList.replace('ocultar','mostrar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+          
+          borrarTodo()
+          RamalMitre.classList.replace('ocultar','mostrar')
+          botonMitre.classList.add("botonClickeado")
         }
         else if(valorOption=="2"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('ocultar','mostrar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+
+          borrarTodo()
+          RamalSanma.classList.replace('ocultar','mostrar')
+          botonSanma.classList.add("botonClickeado")
         }
         else if(valorOption=="3"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('ocultar','mostrar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+
+          borrarTodo()
+          RamalSar.classList.replace('ocultar','mostrar')
+          botonS.classList.add("botonClickeado")
         }
         else if(valorOption=="4"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('ocultar','mostrar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('mostrar','ocultar')
+          
+          borrarTodo()
+          RamalRoca.classList.replace('ocultar','mostrar')
+          botonRoca.classList.add("botonClickeado")
         }
         else if(valorOption=="5"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('ocultar','mostrar')
-            RamalBS.classList.replace('mostrar','ocultar')
+          borrarTodo()
+          RamalTDLC.classList.replace('ocultar','mostrar')
+          botonTDLC.classList.add("botonClickeado")
         }
         else if(valorOption=="6"){
-            RamalMitre.classList.replace('mostrar','ocultar')
-            RamalSanma.classList.replace('mostrar','ocultar')
-            RamalSar.classList.replace('mostrar','ocultar')
-            RamalRoca.classList.replace('mostrar','ocultar')
-            RamalTDLC.classList.replace('mostrar','ocultar')
-            RamalBS.classList.replace('ocultar','mostrar')
+          borrarTodo()
+          RamalBS.classList.replace('ocultar','mostrar')
+          botonBS.classList.add("botonClickeado")
         }
 
     }
+    function botonClickeado(valorOption){
+    }
+
+    
+    let Busqueda = "Directo";
+    const DIRECTO = document.getElementById("DIRECTO")
+    const PROGRAMADA =document.getElementById("PROGRAMADA")
+    function trenStatus(numero){
+      if(numero==1){
+        Busqueda = "Directo"
+        DIRECTO.classList.add("active")
+        PROGRAMADA.classList.remove("active")
+      }
+      else{
+        Busqueda = "Programada"
+        DIRECTO.classList.remove("active")
+        PROGRAMADA.classList.add("active")
+      }
+    console.log(Busqueda)
+    }
+
+
+    function borrarTodo(){
+      botonMitre.classList.remove('botonClickeado')
+      botonS.classList.remove('botonClickeado')
+      botonRoca.classList.remove('botonClickeado')
+      botonSanma.classList.remove('botonClickeado')
+      botonTDLC.classList.remove('botonClickeado')
+      botonBS.classList.remove('botonClickeado')
+
+      RamalMitre.classList.replace('mostrar','ocultar')
+      RamalSanma.classList.replace('mostrar','ocultar')
+      RamalSar.classList.replace('mostrar','ocultar')
+      RamalRoca.classList.replace('mostrar','ocultar')
+      RamalTDLC.classList.replace('mostrar','ocultar')
+      RamalBS.classList.replace('mostrar','ocultar')
+    }
     
     RamalMitre.addEventListener('change', ()=>{
+        linea = 5;
+        console.log(linea)
         let valorOption = RamalMitre.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
     RamalSanma.addEventListener('change', ()=>{
+        linea = 31;
         let valorOption = RamalSanma.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
     RamalSar.addEventListener('change', ()=>{
+        linea = 1;
         let valorOption = RamalSar.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
     RamalRoca.addEventListener('change', ()=>{
+        linea = 11;
         let valorOption = RamalRoca.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
     RamalTDLC.addEventListener('change', ()=>{
+        linea = 41;
         let valorOption = RamalTDLC.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
     RamalBS.addEventListener('change', ()=>{
+        linea = 35;
         let valorOption = RamalBS.value
         console.log(valorOption)
         populateDropdowns(valorOption)
     })
 
+    let token = ""; // Aquí se almacenará el token obtenido
+    let intervalId; // ID del intervalo para detenerlo cuando sea necesario
+    function replace1(str, search, replacement) {
+    // Verificamos si 'search' es una cadena o una expresión regular
+    if (typeof search === 'string') {
+        // Escapamos caracteres especiales en 'search' para usarlo en la expresión regular
+        search = search.replace(/([.*+?^${}()|$$$$\\])/g, '\\$1');
+        search = new RegExp(search, 'g'); // Creamos una expresión regular global
+    }
+    
+    // Usamos el método replace con la expresión regular
+    return str.replace(search, replacement);
+}
+
+
+    function obtenerCredenciales() {
+      const fecha = new Date();
+      const yyyymmdd = fecha.getFullYear() + String(fecha.getMonth() + 1).padStart(2, '0') + String(fecha.getDate()).padStart(2, '0');
+      const baseString = yyyymmdd + "sofse";
+
+      const user = btoa(baseString); // Codificación base64 para USER
+
+       
+      
+      //encriptar contraseña
+      let pass = btoa(user);
+      const reemplazosPrimeraCapa = {
+        "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
+      };
+      for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
+        pass = replace1(pass,key, value);
+      }
+
+      pass = pass.split("").reverse().join("");
+
+      pass = btoa(pass);
+      const reemplazosSegundaCapa = {
+        "a": "32%j", "e": "32%p", "i": "32%w", "o": "32%8", "u": "#0", "=": "32%v"
+      };
+      for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
+        pass = replace1(pass, key, value);
+      }
+      pass = encodeURIComponent(pass.split("").reverse().join(""))
+
+      return { user, pass };
+    }
+
+
+    function login() {
+      const { user, pass } = obtenerCredenciales();
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://apiarribos.sofse.gob.ar/v1/auth/authorize", true);
+      xhr.setRequestHeader("Accept-Encoding", "gzip");
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            token = response.token;
+            document.getElementById("loginStatus").innerText = "Autenticado correctamente.";
+            document.getElementById("menu").style.display = "block";
+          } else {
+            document.getElementById("loginStatus").innerText = "Error en laautenticación. Por favor, verifica tus credenciales."; } } };
+            const data = `username=${user}&password=${pass}`;
+  xhr.send(data);
+}
+
+//boton de cambio de estacion
+function botonEspecial(){
+  //intercambia valores
+  const destinationSelect = document.getElementById("destination");
+  const originSelect = document.getElementById("origin");
+  
+  const origin = document.getElementById("origin").value;
+  const destination = document.getElementById("destination").value;
+  originSelect.value=destination
+  destinationSelect.value=origin
+  //si se estan buscando horarios lo busca denuevo
+  if (buscandoHorarios==true)
+    buscarHorarios(linea)
+}
+
+function obtenerDatos() {
+  if (!token) {
+    document.getElementById("datosStatus").innerText = "Error con el Token.";
+    return;
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://apiarribos.sofse.gob.ar/v1/data", true);
+  xhr.setRequestHeader("Authorization", `${token}`);
+  xhr.setRequestHeader("Accept-Encoding", "gzip");
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        document.getElementById("datosStatus").innerText = "Datos obtenidos correctamente.";
+        renderizarDatos(response);
+      } else {
+        document.getElementById("datosStatus").innerText = "Error al obtener datos.";
+      }
+    }
+  };
+
+  xhr.send();
+}
+
+
+function populateDropdowns(ramal) {
+    //mostrar estaciones
+    const fechayhora = document.getElementById("fechayhora")
+    const ESTACIONES = document.getElementById("ESTACIONES")
+    ESTACIONES.classList.remove("ocultar")
+    if (Busqueda=="Directo"){
+      fechayhora.classList.add("ocultar")
+    }
+    else if(Busqueda=="Programada"){
+      fechayhora.classList.remove("ocultar")
+    }
+    //oculta resultados
+    document.getElementById("result").classList.add("ocultar")
+
+    //filtra estacines segun ramal seleccionado
+    let RamalSeleccionado = estaciones.filter(x => x.Ramal == ramal)
+
+    const destinationSelect = document.getElementById("destination");
+    const originSelect = document.getElementById("origin");
+    
+    //borro lo anteriormente cargado
+    destinationSelect.options.length = 0;
+    originSelect.options.length = 0;
+    //scroll hasta boton de buscar
+    document.getElementById("buscarBtn").scrollIntoView({ behavior: "smooth"})
+    //pauso la busqueda de horarios
+    buscarHorarios("stop");
+    buscandoHorarios = false;
+
+    //creo la estacion "seleccione una estacion"
+    var defaultEstacion = document.createElement("option");
+    defaultEstacion.value = "";
+    defaultEstacion.text = '- Seleccione una Estacion -'
+    
+    originSelect.appendChild(defaultEstacion.cloneNode(true));
+    destinationSelect.appendChild(defaultEstacion.cloneNode(true));
+
+    //creo las estaciones del ramal seleccionado
+    RamalSeleccionado.forEach(estacion => {
+    if (estacion.publico) {
+    const option1 = new Option(estacion.nombre, estacion.id);
+    originSelect.add(option1);
+    const option2 = new Option(estacion.nombre, estacion.id);
+    destinationSelect.add(option2);
+    }
+    originSelect.options[0].disabled = true;
+    destinationSelect.options[0].disabled = true;
+  });
+}
+
+const originSelect = document.getElementById("origin");
+const destinationSelect = document.getElementById("destination");
+//al cambiar la estacion de origen o de destino, si se esta buscando horarios, que cambie en tiempo ream
+originSelect.addEventListener('change', ()=>{
+  if(buscandoHorarios==true)
+    buscarHorarios(linea)
+})
+destinationSelect.addEventListener('change', ()=>{
+  if(buscandoHorarios==true)
+    buscarHorarios(linea)
+})
+
+function buscarHorarios(linea){
+  if (Busqueda=="Directo"){
+    buscarHorariosDirecto(linea)
+  }
+  else if(Busqueda=="Programada"){
+    buscarHorariosProgramado()
+  }
+}
+//HORARIOS PROGRAMADO
+function buscarHorariosProgramado() {
+            const fechaSelected = selectedDate;
+            const hora = selectedTime;
+            const origin = document.getElementById("origin").value;
+            const destination = document.getElementById("destination").value;
+            const TipodeBusqueda = document.getElementById("TipodeBusqueda").value;
+            
+    const resultDiv = document.getElementById("result");
+
+            if (!origin || !destination) {
+            resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
+            resultDiv.scrollIntoView({ behavior: "smooth"})
+            return;
+            }
+            console.log(origin,destination,fechaSelected,hora)
+            obtenerHorariosProgramado(origin, destination, fechaSelected, hora)
+} 
+function obtenerHorariosProgramado(origin, destination, fecha, hora, TipodeBusqueda) {
+            const xhr = new XMLHttpRequest();
+            xhr.open(
+                "GET",
+                `https://api-servicios.sofse.gob.ar/v1/arribos/estacion/${origin}?hasta=${destination}&fecha=${fecha}&hora=${hora}&tipoBusqueda=partida`,
+                true
+            );
+            xhr.setRequestHeader("Authorization", `${token}`);
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        mostrarHorarioSalida(response.results);
+                    } else {
+                        const resultDiv = document.getElementById("result");
+                        resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
+                    }
+                }
+            };
+
+            xhr.send();
+        }
+        
+
+        function mostrarHorarioSalida(resultados) {
+    const resultDiv = document.getElementById("result");
+
+    // Verificar si hay resultados
+    if (!resultados || resultados.length === 0) {
+        resultDiv.innerHTML = '<p class="no-results">No hay resultados disponibles.</p>';
+        return;
+    }
+
+    // Obtener la hora de salida programada del primer resultado
+    const primeraSalida = resultados[0].arribo.salida.programada; // Obtener la hora de salida programada en formato UTC
+    const horaSeleccionadaDate = new Date(primeraSalida); // Convertir a objeto Date
+
+    // Convertir a horario argentino (UTC-3)
+    const horaSeleccionadaArgentina = new Date(horaSeleccionadaDate.getTime() - (3 * 60 * 60 * 1000));
+
+    const horariosFiltrados = resultados
+        .slice(0, 5) // Tomar los primeros 5 resultados
+        .filter(resultado => {
+            const horaSalida = resultado.arribo.salida.programada; // Obtener la hora de salida programada en formato UTC
+            const horaSalidaDate = new Date(horaSalida); // Convertir a objeto Date
+            const horaSalidaArgentina = new Date(horaSalidaDate.getTime() - (3 * 60 * 60 * 1000)); // Convertir a horario argentino
+
+            return horaSalidaArgentina > horaSeleccionadaArgentina; // Filtrar por hora
+        });
+
+    // Limpiar resultados anteriores
+    resultDiv.innerHTML = ""; 
+
+    // Mostrar los resultados filtrados
+    if (horariosFiltrados.length > 0) {
+        let html = '';
+        horariosFiltrados.forEach(resultado => {
+            const idSalida = document.getElementById("origin").value;
+            const idLlegada = document.getElementById("destination").value;
+
+            // Filtra las estaciones
+            let estacionSalida = estaciones.filter(x => x.id == idSalida);
+            let estacionLlegada = estaciones.filter(x => x.id == idLlegada);
+
+            // Asegúrate de que hay al menos un elemento en el array filtrado
+            const estacionSalida1 = estacionSalida.length > 0 ? estacionSalida[0].nombre : "Estación no encontrada";
+            const estacionLlegada1 = estacionLlegada.length > 0 ? estacionLlegada[0].nombre : "Estación no encontrada";
+
+            const horaSalida = resultado.servicio.horaSalida;
+            const horarioSalida = `${String(horaSalida.hours).padStart(2, '0')}:${String(horaSalida.minutes).padStart(2, '0')}`;
+
+            // Construye el HTML para cada resultado dentro de un div con clase "horario"
+            html += `
+                <div class="horario">
+                    <h3>Servicio: </h3>
+                    <p>Desde: ${estacionSalida1}</p>
+                    <p>Hasta: ${estacionLlegada1}</p>
+                    <h2>Sale a las: ${horarioSalida}</h2>
+                </div>
+            `;
+        });
+        resultDiv.classList.remove("ocultar")
+        resultDiv.innerHTML = html; // Mostrar todos los resultados de una vez
+    } else {
+        resultDiv.innerHTML = '<p class="no-results">No hay formaciones disponibles después de la hora seleccionada.</p>';
+    }
+}
+
+
+// Llama a la función con los parámetros deseados
+const origin = document.getElementById("origin").value; // Obtener el origen
+const destination = document.getElementById("destination").value; // Obtener el destino
+const hora = selectedTime; // Obtener la hora seleccionada
+
+
+
+//HORARIOS EN DIRECTO
+  //funcion para buscar horarios
+  function buscarHorariosDirecto(linea) {
+
+    const origin = document.getElementById("origin").value;
+    const destination = document.getElementById("destination").value;
+    if(linea == 'stop') 
+      return;
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.classList.remove("ocultar")
+
+    if (!origin || !destination) {
+      resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
+      resultDiv.scrollIntoView({ behavior: "smooth"})
+      return;
+    }
 
     
-</script>
+    horarios = obtenerHorarios(origin, destination, linea);
+    // Detenemos el intervalo anterior (si existe)
+    if (intervalId) clearInterval(intervalId);
+    
+    buscandoHorarios = true;
+    // Hacemos la primera búsqueda y luego configuramos el intervalo
+    intervalId = setInterval(() => horarios = obtenerHorarios(origin, destination, linea), 1000);
+    
+    setTimeout(() => {
+      resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
+    if(linea == 'stop')
+      return
+    
+  }
+
+  //funcion para obtener horarios
+  function obtenerHorarios(origin, destination, linea) {
+    if(buscandoHorarios==false){
+        return "stop";
+      }
+    const xhr = new XMLHttpRequest();
+    const fields = "results%28desde%2Chasta%2Cservicio%29";
+    xhr.open(
+      "GET",
+      `https://apiarribos.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=${linea}`,
+      true
+    );
+    xhr.setRequestHeader("Authorization", `${token}`);
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText);
+          mostrarHorarios(response.results);
+        } else {
+          const resultDiv = document.getElementById("result");
+          resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
+        }
+      }
+    };
+
+    xhr.send();
+  }
+    
+    function mostrarHorarios(horarios) {
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+      if (!horarios || horarios.length === 0) {
+        resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
+        return;
+      }
+
+      horarios.forEach(horario => {
+        const servicio = horario.servicio.ramal.nombre;
+        const desde = horario.desde.nombreCorto;
+        const hasta = horario.hasta.nombreCorto;
+
+        const llegadaDesde = new Date(horario.desde.llegada);
+        const llegadaHasta = new Date(horario.hasta.llegada);
+
+        const tiempoRestanteDesde = calcularTiempoRestante(llegadaDesde);
+        const tiempoDeViaje = calcularTiempoDeViaje(llegadaDesde,llegadaHasta)
+
+        const div = document.createElement("div");
+        div.className = "horario";
+        div.innerHTML = `
+          <h3>Servicio: ${servicio}</h3>
+          <p>Desde: ${desde} (Llegada: ${llegadaDesde.toLocaleTimeString()})</p>
+          <p>Hasta: ${hasta} (Llegada: ${llegadaHasta.toLocaleTimeString()})</p>
+          <h4>Tiempo de viaje: ${tiempoDeViaje}</h4>
+          <h2>Llegando en: ${tiempoRestanteDesde}</h2>
+        `;
+        resultDiv.appendChild(div);
+      });
+    }
+
+    function calcularTiempoDeViaje(llegadaDesde, llegadaHasta) {
+      const diferencia = llegadaHasta - llegadaDesde;
+      const minutos = Math.floor(diferencia / 60000);
+      const segundos = Math.floor((diferencia % 60000) / 1000);
+      return `${minutos}m ${segundos}s`;
+    }
+
+    function calcularTiempoRestante(llegada) {
+      const ahora = new Date();
+      const diferencia = llegada - ahora;
+
+      if (diferencia <= 0) return "Tren en andén.";
+
+      const minutos = Math.floor(diferencia / 60000);
+      const segundos = Math.floor((diferencia % 60000) / 1000);
+      return `${minutos}m ${segundos}s`;
+    }
+
+    login();
+      function buscandohorario(value){
+
+      }
+    document.getElementById('buscarBtn').addEventListener('click', () => {  
+      
+      buscandoHorarios=true
+        buscarHorarios(linea)
+
+            }
+        );
+  </script>
+</body>
 </html>
