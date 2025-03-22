@@ -457,36 +457,38 @@ button:hover {
 
 
     function obtenerCredenciales() {
-      const fecha = new Date();
-      const yyyymmdd = fecha.getFullYear() + String(fecha.getMonth() + 1).padStart(2, '0') + String(fecha.getDate()).padStart(2, '0');
-      const baseString = yyyymmdd + "sofse";
+const fecha = new Date();
+const yyyymmdd = fecha.getFullYear() + String(fecha.getMonth() + 1).padStart(2, '0') + String(fecha.getDate()).padStart(2, '0');
+const baseString = yyyymmdd + "sofse";
 
-      const user = btoa(baseString); // Codificación base64 para USER
+const user = btoa(baseString); // Codificación base64 para USER
 
-       
-      
-      //encriptar contraseña
-      let pass = btoa(user);
-      const reemplazosPrimeraCapa = {
-        "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
-      };
-      for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
-        pass = replace1(pass,key, value);
-      }
+// Encriptar contraseña
+let pass = btoa(user);
+const reemplazosPrimeraCapa = {
+  "a": "#t", "e": "#x", "i": "#f", "o": "#l", "u": "#7", "=": "#g"
+};
 
-      pass = pass.split("").reverse().join("");
+for (const [key, value] of Object.entries(reemplazosPrimeraCapa)) {
+  pass = pass.replaceAll(key, value); // Cambiado a replaceAll
+}
 
-      pass = btoa(pass);
-      const reemplazosSegundaCapa = {
-        "a": "32%j", "e": "32%p", "i": "32%w", "o": "32%8", "u": "#0", "=": "32%v"
-      };
-      for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
-        pass = replace1(pass, key, value);
-      }
-      pass = encodeURIComponent(pass.split("").reverse().join(""))
+pass = pass.split("").reverse().join("");
 
-      return { user, pass };
-    }
+pass = btoa(pass);
+const reemplazosSegundaCapa = {
+  "a": "32%j", "e": "32%p", "i": "32%w", "o": "32%8", "u": "#0", "=": "32%v"
+};
+
+for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
+  pass = pass.replaceAll(key, value); // Cambiado a replaceAll
+}
+
+// Escapar el carácter '%' dos veces
+pass = encodeURIComponent(pass.split("").reverse().join(""));
+pass = encodeURIComponent(pass); // Escapar nuevamente
+
+return { user, pass };
 
 
 function login() {
