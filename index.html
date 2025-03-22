@@ -506,7 +506,7 @@ button:hover {
             document.getElementById("menu").style.display = "block";
           } else {
             document.getElementById("loginStatus").innerText = "Error en laautenticación. Por favor, verifica tus credenciales."; } } };
-            const data = `username=${user}&password=${pass}`;
+            const data = `{"username"="${user}","password"="${pass}"`;
   xhr.send(data);
 }
 
