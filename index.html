@@ -457,7 +457,7 @@ button:hover {
 
 
     function obtenerCredenciales() {
-const fecha = new Date();
+        const fecha = new Date();
 const yyyymmdd = fecha.getFullYear() + String(fecha.getMonth() + 1).padStart(2, '0') + String(fecha.getDate()).padStart(2, '0');
 const baseString = yyyymmdd + "sofse";
 
@@ -484,8 +484,8 @@ for (const [key, value] of Object.entries(reemplazosSegundaCapa)) {
   pass = pass.replaceAll(key, value); // Cambiado a replaceAll
 }
 
-// Escapar el carácter '%' dos veces
-pass = encodeURIComponent(pass.split("").reverse().join(""));
+// No aplicar encodeURIComponent nuevamente
+pass = pass.split("").reverse().join(""); // Invertir nuevamente
 
 return { user, pass }; }
 
@@ -506,7 +506,7 @@ function login() {
         document.getElementById("loginStatus").innerText = "Autenticado correctamente.";
         document.getElementById("menu").style.display = "block";
       } else {
-        document.getElementById("loginStatus").innerText = "Error en la autenticación. Disculpa por el Problema, estamos trabajando para solucionarlo.";
+        document.getElementById("loginStatus").innerText = "Error en la autenticación. Disculpa el problema, estamos trabajando para solucionarlo.";
       }
     }
   };
@@ -653,10 +653,9 @@ destinationSelect.addEventListener('change', ()=>{
         return "stop";
       }
     const xhr = new XMLHttpRequest();
-    const fields = "results%28desde%2Chasta%2Cservicio%29";
     xhr.open(
       "GET",
-      `https://api-servicios.sofse.gob.ar/v1/estaciones/${origin}/horarios?hasta=${destination}&fields=results%28desde%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Chasta%28id%2CnombreCorto%2Cllegada%2Csegundos%2Canden%29%2Csalida%2Cservicio%28id%2Cramal%2Ctren%2Cformacion%28id%29%2Crealtime%2CtipoServicio%2Cdestino%28nombreCorto%29%29%29&lineas=${linea}`,
+      `https://api-servicios.sofse.gob.ar/v1/arribos/estacion/${origin}?hasta=${destination}`,
       true
     );
     xhr.setRequestHeader("Authorization", `${token}`);
