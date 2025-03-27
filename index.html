@@ -697,12 +697,10 @@ function mostrarHorarios(results, destination) {
 
     results.forEach((horarios) => {
         const servicioNombre = horarios.servicio?.ramal?.nombre || 'No disponible';
-        const servicioCabeceraInicial = horarios.servicio?.ramal?.cabeceraInicial?.nombre || 'No disponible';
-        const servicioCabeceraFinal = horarios.servicio?.ramal?.cabeceraFinal?.nombre || 'No disponible';
 
         const arribo = horarios.arribo;
         const estacionArribo = arribo?.nombre || 'No disponible';
-        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada || 'No disponible');
+        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.estimada || arribo?.salida?.programada || 'No disponible');
 
         horarios.servicio?.estaciones.forEach((estacion) => {
             const nombreEstacion = estacion?.nombre || 'No disponible';
@@ -718,7 +716,7 @@ function mostrarHorarios(results, destination) {
                 const div = document.createElement("div");
                 div.className = "horario";
                 div.innerHTML = `
-                  <h3>Servicio: ${servicioCabeceraInicial}-${servicioCabeceraFinal} </h3>
+                  <h3>Servicio: ${servicioNombre} </h3>
                   <p>Arribo en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
                   ${nombreEstacion !== "No disponible" ? `<p>Destino: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
