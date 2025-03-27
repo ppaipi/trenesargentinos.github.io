@@ -506,7 +506,7 @@ function login() {
         document.getElementById("loginStatus").innerText = "Autenticado correctamente.";
         document.getElementById("menu").style.display = "block";
       } else {
-        document.getElementById("loginStatus").innerText = "Error en la autenticación. Disculpa el problema, estamos trabajando para solucionarlo.";
+        document.getElementById("loginStatus").innerText = "Error en la autenticación. Por favor, verifica tus credenciales.";
       }
     }
   };
@@ -622,17 +622,21 @@ destinationSelect.addEventListener('change', ()=>{
     if(linea == 'stop') 
       return;
 
-    const resultDiv = document.getElementById("result");
-    resultDiv.classList.remove("ocultar")
+
 
     if (!origin || !destination) {
       resultDiv.innerHTML = "<p>Por favor, seleccione ambas estaciones.</p>";
       resultDiv.scrollIntoView({ behavior: "smooth"})
       return;
     }
-
+    const resultDiv = document.getElementById("result");
     
     horarios = obtenerHorarios(origin, destination, linea);
+    setTimeout(() => {
+    resultDiv.classList.remove("ocultar")},100);
+
+    setTimeout(() => {
+    resultDiv.scrollIntoView({ behavior: "smooth"})}, 200); 
     // Detenemos el intervalo anterior (si existe)
     if (intervalId) clearInterval(intervalId);
     
@@ -640,8 +644,8 @@ destinationSelect.addEventListener('change', ()=>{
     // Hacemos la primera búsqueda y luego configuramos el intervalo
     intervalId = setInterval(() => horarios = obtenerHorarios(origin, destination, linea), 1000);
     
-    setTimeout(() => {
-      resultDiv.scrollIntoView({ behavior: "smooth"})}, 350); 
+
+
     if(linea == 'stop')
       return
     
@@ -649,82 +653,151 @@ destinationSelect.addEventListener('change', ()=>{
 
   //funcion para obtener horarios
   function obtenerHorarios(origin, destination, linea) {
-    if(buscandoHorarios==false){
+    if (buscandoHorarios === false) {
         return "stop";
-      }
+    }
+
     const xhr = new XMLHttpRequest();
     xhr.open(
-      "GET",
-      `https://api-servicios.sofse.gob.ar/v1/arribos/estacion/${origin}?hasta=${destination}`,
-      true
+        "GET",
+        `https://api-servicios.sofse.gob.ar/v1/arribos/estacion/${origin}?hasta=${destination}`,
+        true
     );
     xhr.setRequestHeader("Authorization", `${token}`);
 
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          const response = JSON.parse(xhr.responseText);
-          mostrarHorarios(response.results);
-        } else {
-          const resultDiv = document.getElementById("result");
-          resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                try {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.results && response.results.length > 0) {
+                        mostrarHorarios(response.results, destination); // Pasamos 'results' y destination a la función
+                    } else {
+                        mostrarNoHorarios(); // Mostrar mensaje si no hay horarios
+                    }
+                } catch (error) {
+                    console.error('Error al parsear JSON:', error);
+                    mostrarNoHorarios(); // Mostrar mensaje en caso de error al parsear
+                }
+            } else {
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `<p>Error al obtener horarios: ${xhr.status}</p>`;
+            }
         }
-      }
     };
 
     xhr.send();
-  }
-    
-    function mostrarHorarios(horarios) {
-      const resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = "";
+}
 
-      if (!horarios || horarios.length === 0) {
-        resultDiv.innerHTML = "<p>No se encontraron horarios para esta ruta.</p>";
-        return;
-      }
+function mostrarHorarios(results, destination) {
+    const resultDiv = document.getElementById("result"); // Asumimos que tienes un contenedor con id 'result'
+    resultDiv.innerHTML = ''; // Limpiamos el contenido del contenedor antes de agregar nuevos horarios
 
-      horarios.forEach(horario => {
-        const servicio = horario.servicio.ramal.nombre;
-        const desde = horario.desde.nombreCorto;
-        const hasta = horario.hasta.nombreCorto;
+    let horariosEncontrados = false; // Indicador para saber si encontramos horarios
 
-        const llegadaDesde = new Date(horario.desde.llegada);
-        const llegadaHasta = new Date(horario.hasta.llegada);
+    results.forEach((horarios) => {
+        const servicioNombre = horarios.servicio?.ramal?.nombre || 'No disponible';
+        const servicioCabeceraInicial = horarios.servicio?.ramal?.cabeceraInicial?.nombre || 'No disponible';
+        const servicioCabeceraFinal = horarios.servicio?.ramal?.cabeceraFinal?.nombre || 'No disponible';
 
-        const tiempoRestanteDesde = calcularTiempoRestante(llegadaDesde);
-        const tiempoDeViaje = calcularTiempoDeViaje(llegadaDesde,llegadaHasta)
+        const arribo = horarios.arribo;
+        const estacionArribo = arribo?.nombre || 'No disponible';
+        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada || 'No disponible');
 
-        const div = document.createElement("div");
-        div.className = "horario";
-        div.innerHTML = `
-          <h3>Servicio: ${servicio}</h3>
-          <p>Desde: ${desde} (Llegada: ${llegadaDesde.toLocaleTimeString()})</p>
-          <p>Hasta: ${hasta} (Llegada: ${llegadaHasta.toLocaleTimeString()})</p>
-          <h4>Tiempo de viaje: ${tiempoDeViaje}</h4>
-          <h2>Llegando en: ${tiempoRestanteDesde}</h2>
-        `;
-        resultDiv.appendChild(div);
-      });
+        horarios.servicio?.estaciones.forEach((estacion) => {
+            const nombreEstacion = estacion?.nombre || 'No disponible';
+            const llegadaDestino = new Date(estacion?.llegada?.estimada || estacion?.llegada?.programada || 'No disponible');
+            const idElemento = estacion?.idElemento;
+
+            if (idElemento == destination) {
+                horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
+
+                const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
+                const tiempoRestanteArribo = calcularTiempoRestante(llegadaArribo);
+
+                const div = document.createElement("div");
+                div.className = "horario";
+                div.innerHTML = `
+                  <h3>Servicio: ${servicioCabeceraInicial}-${servicioCabeceraFinal} </h3>
+                  <p>Arribo en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
+                  ${nombreEstacion !== "No disponible" ? `<p>Destino: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
+                  ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
+                  <h2>Llegando en: ${tiempoRestanteArribo}</h2>
+                `;
+                resultDiv.appendChild(div);
+            }
+        });
+    });
+
+    // Si no se encontraron horarios, mostramos el mensaje
+    if (!horariosEncontrados) {
+        mostrarNoHorarios();
     }
+}
 
-    function calcularTiempoDeViaje(llegadaDesde, llegadaHasta) {
-      const diferencia = llegadaHasta - llegadaDesde;
-      const minutos = Math.floor(diferencia / 60000);
-      const segundos = Math.floor((diferencia % 60000) / 1000);
-      return `${minutos}m ${segundos}s`;
-    }
+function mostrarNoHorarios() {
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "<p>No encontramos formaciones programadas para estas estaciones.</p>";
+}
 
-    function calcularTiempoRestante(llegada) {
-      const ahora = new Date();
-      const diferencia = llegada - ahora;
+function calcularTiempoDeViaje(llegadaArribo, llegadaDestino) {
+    const diferencia = llegadaDestino - llegadaArribo;
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
 
-      if (diferencia <= 0) return "Tren en andén.";
+function calcularTiempoRestante(llegada) {
+    const ahora = new Date();
+    const diferencia = llegada - ahora;
 
-      const minutos = Math.floor(diferencia / 60000);
-      const segundos = Math.floor((diferencia % 60000) / 1000);
-      return `${minutos}m ${segundos}s`;
-    }
+    if (diferencia <= 0) return "Tren en andén.";
+
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+
+function calcularTiempoDeViaje(llegadaArribo, llegadaDestino) {
+    const diferencia = llegadaDestino - llegadaArribo;
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+function calcularTiempoRestante(llegada) {
+    const ahora = new Date();
+    const diferencia = llegada - ahora;
+
+    if (diferencia <= 0) return "Tren en andén.";
+
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+
+
+
+
+function calcularTiempoDeViaje(llegadaArribo, llegadaDestino) {
+    const diferencia = llegadaDestino - llegadaArribo;
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+function calcularTiempoRestante(llegada) {
+    const ahora = new Date();
+    const diferencia = llegada - ahora;
+
+    if (diferencia <= 0) return "Tren en andén.";
+
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
 
     login();
       function buscandohorario(value){
