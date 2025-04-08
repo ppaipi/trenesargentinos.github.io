@@ -707,17 +707,14 @@ function mostrarHorarios(results, destination) {
             const nombreEstacion = estacion?.nombre || 'No disponible';
             const llegadaDestino = new Date(estacion?.llegada?.estimada || estacion?.llegada?.programada || 'No disponible');
             const idElemento = estacion?.idElemento;
-            if(llegadaArribo=="Invalid Date"){
-              
-              console.log(llegadaArribo,salidaArribo)}
             if (idElemento == destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
-                if(llegadaArribo !== "No disponible"){
+                if(llegadaArribo !== "Invalid Date"){
                   const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
                   const tiempoRestanteArribo = calcularTiempoRestante(llegadaArribo);
                 }
-                else if(llegadaArribo == "No disponible"){
+                else if(llegadaArribo == "Invalid Date"){
                   const tiempoRestanteSalida = calcularTiempoRestante(salidaArribo);
                   const tiempoDeViaje = calcularTiempoDeViaje(salidaArribo, llegadaDestino);
                 }
@@ -729,8 +726,8 @@ function mostrarHorarios(results, destination) {
                   <p>Desde en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
                   ${nombreEstacion !== "No disponible" ? `<p>Hasta: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
-                  ${llegadaArribo !== "No disponible" ? `<h2>Llegando en: ${tiempoRestanteArribo}</h2>` : ""}
-                  ${llegadaArribo == "No disponible" ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : ""}
+                  ${llegadaArribo !== "Invalid Date" ? `<h2>Llegando en: ${tiempoRestanteArribo}</h2>` : ""}
+                  ${llegadaArribo == "Invalid Date" ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : ""}
                 `;
                 resultDiv.appendChild(div);
             }
