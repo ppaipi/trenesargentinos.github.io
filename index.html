@@ -705,7 +705,6 @@ function mostrarHorarios(results, destination) {
           var llegadaBool = false;}
         else{
           var llegadaBool = true;}
-        console.log(llegadaBool)
         const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');
 
         horarios.servicio?.estaciones.forEach((estacion) => {
@@ -716,7 +715,7 @@ function mostrarHorarios(results, destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
 
-                  if(llegadabool){ 
+                  if(llegadaBool){ 
                     const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo);
                     const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
                   }
