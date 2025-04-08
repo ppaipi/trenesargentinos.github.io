@@ -710,14 +710,10 @@ function mostrarHorarios(results, destination) {
             if (idElemento == destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
-                if(llegadaArribo !== "Invalid Date"){
-                  const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
-                  const tiempoRestanteArribo = calcularTiempoRestante(llegadaArribo);
-                }
-                else if(llegadaArribo == "Invalid Date"){
+
                   const tiempoRestanteSalida = calcularTiempoRestante(salidaArribo);
                   const tiempoDeViaje = calcularTiempoDeViaje(salidaArribo, llegadaDestino);
-                }
+                
 
                 const div = document.createElement("div");
                 div.className = "horario";
