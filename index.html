@@ -701,6 +701,11 @@ function mostrarHorarios(results, destination) {
         const arribo = horarios.arribo;
         const estacionArribo = arribo?.nombre || 'No disponible';
         const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada) ||  'No disponible';
+        if(llegadaArribo == "Invalid Date"){
+          var llegadaBool = false;}
+        else{
+          var llegadaBool = true;}
+        console.log(llegadaBool)
         const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');
 
         horarios.servicio?.estaciones.forEach((estacion) => {
