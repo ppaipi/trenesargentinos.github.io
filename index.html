@@ -716,13 +716,13 @@ function mostrarHorarios(results, destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
 
-                  if(llegadaArribo == "Invalid Date"){ 
-                    const tiempoRestanteSalida = calcularTiempoRestante(salidaArribo);
-                    const tiempoDeViaje = calcularTiempoDeViaje(salidaArribo, llegadaDestino);
-                  }
-                  else{
+                  if(llegadabool){ 
                     const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo);
                     const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
+                  }
+                  else{
+                    const tiempoRestanteSalida = calcularTiempoRestante(salidaArribo);
+                    const tiempoDeViaje = calcularTiempoDeViaje(salidaArribo, llegadaDestino);
                   }
                   
                 
@@ -734,7 +734,8 @@ function mostrarHorarios(results, destination) {
                   <p>Desde en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
                   ${nombreEstacion !== "No disponible" ? `<p>Hasta: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
-                  ${llegadaArribo == "Invalid Date" ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : `<h2>Llegando en: ${tiempoRestanteSalida}</h2>`}
+                  ${llegadaBool ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : ""}
+                  ${llegadaBool==false ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : ""}
                 `;
                 resultDiv.appendChild(div);
             }
