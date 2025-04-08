@@ -715,13 +715,13 @@ function mostrarHorarios(results, destination) {
                   else{
                     var llegadaBool = true;}
                   console.log(llegadaBool)
-                  if(llegadaBool==true){ 
-                    const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo);
-                    const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
-                  }
-                  else{
+                  if(llegadaBool==false){ 
                     const tiempoRestanteSalida = calcularTiempoRestante(salidaArribo);
                     const tiempoDeViaje = calcularTiempoDeViaje(salidaArribo, llegadaDestino);
+                  }
+                  else{
+                    const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo);
+                    const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
                   }
                   
                 
