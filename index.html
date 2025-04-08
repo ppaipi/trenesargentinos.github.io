@@ -727,8 +727,7 @@ function mostrarHorarios(results, destination) {
                   <p>Desde en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
                   ${nombreEstacion !== "No disponible" ? `<p>Hasta: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
-                  ${llegadaArribo != "Invalid Date" ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : ""}
-                  ${llegadaArribo == "Invalid Date" ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : ""}
+                  ${llegadaArribo == "Invalid Date" ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : `<h2>Llegando en: ${tiempoRestanteSalida}</h2>`}
                 `;
                 resultDiv.appendChild(div);
             }
