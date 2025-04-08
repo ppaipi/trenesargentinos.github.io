@@ -701,10 +701,6 @@ function mostrarHorarios(results, destination) {
         const arribo = horarios.arribo;
         const estacionArribo = arribo?.nombre || 'No disponible';
         const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada) ||  'No disponible';
-        if(llegadaArribo == "Invalid Date"){
-          var llegadaBool = false;}
-        else{
-          var llegadaBool = true;}
         const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');
 
         horarios.servicio?.estaciones.forEach((estacion) => {
@@ -714,8 +710,11 @@ function mostrarHorarios(results, destination) {
             if (idElemento == destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
-
-                  if(llegadaBool){ 
+                  if(llegadaArribo == "Invalid Date"){
+                    var llegadaBool = false;}
+                  else{
+                    var llegadaBool = true;}
+                  if(llegadaBool==true){ 
                     const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo);
                     const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
                   }
