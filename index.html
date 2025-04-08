@@ -700,7 +700,7 @@ function mostrarHorarios(results, destination) {
 
         const arribo = horarios.arribo;
         const estacionArribo = arribo?.nombre || 'No disponible';
-        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada) ||  'No disponible');
+        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada) ||  'No disponible';
         const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');
 
         horarios.servicio?.estaciones.forEach((estacion) => {
