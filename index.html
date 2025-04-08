@@ -707,7 +707,7 @@ function mostrarHorarios(results, destination) {
             const nombreEstacion = estacion?.nombre || 'No disponible';
             const llegadaDestino = new Date(estacion?.llegada?.estimada || estacion?.llegada?.programada || 'No disponible');
             const idElemento = estacion?.idElemento;
-
+            console.log(llegadaArribo,salidaArribo)
             if (idElemento == destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
