@@ -728,8 +728,7 @@ function mostrarHorarios(results, destination) {
                   <p>Desde en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
                   ${nombreEstacion !== "No disponible" ? `<p>Hasta: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
-                  ${llegadaBool ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : ""}
-                  ${llegadaBool==false ? `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>` : ""}
+                  ${llegadaBool ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>`}
                 `;
                 resultDiv.appendChild(div);
             }
@@ -748,7 +747,6 @@ function mostrarNoHorarios() {
 }
 
 function calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino, llegadaBool) {
-
     if(!llegadaBool){
       const ARRIBO = salidaArribo}
     else{
