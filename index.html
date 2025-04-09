@@ -710,9 +710,12 @@ function mostrarHorarios(results, destination) {
             if (idElemento == destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
-
-                  const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo, salidaArribo);
-                  const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino);
+                      if(llegadaArribo == "Invalid Date"){
+                        const llegadaBool = false}
+                      else{
+                        const llegadaBool = true}
+                  const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo, salidaArribo, llegadaBool);
+                  const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino, llegadaBool);
 
 
                   
@@ -744,9 +747,9 @@ function mostrarNoHorarios() {
     resultDiv.innerHTML = "<p>No encontramos formaciones programadas para estas estaciones.</p>";
 }
 
-function calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino) {
+function calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino, llegadaBool) {
 
-    if(llegadaArribo == "Invalid Date"){
+    if(!llegadaBool){
       const ARRIBO = salidaArribo}
     else{
       const ARRIBO = llegadaArribo}
@@ -757,8 +760,8 @@ function calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino) {
     return `${minutos}m ${segundos}s`;
 }
 
-function calcularTiempoRestante(llegada1,llegada2) {
-    if(llegada1 == "Invalid Date"){
+function calcularTiempoRestante(llegada1,llegada2,llegadaBool) {
+    if(!llegadaBool){
       const llegada = llegada2;}
     else{
       const llegada = llegada1;}
