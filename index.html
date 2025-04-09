@@ -697,39 +697,34 @@ function mostrarHorarios(results, destination) {
 
     results.forEach((horarios) => {
         const servicioNombre = horarios.servicio?.ramal?.nombre || 'No disponible';
-
         const arribo = horarios.arribo;
         const estacionArribo = arribo?.nombre || 'No disponible';
-        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada) ||  'No disponible';
-        const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');
-
+        const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.estimada || arribo?.salida?.programada || 'No disponible');
+        if(horarios.servicio.location){
+          
+        const latitud = horarios.servicio.location.lat || "No hay Latitud";
+        const longitud = horarios.servicio.location.long || "No hay Longitud";
+        
+        console.log(latitud,longitud)
+        }
         horarios.servicio?.estaciones.forEach((estacion) => {
             const nombreEstacion = estacion?.nombre || 'No disponible';
             const llegadaDestino = new Date(estacion?.llegada?.estimada || estacion?.llegada?.programada || 'No disponible');
             const idElemento = estacion?.idElemento;
+
             if (idElemento == destination) {
                 horariosEncontrados = true; // Si encontramos un horario, cambiamos el indicador
 
-                  if(llegadaArribo == "Invalid Date"){
-                    const llegadaBool = false}
-                  else{
-                    const llegadaBool = true}
-                  console.log(llegadaBool)
-                  const tiempoRestanteSalida = calcularTiempoRestante(llegadaArribo, salidaArribo, llegadaBool);
-                  const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino, llegadaBool);
-
-
-                  
-                
-
+                const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
+                const tiempoRestanteArribo = calcularTiempoRestante(llegadaArribo);
                 const div = document.createElement("div");
                 div.className = "horario";
                 div.innerHTML = `
                   <h3>Servicio: ${servicioNombre} </h3>
-                  <p>Desde en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
-                  ${nombreEstacion !== "No disponible" ? `<p>Hasta: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
+                  <p>Arribo en: ${estacionArribo} (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
+                  ${nombreEstacion !== "No disponible" ? `<p>Destino: ${nombreEstacion} (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h4>Tiempo de viaje: ${tiempoDeViaje}</h4>` : ""}
-                  ${llegadaBool ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>`}
+                  <h2>Llegando en: ${tiempoRestanteArribo}</h2>
                 `;
                 resultDiv.appendChild(div);
             }
@@ -747,24 +742,33 @@ function mostrarNoHorarios() {
     resultDiv.innerHTML = "<p>No encontramos formaciones programadas para estas estaciones.</p>";
 }
 
-function calcularTiempoDeViaje(llegadaArribo, salidaArribo, llegadaDestino, llegadaBool) {
-    if(!llegadaBool){
-      const ARRIBO = salidaArribo}
-    else{
-      const ARRIBO = llegadaArribo}
-  
-    const diferencia = llegadaDestino - ARRIBO;
+function calcularTiempoDeViaje(llegadaArribo, llegadaDestino) {
+    const diferencia = llegadaDestino - llegadaArribo;
     const minutos = Math.floor(diferencia / 60000);
     const segundos = Math.floor((diferencia % 60000) / 1000);
     return `${minutos}m ${segundos}s`;
 }
 
-function calcularTiempoRestante(llegada1,llegada2,llegadaBool) {
-    if(!llegadaBool){
-      const llegada = llegada2;}
-    else{
-      const llegada = llegada1;}
-  
+function calcularTiempoRestante(llegada) {
+    const ahora = new Date();
+    const diferencia = llegada - ahora;
+
+    if (diferencia <= 0) return "Tren en andén.";
+
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+
+function calcularTiempoDeViaje(llegadaArribo, llegadaDestino) {
+    const diferencia = llegadaDestino - llegadaArribo;
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+function calcularTiempoRestante(llegada) {
     const ahora = new Date();
     const diferencia = llegada - ahora;
 
@@ -778,6 +782,24 @@ function calcularTiempoRestante(llegada1,llegada2,llegadaBool) {
 
 
 
+
+function calcularTiempoDeViaje(llegadaArribo, llegadaDestino) {
+    const diferencia = llegadaDestino - llegadaArribo;
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
+
+function calcularTiempoRestante(llegada) {
+    const ahora = new Date();
+    const diferencia = llegada - ahora;
+
+    if (diferencia <= 0) return "Tren en andén.";
+
+    const minutos = Math.floor(diferencia / 60000);
+    const segundos = Math.floor((diferencia % 60000) / 1000);
+    return `${minutos}m ${segundos}s`;
+}
 
     login();
       function buscandohorario(value){
