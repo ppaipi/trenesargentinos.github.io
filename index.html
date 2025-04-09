@@ -88,7 +88,7 @@ button:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.horario h3 {
+.horarioH3 {
   margin: 0;
   font-size: 1.2rem;
   color: #0056b3;
@@ -728,9 +728,9 @@ function mostrarHorarios(results, destination) {
                 const div = document.createElement("div");
                 div.className = "horario";
                 div.innerHTML = `
-                  <h3>Servicio: ${servicioNombre} </h3>
-                  <p>Desde: <b>${estacionArribo}</b> (Hora: ${llegadaArribo.toLocaleTimeString()})</p>
-                  ${nombreEstacion !== "No disponible" ? `<p>Hasta: <b>${nombreEstacion}</b> (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
+                  <h3 class="horarioH3">Servicio: ${servicioNombre} </h3>
+                  ${llegadaBool ? `<p>Desde:  <b>${estacionArribo} </b> (Hora: ${llegadaArribo.toLocaleTimeString()})</p>` : `<p>Desde: <b>${estacionArribo}</b> (Hora: ${salidaArribo.toLocaleTimeString()})</p>`}
+                  ${nombreEstacion !== "No disponible" ? `<p>Hasta: <b>${nombreEstacion} </b> (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
                   ${tiempoDeViaje ? `<h3>Tiempo de viaje: ${tiempoDeViaje}</h3>` : ""}
                   ${llegadaBool ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>`}
                 `;
