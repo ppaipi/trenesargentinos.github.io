@@ -93,6 +93,9 @@ button:hover {
   font-size: 1.2rem;
   color: #0056b3;
 }
+.andenH4{
+  margin: 0;
+}
 
 .horario p {
   margin: 5px 0;
@@ -701,7 +704,8 @@ function mostrarHorarios(results, destination) {
         const arribo = horarios.arribo;
         const estacionArribo = arribo?.nombre || 'No disponible';
         const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada) ||  'No disponible';
-        const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');
+        const salidaArribo = new Date(arribo?.salida?.programada || 'No disponible');        
+        const andenSalida = arribo?.anden?.nombre || false ;
         
         if(llegadaArribo == "Invalid Date"){
             var llegadaBool = false}
@@ -731,9 +735,11 @@ function mostrarHorarios(results, destination) {
                   <h3 class="horarioH3">Servicio: ${servicioNombre} </h3>
                   ${llegadaBool ? `<p>Desde:  <b>${estacionArribo} </b> (Hora: ${llegadaArribo.toLocaleTimeString()})</p>` : `<p>Desde: <b>${estacionArribo}</b> (Hora: ${salidaArribo.toLocaleTimeString()})</p>`}
                   ${nombreEstacion !== "No disponible" ? `<p>Hasta: <b>${nombreEstacion} </b> (Hora: ${llegadaDestino.toLocaleTimeString()})</p>` : ""}
+                  ${!llegadaBool && (andenSalida!=false) ? `<h3 class='andenH4'>Andén: ${andenSalida}</h3>` : ` `}
                   ${tiempoDeViaje ? `<h3>Tiempo de viaje: ${tiempoDeViaje}</h3>` : ""}
                   ${llegadaBool ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>` : `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>`}
                 `;
+
                 resultDiv.appendChild(div);
             }
         });
