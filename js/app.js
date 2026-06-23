@@ -354,6 +354,7 @@ function mostrarErrorCarga(status) {
 }
 
 function buscarProgramado() {
+  detenerBusqueda();
   if (!origenSeleccionado || !destinoSeleccionado) return;
 
   ultimaBusquedaDiv.classList.add("ocultar");
