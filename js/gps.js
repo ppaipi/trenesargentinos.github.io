@@ -1,18 +1,28 @@
-import { cargarEstaciones, buscarEstacionPorId, crearBuscadorEstacion, compartenRuta, login } from "./buscador.js";
-
-const STORAGE_KEY = "trenesArgentinos.ultimaBusqueda";
+import { cargarEstaciones, crearBuscadorEstacion, compartenRuta, login } from "./buscador.js";
 
 let token = "";
 let buscandoHorarios = false;
 let intervalId;
-let origenSeleccionado = null; // estacion completa {id, nombre, rutas}
+let origenSeleccionado = null;
 let destinoSeleccionado = null;
 
 const originInput = document.getElementById("origin-input");
 const destinationInput = document.getElementById("destination-input");
 const buscarBtn = document.getElementById("buscarBtn");
 const resultDiv = document.getElementById("result");
-const ultimaBusquedaDiv = document.getElementById("ultimaBusqueda");
+
+// tarjetas activas, indexadas por id de formacion: se reutilizan entre
+// sondeos para que el mapa solo mueva el marcador en vez de recrearse
+// (eso era lo que causaba el titileo y el reinicio del mapa).
+const tarjetas = new Map();
+let mensajeVacio = null;
+
+const iconoTren = L.icon({
+  iconUrl: "tren.png",
+  iconSize: [40, 40],
+  iconAnchor: [20, 40],
+  popupAnchor: [0, -32],
+});
 
 function actualizarBotonBuscar() {
   buscarBtn.disabled = !(origenSeleccionado && destinoSeleccionado);
@@ -21,56 +31,6 @@ function actualizarBotonBuscar() {
 function limpiarCampo(input) {
   input.value = "";
   delete input.dataset.id;
-}
-
-function guardarUltimaBusqueda() {
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify({ origenId: origenSeleccionado.id, destinoId: destinoSeleccionado.id })
-  );
-}
-
-function cargarUltimaBusqueda() {
-  const guardada = localStorage.getItem(STORAGE_KEY);
-  if (!guardada) return;
-
-  let datos;
-  try {
-    datos = JSON.parse(guardada);
-  } catch {
-    return;
-  }
-
-  const origen = buscarEstacionPorId(datos.origenId);
-  const destino = buscarEstacionPorId(datos.destinoId);
-  if (!origen || !destino) return;
-
-  ultimaBusquedaDiv.innerHTML = `
-    <p>Última búsqueda: <span class="trayecto">${origen.nombre} → ${destino.nombre}</span></p>
-    <div class="acciones">
-      <button id="buscarDeNuevoBtn" type="button">Buscar de nuevo</button>
-      <button id="cambiarEstacionesBtn" type="button">Cambiar estaciones</button>
-    </div>
-  `;
-  ultimaBusquedaDiv.classList.remove("ocultar");
-
-  document.getElementById("buscarDeNuevoBtn").addEventListener("click", () => {
-    aplicarSeleccion(originInput, origen, (v) => (origenSeleccionado = v));
-    aplicarSeleccion(destinationInput, destino, (v) => (destinoSeleccionado = v));
-    actualizarBotonBuscar();
-    iniciarBusqueda();
-  });
-
-  document.getElementById("cambiarEstacionesBtn").addEventListener("click", () => {
-    ultimaBusquedaDiv.classList.add("ocultar");
-    originInput.focus();
-  });
-}
-
-function aplicarSeleccion(input, estacion, setear) {
-  input.value = estacion.nombre;
-  input.dataset.id = estacion.id;
-  setear(estacion);
 }
 
 function botonEspecial() {
@@ -97,9 +57,7 @@ function botonEspecial() {
 function iniciarBusqueda() {
   if (!origenSeleccionado || !destinoSeleccionado) return;
 
-  ultimaBusquedaDiv.classList.add("ocultar");
-  guardarUltimaBusqueda();
-
+  limpiarTarjetas();
   resultDiv.classList.remove("ocultar");
   resultDiv.scrollIntoView({ behavior: "smooth" });
 
@@ -142,17 +100,12 @@ function obtenerHorarios() {
       if (xhr.status === 200) {
         try {
           const response = JSON.parse(xhr.responseText);
-          if (response.results && response.results.length > 0) {
-            mostrarHorarios(response.results, destination);
-          } else {
-            mostrarNoHorarios();
-          }
+          actualizarTarjetas(response.results || [], destination);
         } catch (error) {
           console.error("Error al parsear JSON:", error);
-          mostrarNoHorarios();
         }
       } else {
-        resultDiv.innerHTML = `<p class="mensaje-vacio">Error al obtener horarios (${xhr.status})</p>`;
+        mostrarErrorCarga(xhr.status);
       }
     }
   };
@@ -160,58 +113,133 @@ function obtenerHorarios() {
   xhr.send();
 }
 
-function mostrarHorarios(results, destination) {
-  resultDiv.innerHTML = "";
-  let horariosEncontrados = false;
+function crearTarjeta(idFormacion) {
+  const div = document.createElement("div");
+  div.className = "horario";
+  div.innerHTML = `
+    <h3 class="horarioH3 campo-servicio"></h3>
+    <p class="campo-arribo"></p>
+    <p class="campo-destino"></p>
+    <h3 class="campo-viaje"></h3>
+    <h2 class="campo-restante"></h2>
+    <div id="mapa-${idFormacion}" class="mapa ocultar"></div>
+  `;
+  return {
+    div,
+    campos: {
+      servicio: div.querySelector(".campo-servicio"),
+      arribo: div.querySelector(".campo-arribo"),
+      destino: div.querySelector(".campo-destino"),
+      viaje: div.querySelector(".campo-viaje"),
+      restante: div.querySelector(".campo-restante"),
+      mapaDiv: div.querySelector(".mapa"),
+    },
+    map: null,
+    marker: null,
+  };
+}
+
+function actualizarMapa(tarjeta, lat, lon) {
+  tarjeta.campos.mapaDiv.classList.remove("ocultar");
+
+  if (!tarjeta.map) {
+    tarjeta.map = L.map(tarjeta.campos.mapaDiv).setView([lat, lon], 14);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors",
+    }).addTo(tarjeta.map);
+    tarjeta.marker = L.marker([lat, lon], { icon: iconoTren }).addTo(tarjeta.map);
+  } else {
+    // solo se mueve el marcador: no se recrea el mapa ni se vuelven a pedir las
+    // teselas, por eso ya no titila ni se reinicia el zoom/posicion del usuario.
+    tarjeta.marker.setLatLng([lat, lon]);
+  }
+}
+
+function actualizarTarjetas(results, destination) {
+  const vistos = new Set();
 
   results.forEach((horarios) => {
     const servicioNombre = horarios.servicio?.ramal?.nombre || "No disponible";
     const arribo = horarios.arribo;
+    const claveTarjeta = arribo?.equipo?.id ?? `${servicioNombre}-${arribo?.nombre}`;
     const estacionArribo = arribo?.nombre || "No disponible";
-    const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.llegada?.programada);
-    const salidaArribo = new Date(arribo?.salida?.programada || "No disponible");
-    const andenSalida = arribo?.anden?.nombre || false;
-    const llegadaBool = llegadaArribo.toString() !== "Invalid Date";
+    const llegadaArribo = new Date(arribo?.llegada?.estimada || arribo?.salida?.programada);
+    const ubicacion = horarios.servicio?.location;
 
-    horarios.servicio?.estaciones.forEach((estacion) => {
+    horarios.servicio?.estaciones?.forEach((estacion) => {
+      if (estacion.idElemento != destination) return;
+      vistos.add(claveTarjeta);
+
       const nombreEstacion = estacion?.nombre || "No disponible";
-      const llegadaDestino = new Date(
-        estacion?.llegada?.estimada || estacion?.llegada?.programada || "No disponible"
-      );
-      const idElemento = estacion?.idElemento;
+      const llegadaDestino = new Date(estacion?.llegada?.estimada || estacion?.llegada?.programada);
+      const tiempoDeViaje = calcularTiempoDeViaje(llegadaArribo, llegadaDestino);
+      const tiempoRestante = calcularTiempoRestante(llegadaArribo);
 
-      if (idElemento == destination) {
-        horariosEncontrados = true;
-        const referencia = llegadaBool ? llegadaArribo : salidaArribo;
-        const tiempoRestanteSalida = calcularTiempoRestante(referencia);
-        const tiempoDeViaje = calcularTiempoDeViaje(referencia, llegadaDestino);
+      let tarjeta = tarjetas.get(claveTarjeta);
+      if (!tarjeta) {
+        tarjeta = crearTarjeta(claveTarjeta);
+        tarjetas.set(claveTarjeta, tarjeta);
+        resultDiv.appendChild(tarjeta.div);
+      }
 
-        const div = document.createElement("div");
-        div.className = "horario";
-        div.innerHTML = `
-          <h3 class="horarioH3">Servicio: ${servicioNombre}</h3>
-          ${llegadaBool
-            ? `<p>Desde: <b>${estacionArribo}</b> (Hora: ${llegadaArribo.toLocaleTimeString()})</p>`
-            : `<p>Desde: <b>${estacionArribo}</b> (Hora: ${salidaArribo.toLocaleTimeString()})</p>`}
-          ${nombreEstacion !== "No disponible"
-            ? `<p>Hasta: <b>${nombreEstacion}</b> (Hora: ${llegadaDestino.toLocaleTimeString()})</p>`
-            : ""}
-          ${!llegadaBool && andenSalida !== false ? `<h4 class="andenH4">Andén: ${andenSalida}</h4>` : ""}
-          ${tiempoDeViaje ? `<h3>Tiempo de viaje: ${tiempoDeViaje}</h3>` : ""}
-          ${llegadaBool
-            ? `<h2>Llegando en: ${tiempoRestanteSalida}</h2>`
-            : `<h2>Saliendo en: ${tiempoRestanteSalida}</h2>`}
-        `;
-        resultDiv.appendChild(div);
+      tarjeta.campos.servicio.textContent = `Servicio: ${servicioNombre}`;
+      tarjeta.campos.arribo.innerHTML = `Arribo en: <b>${estacionArribo}</b> (Hora: ${llegadaArribo.toLocaleTimeString()})`;
+      tarjeta.campos.destino.innerHTML =
+        nombreEstacion !== "No disponible"
+          ? `Destino: <b>${nombreEstacion}</b> (Hora: ${llegadaDestino.toLocaleTimeString()})`
+          : "";
+      tarjeta.campos.viaje.textContent = tiempoDeViaje ? `Tiempo de viaje: ${tiempoDeViaje}` : "";
+      tarjeta.campos.restante.textContent = `Llegando en: ${tiempoRestante}`;
+
+      if (ubicacion?.lat && ubicacion?.long) {
+        actualizarMapa(tarjeta, ubicacion.lat, ubicacion.long);
       }
     });
   });
 
-  if (!horariosEncontrados) mostrarNoHorarios();
+  for (const [clave, tarjeta] of tarjetas) {
+    if (!vistos.has(clave)) {
+      if (tarjeta.map) tarjeta.map.remove();
+      tarjeta.div.remove();
+      tarjetas.delete(clave);
+    }
+  }
+
+  actualizarMensajeVacio();
 }
 
-function mostrarNoHorarios() {
-  resultDiv.innerHTML = '<p class="mensaje-vacio">No encontramos formaciones programadas para estas estaciones.</p>';
+function actualizarMensajeVacio() {
+  if (tarjetas.size === 0) {
+    if (!mensajeVacio) {
+      mensajeVacio = document.createElement("p");
+      mensajeVacio.className = "mensaje-vacio";
+      mensajeVacio.textContent = "No encontramos formaciones programadas para estas estaciones.";
+      resultDiv.appendChild(mensajeVacio);
+    }
+  } else if (mensajeVacio) {
+    mensajeVacio.remove();
+    mensajeVacio = null;
+  }
+}
+
+function limpiarTarjetas() {
+  for (const tarjeta of tarjetas.values()) {
+    if (tarjeta.map) tarjeta.map.remove();
+    tarjeta.div.remove();
+  }
+  tarjetas.clear();
+  if (mensajeVacio) {
+    mensajeVacio.remove();
+    mensajeVacio = null;
+  }
+}
+
+function mostrarErrorCarga(status) {
+  limpiarTarjetas();
+  const p = document.createElement("p");
+  p.className = "mensaje-vacio";
+  p.textContent = `Error al obtener horarios (${status})`;
+  resultDiv.appendChild(p);
 }
 
 function calcularTiempoDeViaje(arribo, llegadaDestino) {
@@ -276,7 +304,6 @@ async function iniciar() {
   login({
     onOk: (tok) => {
       token = tok;
-      cargarUltimaBusqueda();
     },
   });
 }
