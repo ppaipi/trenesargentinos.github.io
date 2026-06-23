@@ -160,20 +160,66 @@ label {
   background: #fff;
 }
 
-.autocomplete-list {
+.panel-busqueda {
   position: absolute;
   z-index: 20;
   top: 100%;
   left: 0;
   right: 0;
   margin: 4px 0 0;
-  padding: 4px;
-  list-style: none;
+  padding: 8px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
-  max-height: 260px;
+  max-height: 320px;
   overflow-y: auto;
+}
+
+.chips-fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-bottom: 6px;
+}
+
+.chips-fila:empty {
+  display: none;
+}
+
+.chip {
+  border: none;
+  width: auto;
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 20px;
+  background: #eef4ff;
+  color: var(--azul);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: #dbe7ff;
+}
+
+.chip-volver {
+  background: #f1f1f1;
+  color: #555;
+}
+
+.chip-volver:hover {
+  background: #e3e3e3;
+}
+
+.autocomplete-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete-list:empty {
+  display: none;
 }
 
 .autocomplete-list li {

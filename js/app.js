@@ -10,21 +10,22 @@ const COLOR_LINEA = {
   "Trenes de Terceros": "var(--linea-trenesterceros)",
 };
 
+const LINEAS_PRINCIPALES = ["Mitre", "San Martín", "Sarmiento", "Roca", "Tren de la Costa", "Belgrano Sur"];
+
 const STORAGE_KEY = "trenesArgentinos.ultimaBusqueda";
 
 let estaciones = [];
+let rutaIndice = new Map(); // "linea|||ramal" -> estaciones[]
 let token = "";
 let buscandoHorarios = false;
 let intervalId;
-let origenSeleccionado = null; // { id, nombre }
+let origenSeleccionado = null; // estacion completa {id, nombre, rutas}
 let destinoSeleccionado = null;
 
 const loginStatus = document.getElementById("loginStatus");
 const menu = document.getElementById("menu");
 const originInput = document.getElementById("origin-input");
 const destinationInput = document.getElementById("destination-input");
-const originList = document.getElementById("origin-list");
-const destinationList = document.getElementById("destination-list");
 const buscarBtn = document.getElementById("buscarBtn");
 const resultDiv = document.getElementById("result");
 const ultimaBusquedaDiv = document.getElementById("ultimaBusqueda");
@@ -42,32 +43,114 @@ async function cargarEstaciones() {
     throw new Error("Error al cargar estaciones: " + response.statusText);
   }
   estaciones = await response.json();
+
+  rutaIndice = new Map();
+  estaciones.forEach((estacion) => {
+    estacion.rutas.forEach((ruta) => {
+      const key = `${ruta.linea}|||${ruta.ramal}`;
+      if (!rutaIndice.has(key)) rutaIndice.set(key, []);
+      rutaIndice.get(key).push(estacion);
+    });
+  });
 }
 
-function crearAutocomplete(input, lista, alSeleccionar) {
-  let activo = -1;
+function ramalesDeLinea(linea) {
+  const ramales = new Set();
+  estaciones.forEach((e) =>
+    e.rutas.forEach((r) => {
+      if (r.linea === linea) ramales.add(r.ramal);
+    })
+  );
+  return [...ramales].sort((a, b) => a.localeCompare(b, "es"));
+}
 
-  function renderSugerencias(coincidencias) {
+function estacionesDeRuta(linea, ramal) {
+  return (rutaIndice.get(`${linea}|||${ramal}`) || [])
+    .slice()
+    .sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+}
+
+function compartenRuta(a, b) {
+  return a.rutas.some((ra) => b.rutas.some((rb) => ra.linea === rb.linea && ra.ramal === rb.ramal));
+}
+
+function estacionesAlcanzables(estacion) {
+  const vistos = new Set([estacion.id]);
+  const resultado = [];
+  estacion.rutas.forEach((ruta) => {
+    estacionesDeRuta(ruta.linea, ruta.ramal).forEach((e) => {
+      if (!vistos.has(e.id)) {
+        vistos.add(e.id);
+        resultado.push(e);
+      }
+    });
+  });
+  return resultado.sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+}
+
+function colorDeEstacion(estacion) {
+  return COLOR_LINEA[estacion.rutas[0].linea] || "#999";
+}
+
+function lineasDeEstacion(estacion) {
+  return [...new Set(estacion.rutas.map((r) => r.linea))].join(", ");
+}
+
+/**
+ * Buscador de estaciones combinado: texto libre + navegación por línea/ramal.
+ * Si la otra estación (origen/destino) ya está elegida, restringe todo a
+ * estaciones que comparten un ramal real con ella.
+ */
+function crearBuscadorEstacion({ input, panel, chips, lista, obtenerOtra, onSeleccionar }) {
+  let activo = -1;
+  let pila = []; // historial de vistas para el boton "volver"
+
+  function abrirPanel() {
+    panel.classList.remove("ocultar");
+  }
+
+  function cerrarPanel() {
+    panel.classList.add("ocultar");
+  }
+
+  function limpiarLista() {
     lista.innerHTML = "";
     activo = -1;
+  }
 
-    if (coincidencias.length === 0) {
+  function renderEstaciones(items, { volver } = {}) {
+    limpiarLista();
+    chips.innerHTML = "";
+
+    if (volver) {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "chip chip-volver";
+      chip.textContent = "← Volver";
+      chip.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        volver();
+      });
+      chips.appendChild(chip);
+    }
+
+    if (items.length === 0) {
       const li = document.createElement("li");
       li.className = "sin-resultados";
       li.textContent = "No se encontraron estaciones";
       lista.appendChild(li);
-      lista.classList.remove("ocultar");
+      abrirPanel();
       return;
     }
 
-    coincidencias.slice(0, 8).forEach((estacion) => {
+    items.slice(0, 30).forEach((estacion) => {
       const li = document.createElement("li");
-      const colorLinea = COLOR_LINEA[estacion.lineas[0]] || "#999";
 
       const badge = document.createElement("span");
       badge.className = "badge-linea";
-      badge.style.background = colorLinea;
-      badge.title = estacion.lineas.join(", ");
+      badge.style.background = colorDeEstacion(estacion);
+      badge.title = lineasDeEstacion(estacion);
 
       const nombre = document.createElement("span");
       nombre.className = "nombre-estacion";
@@ -77,47 +160,139 @@ function crearAutocomplete(input, lista, alSeleccionar) {
       li.appendChild(nombre);
       li.addEventListener("mousedown", (e) => {
         e.preventDefault();
-        seleccionarEstacion(estacion);
+        e.stopPropagation();
+        seleccionar(estacion);
       });
 
       lista.appendChild(li);
     });
 
-    lista.classList.remove("ocultar");
+    abrirPanel();
   }
 
-  function seleccionarEstacion(estacion) {
-    input.value = estacion.nombre;
-    input.dataset.id = estacion.id;
-    lista.classList.add("ocultar");
-    alSeleccionar({ id: estacion.id, nombre: estacion.nombre });
-  }
+  function renderChips(opciones, { etiqueta, onElegir, volver }) {
+    limpiarLista();
+    chips.innerHTML = "";
 
-  function buscar() {
-    const texto = normalizar(input.value.trim());
-    delete input.dataset.id;
-    alSeleccionar(null);
-
-    if (texto.length === 0) {
-      lista.classList.add("ocultar");
-      return;
+    if (volver) {
+      const chipVolver = document.createElement("button");
+      chipVolver.type = "button";
+      chipVolver.className = "chip chip-volver";
+      chipVolver.textContent = "← Volver";
+      chipVolver.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        volver();
+      });
+      chips.appendChild(chipVolver);
     }
 
-    const coincidencias = estaciones.filter((e) =>
-      normalizar(e.nombre).includes(texto)
-    );
-    renderSugerencias(coincidencias);
+    opciones.forEach((opcion) => {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "chip";
+      chip.textContent = etiqueta(opcion);
+      chip.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        onElegir(opcion);
+      });
+      chips.appendChild(chip);
+    });
+
+    abrirPanel();
   }
 
-  input.addEventListener("input", buscar);
+  function mostrarVistaInicial() {
+    pila = [];
+    const otra = obtenerOtra();
+
+    if (otra) {
+      mostrarRamalesDeEstacion(otra);
+    } else {
+      mostrarLineas();
+    }
+  }
+
+  function mostrarLineas() {
+    renderChips(LINEAS_PRINCIPALES, {
+      etiqueta: (linea) => linea,
+      onElegir: (linea) => {
+        pila.push(mostrarLineas);
+        mostrarRamales(linea);
+      },
+    });
+  }
+
+  function mostrarRamales(linea) {
+    const ramales = ramalesDeLinea(linea);
+    renderChips(ramales, {
+      etiqueta: (ramal) => ramal,
+      onElegir: (ramal) => {
+        pila.push(() => mostrarRamales(linea));
+        mostrarEstacionesDeRamal(linea, ramal);
+      },
+      volver: pila.length ? () => volver() : null,
+    });
+  }
+
+  function mostrarRamalesDeEstacion(otra) {
+    if (otra.rutas.length === 1) {
+      mostrarEstacionesDeRamal(otra.rutas[0].linea, otra.rutas[0].ramal);
+      return;
+    }
+    renderChips(otra.rutas, {
+      etiqueta: (ruta) => `${ruta.ramal} (${ruta.linea})`,
+      onElegir: (ruta) => {
+        pila.push(() => mostrarRamalesDeEstacion(otra));
+        mostrarEstacionesDeRamal(ruta.linea, ruta.ramal);
+      },
+    });
+  }
+
+  function mostrarEstacionesDeRamal(linea, ramal) {
+    const otra = obtenerOtra();
+    let items = estacionesDeRuta(linea, ramal);
+    if (otra) items = items.filter((e) => e.id !== otra.id);
+
+    renderEstaciones(items, { volver: pila.length ? () => volver() : null });
+  }
+
+  function volver() {
+    const anterior = pila.pop();
+    if (anterior) anterior();
+    else mostrarVistaInicial();
+  }
+
+  function buscarPorTexto(texto) {
+    const objetivo = normalizar(texto);
+    const items = estaciones.filter((e) => normalizar(e.nombre).includes(objetivo));
+    renderEstaciones(items);
+  }
+
+  function seleccionar(estacion) {
+    input.value = estacion.nombre;
+    input.dataset.id = estacion.id;
+    cerrarPanel();
+    onSeleccionar(estacion);
+  }
+
+  input.addEventListener("input", () => {
+    delete input.dataset.id;
+    onSeleccionar(null);
+    const texto = input.value.trim();
+    if (texto.length === 0) mostrarVistaInicial();
+    else buscarPorTexto(texto);
+  });
 
   input.addEventListener("focus", () => {
-    if (input.value.trim().length > 0 && !input.dataset.id) buscar();
+    if (input.value.trim().length === 0) mostrarVistaInicial();
+    else buscarPorTexto(input.value.trim());
   });
 
   input.addEventListener("keydown", (e) => {
     const items = lista.querySelectorAll("li:not(.sin-resultados)");
-    if (lista.classList.contains("ocultar") || items.length === 0) return;
+    if (panel.classList.contains("ocultar") || items.length === 0) return;
 
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -130,7 +305,7 @@ function crearAutocomplete(input, lista, alSeleccionar) {
       if (activo >= 0) items[activo].dispatchEvent(new Event("mousedown"));
       return;
     } else if (e.key === "Escape") {
-      lista.classList.add("ocultar");
+      cerrarPanel();
       return;
     } else {
       return;
@@ -140,15 +315,20 @@ function crearAutocomplete(input, lista, alSeleccionar) {
     items[activo].classList.add("activo");
   });
 
-  document.addEventListener("click", (e) => {
-    if (!input.contains(e.target) && !lista.contains(e.target)) {
-      lista.classList.add("ocultar");
+  document.addEventListener("mousedown", (e) => {
+    if (!input.contains(e.target) && !panel.contains(e.target)) {
+      cerrarPanel();
     }
   });
 }
 
 function actualizarBotonBuscar() {
   buscarBtn.disabled = !(origenSeleccionado && destinoSeleccionado);
+}
+
+function limpiarCampo(input) {
+  input.value = "";
+  delete input.dataset.id;
 }
 
 function obtenerCredenciales() {
@@ -229,7 +409,7 @@ function login() {
 function guardarUltimaBusqueda() {
   localStorage.setItem(
     STORAGE_KEY,
-    JSON.stringify({ origen: origenSeleccionado, destino: destinoSeleccionado })
+    JSON.stringify({ origenId: origenSeleccionado.id, destinoId: destinoSeleccionado.id })
   );
 }
 
@@ -243,10 +423,13 @@ function cargarUltimaBusqueda() {
   } catch {
     return;
   }
-  if (!datos?.origen || !datos?.destino) return;
+
+  const origen = estaciones.find((e) => e.id === datos.origenId);
+  const destino = estaciones.find((e) => e.id === datos.destinoId);
+  if (!origen || !destino) return;
 
   ultimaBusquedaDiv.innerHTML = `
-    <p>Última búsqueda: <span class="trayecto">${datos.origen.nombre} → ${datos.destino.nombre}</span></p>
+    <p>Última búsqueda: <span class="trayecto">${origen.nombre} → ${destino.nombre}</span></p>
     <div class="acciones">
       <button id="buscarDeNuevoBtn" type="button">Buscar de nuevo</button>
       <button id="cambiarEstacionesBtn" type="button">Cambiar estaciones</button>
@@ -255,8 +438,8 @@ function cargarUltimaBusqueda() {
   ultimaBusquedaDiv.classList.remove("ocultar");
 
   document.getElementById("buscarDeNuevoBtn").addEventListener("click", () => {
-    aplicarSeleccion(originInput, datos.origen, (v) => (origenSeleccionado = v));
-    aplicarSeleccion(destinationInput, datos.destino, (v) => (destinoSeleccionado = v));
+    aplicarSeleccion(originInput, origen, (v) => (origenSeleccionado = v));
+    aplicarSeleccion(destinationInput, destino, (v) => (destinoSeleccionado = v));
     actualizarBotonBuscar();
     iniciarBusqueda();
   });
@@ -270,7 +453,7 @@ function cargarUltimaBusqueda() {
 function aplicarSeleccion(input, estacion, setear) {
   input.value = estacion.nombre;
   input.dataset.id = estacion.id;
-  setear({ id: estacion.id, nombre: estacion.nombre });
+  setear(estacion);
 }
 
 function botonEspecial() {
@@ -434,16 +617,40 @@ async function iniciar() {
   scroll(0, 0);
   await cargarEstaciones();
 
-  crearAutocomplete(originInput, originList, (estacion) => {
-    origenSeleccionado = estacion;
-    actualizarBotonBuscar();
+  crearBuscadorEstacion({
+    input: originInput,
+    panel: document.getElementById("origin-panel"),
+    chips: document.getElementById("origin-chips"),
+    lista: document.getElementById("origin-list"),
+    obtenerOtra: () => destinoSeleccionado,
+    onSeleccionar: (estacion) => {
+      origenSeleccionado = estacion;
+      if (estacion && destinoSeleccionado && !compartenRuta(estacion, destinoSeleccionado)) {
+        limpiarCampo(destinationInput);
+        destinoSeleccionado = null;
+      }
+      actualizarBotonBuscar();
+    },
   });
-  crearAutocomplete(destinationInput, destinationList, (estacion) => {
-    destinoSeleccionado = estacion;
-    actualizarBotonBuscar();
+
+  crearBuscadorEstacion({
+    input: destinationInput,
+    panel: document.getElementById("destination-panel"),
+    chips: document.getElementById("destination-chips"),
+    lista: document.getElementById("destination-list"),
+    obtenerOtra: () => origenSeleccionado,
+    onSeleccionar: (estacion) => {
+      destinoSeleccionado = estacion;
+      if (estacion && origenSeleccionado && !compartenRuta(estacion, origenSeleccionado)) {
+        limpiarCampo(originInput);
+        origenSeleccionado = null;
+      }
+      actualizarBotonBuscar();
+    },
   });
 
   document.getElementById("botonEspecial").addEventListener("click", botonEspecial);
+
   buscarBtn.addEventListener("click", () => {
     detenerBusqueda();
     iniciarBusqueda();

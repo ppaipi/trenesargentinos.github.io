@@ -27,8 +27,11 @@
       <div class="tarjeta-busqueda">
         <div class="campo-busqueda">
           <label for="origin-input">Estación de Origen</label>
-          <input type="text" id="origin-input" autocomplete="off" placeholder="Ej: Once, Tigre, Moreno...">
-          <ul id="origin-list" class="autocomplete-list ocultar"></ul>
+          <input type="text" id="origin-input" autocomplete="off" placeholder="Escribí o elegí por línea...">
+          <div id="origin-panel" class="panel-busqueda ocultar">
+            <div id="origin-chips" class="chips-fila"></div>
+            <ul id="origin-list" class="autocomplete-list"></ul>
+          </div>
         </div>
 
         <div class="fila-swap">
@@ -37,8 +40,11 @@
 
         <div class="campo-busqueda">
           <label for="destination-input">Estación de Destino</label>
-          <input type="text" id="destination-input" autocomplete="off" placeholder="Ej: Once, Tigre, Moreno...">
-          <ul id="destination-list" class="autocomplete-list ocultar"></ul>
+          <input type="text" id="destination-input" autocomplete="off" placeholder="Escribí o elegí por ramal...">
+          <div id="destination-panel" class="panel-busqueda ocultar">
+            <div id="destination-chips" class="chips-fila"></div>
+            <ul id="destination-list" class="autocomplete-list"></ul>
+          </div>
         </div>
 
         <button id="buscarBtn" type="button" disabled>Buscar Horarios</button>

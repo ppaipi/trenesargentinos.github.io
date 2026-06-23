@@ -2,1772 +2,3633 @@
   {
     "id": 526,
     "nombre": "20 de Junio",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Marcos Paz"
+      }
     ]
   },
   {
     "id": 1,
     "nombre": "3 de Febrero",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 3,
     "nombre": "Abbot",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 5,
     "nombre": "Acassuso",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 8,
     "nombre": "Adrogué",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      }
     ]
   },
   {
     "id": 9,
     "nombre": "Agustín de Elía",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 12,
     "nombre": "Aldo Bonzi",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 13,
     "nombre": "Alejandro Korn",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 14,
     "nombre": "Alejandro Petión",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 21,
     "nombre": "Apeadero Kloosterman",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 22,
     "nombre": "Apeadero Km. 12",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 25,
     "nombre": "Arquitectura",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 5976,
     "nombre": "Avenida 7",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 29,
     "nombre": "Bancalari",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 30,
     "nombre": "Banfield",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 34,
     "nombre": "Belgrano C",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 35,
     "nombre": "Belgrano R",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 36,
     "nombre": "Bella Vista",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 37,
     "nombre": "Benavídez",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 38,
     "nombre": "Berazategui",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 39,
     "nombre": "Bernal",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 42,
     "nombre": "Borges",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 43,
     "nombre": "Bosques",
-    "lineas": [
-      "Roca",
-      "Trenes de Terceros"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      },
+      {
+        "linea": "Trenes de Terceros",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 49,
     "nombre": "Burzaco",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      }
     ]
   },
   {
     "id": 32,
     "nombre": "Béccar",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 50,
     "nombre": "Caballito",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 51,
     "nombre": "Cabred",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 55,
     "nombre": "Campana",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 58,
     "nombre": "Canal San Fernando",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 61,
     "nombre": "Capilla del Señor",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 64,
     "nombre": "Carlos Spegazzini",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      }
     ]
   },
   {
     "id": 65,
     "nombre": "Carupá",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 67,
     "nombre": "Caseros",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 70,
     "nombre": "Castelar",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 60,
     "nombre": "Cañuelas",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 78,
     "nombre": "Chascomús",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 79,
     "nombre": "Chilavert",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 5977,
     "nombre": "Circunvalación",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 83,
     "nombre": "City Bell",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 84,
     "nombre": "Ciudadela",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 85,
     "nombre": "Claypole",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 86,
     "nombre": "Cnel. Brandsen",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 90,
     "nombre": "Coghlan",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      }
     ]
   },
   {
     "id": 91,
     "nombre": "Colegiales",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 93,
     "nombre": "Constitución",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 102,
     "nombre": "Dante Ardigó",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 104,
     "nombre": "Delta",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 106,
     "nombre": "Derqui",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 112,
     "nombre": "Devoto",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 113,
     "nombre": "Diagonal 73",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 117,
     "nombre": "Domselaar",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 115,
     "nombre": "Don Bosco",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 118,
     "nombre": "Dr. A. Schweitzer",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 119,
     "nombre": "Dr. Cetrángolo",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      }
     ]
   },
   {
     "id": 121,
     "nombre": "Dr. Sáenz Prov.",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      }
     ]
   },
   {
     "id": 525,
     "nombre": "Dr. Sáenz Viad.",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 125,
     "nombre": "El Jagüel",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 127,
     "nombre": "El Palomar",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 128,
     "nombre": "El Talar",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 129,
     "nombre": "Empalme Lobos",
-    "lineas": [
-      "Roca",
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 130,
     "nombre": "Escobar",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 132,
     "nombre": "Ezeiza",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 133,
     "nombre": "Ezpeleta",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 134,
     "nombre": "F. Álvarez",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 137,
     "nombre": "Ferrari",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 138,
     "nombre": "Florencio Varela",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 139,
     "nombre": "Flores",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 140,
     "nombre": "Floresta",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 141,
     "nombre": "Florida",
-    "lineas": [
-      "Belgrano Norte",
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      },
+      {
+        "linea": "Belgrano Norte",
+        "ramal": "Villa Rosa"
+      }
     ]
   },
   {
     "id": 147,
     "nombre": "Garín",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 150,
     "nombre": "General Urquiza",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 151,
     "nombre": "Gerli",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 152,
     "nombre": "Glew",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      }
     ]
   },
   {
     "id": 153,
     "nombre": "Gonnet",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 154,
     "nombre": "González Catán",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Marcos Paz"
+      }
     ]
   },
   {
     "id": 155,
     "nombre": "Gowland",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 163,
     "nombre": "Gral. Rodríguez",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 165,
     "nombre": "Guernica",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      }
     ]
   },
   {
     "id": 168,
     "nombre": "Gutiérrez",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 146,
     "nombre": "Gándara",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 169,
     "nombre": "Haedo",
-    "lineas": [
-      "Roca",
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 172,
     "nombre": "Hipólito Yrigoyen",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 173,
     "nombre": "Hornos",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 5980,
     "nombre": "Hospital Cuenca Alta",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      }
     ]
   },
   {
     "id": 174,
     "nombre": "Hospital Español",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 5979,
     "nombre": "Hospital.San Juan de Dios",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 176,
     "nombre": "Hudson",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 177,
     "nombre": "Hurlingham",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 178,
     "nombre": "Independencia",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 179,
     "nombre": "Informática",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 180,
     "nombre": "Ing. Budge",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 181,
     "nombre": "Ingeniero Castello",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 182,
     "nombre": "Ingeniero S. Brian",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 184,
     "nombre": "Isidro Casanova",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 186,
     "nombre": "Ituzaingó",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 190,
     "nombre": "J. L. Suárez",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 189,
     "nombre": "Jeppener",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 194,
     "nombre": "José C. Paz",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 195,
     "nombre": "José Ingenieros",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 197,
     "nombre": "José Mármol",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 198,
     "nombre": "Juan Anchorena",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 200,
     "nombre": "Juan B. Justo",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      }
     ]
   },
   {
     "id": 201,
     "nombre": "Juan XXIII",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 203,
     "nombre": "Justo Villegas",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 188,
     "nombre": "Jáuregui",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 204,
     "nombre": "Kilometro 83",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      }
     ]
   },
   {
     "id": 205,
     "nombre": "Km. 34",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 464,
     "nombre": "Km. 34,5",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 236,
     "nombre": "L. M. Drago",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 229,
     "nombre": "L. de la Torre",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 210,
     "nombre": "La Fraternidad",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 212,
     "nombre": "La Lucila",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 214,
     "nombre": "La Noria",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 216,
     "nombre": "La Paternal",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 217,
     "nombre": "La Plata",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 218,
     "nombre": "La Reja",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 220,
     "nombre": "La Salada",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 209,
     "nombre": "Laferrere",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 215,
     "nombre": "Lanús",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 222,
     "nombre": "Las Barrancas",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 225,
     "nombre": "Las Heras",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 226,
     "nombre": "Las Malvinas",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 230,
     "nombre": "Lezama",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 231,
     "nombre": "Lezica y Torrezuri",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 232,
     "nombre": "Libertad",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 233,
     "nombre": "Libertador",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 234,
     "nombre": "Liniers",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 235,
     "nombre": "Llavallol",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 237,
     "nombre": "Lobos",
-    "lineas": [
-      "Roca",
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 238,
     "nombre": "Lomas de Zamora",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 239,
     "nombre": "Longchamps",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      }
     ]
   },
   {
     "id": 243,
     "nombre": "Los Cardales",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 246,
     "nombre": "Luis Guillón",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 247,
     "nombre": "Luján",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 240,
     "nombre": "López Camelo",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 248,
     "nombre": "Maipú",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 249,
     "nombre": "Malaver",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 252,
     "nombre": "Manzanares",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 253,
     "nombre": "Maq. Savio",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 4601,
     "nombre": "Maquinista Ricardo Cal",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 3700,
     "nombre": "Marcos Paz",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Marcos Paz"
+      }
     ]
   },
   {
     "id": 254,
     "nombre": "Marcos Paz",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 257,
     "nombre": "Mariano Acosta",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 258,
     "nombre": "Marina Nueva",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 259,
     "nombre": "Marinos C. G. Belgrano",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 260,
     "nombre": "Marinos del Fournier",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 262,
     "nombre": "Martínez",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 256,
     "nombre": "María Eva Duarte",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 263,
     "nombre": "Maschwitz",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 264,
     "nombre": "Matheu",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 267,
     "nombre": "Medicina",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 268,
     "nombre": "Mercedes",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 5978,
     "nombre": "Meridiano V",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 269,
     "nombre": "Merlo",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 270,
     "nombre": "Merlo Gómez",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 271,
     "nombre": "Miguelete",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 272,
     "nombre": "Ministro Carranza",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 273,
     "nombre": "Mitre",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      }
     ]
   },
   {
     "id": 275,
     "nombre": "Monasterio",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      }
     ]
   },
   {
     "id": 276,
     "nombre": "Monte",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 277,
     "nombre": "Monte Grande",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 278,
     "nombre": "Moreno",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 279,
     "nombre": "Morón",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 283,
     "nombre": "Muñiz",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 265,
     "nombre": "Máximo Paz",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 287,
     "nombre": "Núñez",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 290,
     "nombre": "Olivera",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 291,
     "nombre": "Olivos",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 293,
     "nombre": "Once",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 294,
     "nombre": "Otamendi",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 310,
     "nombre": "P. Marín",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 314,
     "nombre": "P. Turner",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 296,
     "nombre": "Pacheco",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 297,
     "nombre": "Palermo",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 300,
     "nombre": "Paso del Rey",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 303,
     "nombre": "Pereyra",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 304,
     "nombre": "Periodismo",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 306,
     "nombre": "Pilar",
-    "lineas": [
-      "Regionales",
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      },
+      {
+        "linea": "Regionales",
+        "ramal": "Villa María"
+      }
     ]
   },
   {
     "id": 309,
     "nombre": "Plátanos",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 311,
     "nombre": "Policlínico",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Universitario"
+      }
     ]
   },
   {
     "id": 313,
     "nombre": "Presidente Illia",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 315,
     "nombre": "Puente Alsina",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 318,
     "nombre": "Pueyrredón",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 319,
     "nombre": "Punta Chica",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 321,
     "nombre": "Querandí",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 322,
     "nombre": "Quilmes",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 324,
     "nombre": "Rafael Calzada",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 325,
     "nombre": "Rafael Castillo",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 327,
     "nombre": "Ramos Mejía",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 328,
     "nombre": "Ranelagh",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 329,
     "nombre": "Remedios de Escalada",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 332,
     "nombre": "Retiro LM",
-    "lineas": [
-      "Belgrano Norte",
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      },
+      {
+        "linea": "Belgrano Norte",
+        "ramal": "Villa Rosa"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 463,
     "nombre": "Retiro LSM",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 333,
     "nombre": "Ricardo Levene",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 334,
     "nombre": "Ringuelet",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 335,
     "nombre": "Rio Lujan",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 337,
     "nombre": "Rivadavia",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 347,
     "nombre": "S. A. de Padua",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 368,
     "nombre": "S. y Kosteki",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 346,
     "nombre": "Saavedra",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Mitre"
+      }
     ]
   },
   {
     "id": 353,
     "nombre": "San Andrés",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 355,
     "nombre": "San Fernando C",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 356,
     "nombre": "San Fernando R",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 357,
     "nombre": "San Isidro C",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 358,
     "nombre": "San Isidro R",
-    "lineas": [
-      "Tren de la Costa"
+    "rutas": [
+      {
+        "linea": "Tren de la Costa",
+        "ramal": "Tren de la Costa"
+      }
     ]
   },
   {
     "id": 359,
     "nombre": "San Justo",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 360,
     "nombre": "San Martín",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      }
     ]
   },
   {
     "id": 361,
     "nombre": "San Miguel",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 365,
     "nombre": "Santa Catalina",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 367,
     "nombre": "Santa Sofía",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 369,
     "nombre": "Santos Lugares",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 370,
     "nombre": "Sarandí",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 378,
     "nombre": "Sol y Verde",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 380,
     "nombre": "Sourigues",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 381,
     "nombre": "Speratti",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 348,
     "nombre": "Sáenz Peña",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 354,
     "nombre": "Sánchez de Mendeville",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 383,
     "nombre": "Tablada",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      }
     ]
   },
   {
     "id": 385,
     "nombre": "Tapiales",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 386,
     "nombre": "Temperley",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alejandro Korn"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Haedo"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Chascomús"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Mar del Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lezama"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 389,
     "nombre": "Tigre",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 392,
     "nombre": "Tolosa",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 396,
     "nombre": "Tristán Suárez",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 399,
     "nombre": "Turdera",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Ezeiza"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 401,
     "nombre": "Univ. Luján",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Mercedes"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 400,
     "nombre": "Unión Ferroviaria",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      }
     ]
   },
   {
     "id": 402,
     "nombre": "Uribelarrea",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 407,
     "nombre": "Vicente Casares",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Cañuelas Esp"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Alvear"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Monte"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Lobos"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bahía Blanca"
+      }
     ]
   },
   {
     "id": 408,
     "nombre": "Vicente López",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 409,
     "nombre": "Victoria",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 411,
     "nombre": "Villa Astolfi",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 412,
     "nombre": "Villa Ballester",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "J. L. Suárez"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   },
   {
     "id": 413,
     "nombre": "Villa Caraza",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 414,
     "nombre": "Villa Crespo",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 417,
     "nombre": "Villa Diamante",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 418,
     "nombre": "Villa Domínico",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 419,
     "nombre": "Villa Elisa",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      }
     ]
   },
   {
     "id": 420,
     "nombre": "Villa España",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 421,
     "nombre": "Villa Fiorito",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Pte Alsina"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Apeadero Km 12"
+      }
     ]
   },
   {
     "id": 422,
     "nombre": "Villa Lugano",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 423,
     "nombre": "Villa Luro",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Moreno"
+      },
+      {
+        "linea": "Sarmiento",
+        "ramal": "Pehuajó"
+      }
     ]
   },
   {
     "id": 424,
     "nombre": "Villa Madero",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 427,
     "nombre": "Villa Soldati",
-    "lineas": [
-      "Belgrano Sur"
+    "rutas": [
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "M.C.G. Belgrano"
+      },
+      {
+        "linea": "Belgrano Sur",
+        "ramal": "Gonzalez Catán"
+      }
     ]
   },
   {
     "id": 415,
     "nombre": "Villa del Parque",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Rufino"
+      }
     ]
   },
   {
     "id": 428,
     "nombre": "Virreyes",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Tigre"
+      }
     ]
   },
   {
     "id": 430,
     "nombre": "Wilde",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "La Plata"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-Q"
+      }
     ]
   },
   {
     "id": 431,
     "nombre": "William Morris",
-    "lineas": [
-      "San Martín"
+    "rutas": [
+      {
+        "linea": "San Martín",
+        "ramal": "Pilar"
+      },
+      {
+        "linea": "San Martín",
+        "ramal": "Cabred"
+      }
     ]
   },
   {
     "id": 432,
     "nombre": "Zamudio",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 433,
     "nombre": "Zapiola",
-    "lineas": [
-      "Sarmiento"
+    "rutas": [
+      {
+        "linea": "Sarmiento",
+        "ramal": "Lobos"
+      }
     ]
   },
   {
     "id": 435,
     "nombre": "Zeballos",
-    "lineas": [
-      "Roca"
+    "rutas": [
+      {
+        "linea": "Roca",
+        "ramal": "Bosques-T"
+      },
+      {
+        "linea": "Roca",
+        "ramal": "Gutiérrez"
+      }
     ]
   },
   {
     "id": 436,
     "nombre": "Zelaya",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Capilla del Señor"
+      }
     ]
   },
   {
     "id": 434,
     "nombre": "Zárate",
-    "lineas": [
-      "Mitre"
+    "rutas": [
+      {
+        "linea": "Mitre",
+        "ramal": "Zarate"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Rosario Norte"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Córdoba"
+      },
+      {
+        "linea": "Mitre",
+        "ramal": "Tucumán"
+      }
     ]
   }
 ]
