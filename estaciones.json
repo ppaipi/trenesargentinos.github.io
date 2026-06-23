@@ -1,0 +1,1773 @@
+[
+  {
+    "id": 526,
+    "nombre": "20 de Junio",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 1,
+    "nombre": "3 de Febrero",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Abbot",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Acassuso",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Adrogué",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Agustín de Elía",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Aldo Bonzi",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Alejandro Korn",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Alejandro Petión",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 21,
+    "nombre": "Apeadero Kloosterman",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 22,
+    "nombre": "Apeadero Km. 12",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 25,
+    "nombre": "Arquitectura",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 5976,
+    "nombre": "Avenida 7",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 29,
+    "nombre": "Bancalari",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "Banfield",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 34,
+    "nombre": "Belgrano C",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 35,
+    "nombre": "Belgrano R",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 36,
+    "nombre": "Bella Vista",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 37,
+    "nombre": "Benavídez",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 38,
+    "nombre": "Berazategui",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 39,
+    "nombre": "Bernal",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 42,
+    "nombre": "Borges",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 43,
+    "nombre": "Bosques",
+    "lineas": [
+      "Roca",
+      "Trenes de Terceros"
+    ]
+  },
+  {
+    "id": 49,
+    "nombre": "Burzaco",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 32,
+    "nombre": "Béccar",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 50,
+    "nombre": "Caballito",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 51,
+    "nombre": "Cabred",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 55,
+    "nombre": "Campana",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 58,
+    "nombre": "Canal San Fernando",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 61,
+    "nombre": "Capilla del Señor",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 64,
+    "nombre": "Carlos Spegazzini",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 65,
+    "nombre": "Carupá",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 67,
+    "nombre": "Caseros",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 70,
+    "nombre": "Castelar",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 60,
+    "nombre": "Cañuelas",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 78,
+    "nombre": "Chascomús",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 79,
+    "nombre": "Chilavert",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 5977,
+    "nombre": "Circunvalación",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 83,
+    "nombre": "City Bell",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 84,
+    "nombre": "Ciudadela",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 85,
+    "nombre": "Claypole",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 86,
+    "nombre": "Cnel. Brandsen",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 90,
+    "nombre": "Coghlan",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 91,
+    "nombre": "Colegiales",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 93,
+    "nombre": "Constitución",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 102,
+    "nombre": "Dante Ardigó",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 104,
+    "nombre": "Delta",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 106,
+    "nombre": "Derqui",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 112,
+    "nombre": "Devoto",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 113,
+    "nombre": "Diagonal 73",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 117,
+    "nombre": "Domselaar",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 115,
+    "nombre": "Don Bosco",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 118,
+    "nombre": "Dr. A. Schweitzer",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 119,
+    "nombre": "Dr. Cetrángolo",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 121,
+    "nombre": "Dr. Sáenz Prov.",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 525,
+    "nombre": "Dr. Sáenz Viad.",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 125,
+    "nombre": "El Jagüel",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 127,
+    "nombre": "El Palomar",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 128,
+    "nombre": "El Talar",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 129,
+    "nombre": "Empalme Lobos",
+    "lineas": [
+      "Roca",
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 130,
+    "nombre": "Escobar",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 132,
+    "nombre": "Ezeiza",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 133,
+    "nombre": "Ezpeleta",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 134,
+    "nombre": "F. Álvarez",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 137,
+    "nombre": "Ferrari",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 138,
+    "nombre": "Florencio Varela",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 139,
+    "nombre": "Flores",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 140,
+    "nombre": "Floresta",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 141,
+    "nombre": "Florida",
+    "lineas": [
+      "Belgrano Norte",
+      "Mitre"
+    ]
+  },
+  {
+    "id": 147,
+    "nombre": "Garín",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 150,
+    "nombre": "General Urquiza",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 151,
+    "nombre": "Gerli",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 152,
+    "nombre": "Glew",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 153,
+    "nombre": "Gonnet",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 154,
+    "nombre": "González Catán",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 155,
+    "nombre": "Gowland",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 163,
+    "nombre": "Gral. Rodríguez",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 165,
+    "nombre": "Guernica",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 168,
+    "nombre": "Gutiérrez",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 146,
+    "nombre": "Gándara",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 169,
+    "nombre": "Haedo",
+    "lineas": [
+      "Roca",
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 172,
+    "nombre": "Hipólito Yrigoyen",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 173,
+    "nombre": "Hornos",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 5980,
+    "nombre": "Hospital Cuenca Alta",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 174,
+    "nombre": "Hospital Español",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 5979,
+    "nombre": "Hospital.San Juan de Dios",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 176,
+    "nombre": "Hudson",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 177,
+    "nombre": "Hurlingham",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 178,
+    "nombre": "Independencia",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 179,
+    "nombre": "Informática",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 180,
+    "nombre": "Ing. Budge",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 181,
+    "nombre": "Ingeniero Castello",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 182,
+    "nombre": "Ingeniero S. Brian",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 184,
+    "nombre": "Isidro Casanova",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 186,
+    "nombre": "Ituzaingó",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 190,
+    "nombre": "J. L. Suárez",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 189,
+    "nombre": "Jeppener",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 194,
+    "nombre": "José C. Paz",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 195,
+    "nombre": "José Ingenieros",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 197,
+    "nombre": "José Mármol",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 198,
+    "nombre": "Juan Anchorena",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 200,
+    "nombre": "Juan B. Justo",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 201,
+    "nombre": "Juan XXIII",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 203,
+    "nombre": "Justo Villegas",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 188,
+    "nombre": "Jáuregui",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 204,
+    "nombre": "Kilometro 83",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 205,
+    "nombre": "Km. 34",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 464,
+    "nombre": "Km. 34,5",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 236,
+    "nombre": "L. M. Drago",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 229,
+    "nombre": "L. de la Torre",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 210,
+    "nombre": "La Fraternidad",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 212,
+    "nombre": "La Lucila",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 214,
+    "nombre": "La Noria",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 216,
+    "nombre": "La Paternal",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 217,
+    "nombre": "La Plata",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 218,
+    "nombre": "La Reja",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 220,
+    "nombre": "La Salada",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 209,
+    "nombre": "Laferrere",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 215,
+    "nombre": "Lanús",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 222,
+    "nombre": "Las Barrancas",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 225,
+    "nombre": "Las Heras",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 226,
+    "nombre": "Las Malvinas",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 230,
+    "nombre": "Lezama",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 231,
+    "nombre": "Lezica y Torrezuri",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 232,
+    "nombre": "Libertad",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 233,
+    "nombre": "Libertador",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 234,
+    "nombre": "Liniers",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 235,
+    "nombre": "Llavallol",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 237,
+    "nombre": "Lobos",
+    "lineas": [
+      "Roca",
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 238,
+    "nombre": "Lomas de Zamora",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 239,
+    "nombre": "Longchamps",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 243,
+    "nombre": "Los Cardales",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 246,
+    "nombre": "Luis Guillón",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 247,
+    "nombre": "Luján",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 240,
+    "nombre": "López Camelo",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 248,
+    "nombre": "Maipú",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 249,
+    "nombre": "Malaver",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 252,
+    "nombre": "Manzanares",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 253,
+    "nombre": "Maq. Savio",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 4601,
+    "nombre": "Maquinista Ricardo Cal",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 3700,
+    "nombre": "Marcos Paz",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 254,
+    "nombre": "Marcos Paz",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 257,
+    "nombre": "Mariano Acosta",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 258,
+    "nombre": "Marina Nueva",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 259,
+    "nombre": "Marinos C. G. Belgrano",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 260,
+    "nombre": "Marinos del Fournier",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 262,
+    "nombre": "Martínez",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 256,
+    "nombre": "María Eva Duarte",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 263,
+    "nombre": "Maschwitz",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 264,
+    "nombre": "Matheu",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 267,
+    "nombre": "Medicina",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 268,
+    "nombre": "Mercedes",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 5978,
+    "nombre": "Meridiano V",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 269,
+    "nombre": "Merlo",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 270,
+    "nombre": "Merlo Gómez",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 271,
+    "nombre": "Miguelete",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 272,
+    "nombre": "Ministro Carranza",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 273,
+    "nombre": "Mitre",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 275,
+    "nombre": "Monasterio",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 276,
+    "nombre": "Monte",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 277,
+    "nombre": "Monte Grande",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 278,
+    "nombre": "Moreno",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 279,
+    "nombre": "Morón",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 283,
+    "nombre": "Muñiz",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 265,
+    "nombre": "Máximo Paz",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 287,
+    "nombre": "Núñez",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 290,
+    "nombre": "Olivera",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 291,
+    "nombre": "Olivos",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 293,
+    "nombre": "Once",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 294,
+    "nombre": "Otamendi",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 310,
+    "nombre": "P. Marín",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 314,
+    "nombre": "P. Turner",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 296,
+    "nombre": "Pacheco",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 297,
+    "nombre": "Palermo",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 300,
+    "nombre": "Paso del Rey",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 303,
+    "nombre": "Pereyra",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 304,
+    "nombre": "Periodismo",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 306,
+    "nombre": "Pilar",
+    "lineas": [
+      "Regionales",
+      "San Martín"
+    ]
+  },
+  {
+    "id": 309,
+    "nombre": "Plátanos",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 311,
+    "nombre": "Policlínico",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 313,
+    "nombre": "Presidente Illia",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 315,
+    "nombre": "Puente Alsina",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 318,
+    "nombre": "Pueyrredón",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 319,
+    "nombre": "Punta Chica",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 321,
+    "nombre": "Querandí",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 322,
+    "nombre": "Quilmes",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 324,
+    "nombre": "Rafael Calzada",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 325,
+    "nombre": "Rafael Castillo",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 327,
+    "nombre": "Ramos Mejía",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 328,
+    "nombre": "Ranelagh",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 329,
+    "nombre": "Remedios de Escalada",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 332,
+    "nombre": "Retiro LM",
+    "lineas": [
+      "Belgrano Norte",
+      "Mitre"
+    ]
+  },
+  {
+    "id": 463,
+    "nombre": "Retiro LSM",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 333,
+    "nombre": "Ricardo Levene",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 334,
+    "nombre": "Ringuelet",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 335,
+    "nombre": "Rio Lujan",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 337,
+    "nombre": "Rivadavia",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 347,
+    "nombre": "S. A. de Padua",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 368,
+    "nombre": "S. y Kosteki",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 346,
+    "nombre": "Saavedra",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 353,
+    "nombre": "San Andrés",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 355,
+    "nombre": "San Fernando C",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 356,
+    "nombre": "San Fernando R",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 357,
+    "nombre": "San Isidro C",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 358,
+    "nombre": "San Isidro R",
+    "lineas": [
+      "Tren de la Costa"
+    ]
+  },
+  {
+    "id": 359,
+    "nombre": "San Justo",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 360,
+    "nombre": "San Martín",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 361,
+    "nombre": "San Miguel",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 365,
+    "nombre": "Santa Catalina",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 367,
+    "nombre": "Santa Sofía",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 369,
+    "nombre": "Santos Lugares",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 370,
+    "nombre": "Sarandí",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 378,
+    "nombre": "Sol y Verde",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 380,
+    "nombre": "Sourigues",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 381,
+    "nombre": "Speratti",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 348,
+    "nombre": "Sáenz Peña",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 354,
+    "nombre": "Sánchez de Mendeville",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 383,
+    "nombre": "Tablada",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 385,
+    "nombre": "Tapiales",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 386,
+    "nombre": "Temperley",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 389,
+    "nombre": "Tigre",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 392,
+    "nombre": "Tolosa",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 396,
+    "nombre": "Tristán Suárez",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 399,
+    "nombre": "Turdera",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 401,
+    "nombre": "Univ. Luján",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 400,
+    "nombre": "Unión Ferroviaria",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 402,
+    "nombre": "Uribelarrea",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 407,
+    "nombre": "Vicente Casares",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 408,
+    "nombre": "Vicente López",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 409,
+    "nombre": "Victoria",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 411,
+    "nombre": "Villa Astolfi",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 412,
+    "nombre": "Villa Ballester",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 413,
+    "nombre": "Villa Caraza",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 414,
+    "nombre": "Villa Crespo",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 417,
+    "nombre": "Villa Diamante",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 418,
+    "nombre": "Villa Domínico",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 419,
+    "nombre": "Villa Elisa",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 420,
+    "nombre": "Villa España",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 421,
+    "nombre": "Villa Fiorito",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 422,
+    "nombre": "Villa Lugano",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 423,
+    "nombre": "Villa Luro",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 424,
+    "nombre": "Villa Madero",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 427,
+    "nombre": "Villa Soldati",
+    "lineas": [
+      "Belgrano Sur"
+    ]
+  },
+  {
+    "id": 415,
+    "nombre": "Villa del Parque",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 428,
+    "nombre": "Virreyes",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 430,
+    "nombre": "Wilde",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 431,
+    "nombre": "William Morris",
+    "lineas": [
+      "San Martín"
+    ]
+  },
+  {
+    "id": 432,
+    "nombre": "Zamudio",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 433,
+    "nombre": "Zapiola",
+    "lineas": [
+      "Sarmiento"
+    ]
+  },
+  {
+    "id": 435,
+    "nombre": "Zeballos",
+    "lineas": [
+      "Roca"
+    ]
+  },
+  {
+    "id": 436,
+    "nombre": "Zelaya",
+    "lineas": [
+      "Mitre"
+    ]
+  },
+  {
+    "id": 434,
+    "nombre": "Zárate",
+    "lineas": [
+      "Mitre"
+    ]
+  }
+]
