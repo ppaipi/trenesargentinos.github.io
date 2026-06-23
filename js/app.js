@@ -333,16 +333,16 @@ function actualizarMensajeVacio() {
   }
 }
 
+// Limpia por completo el area de resultados: tanto las tarjetas en vivo
+// (con sus mapas Leaflet) como cualquier HTML insertado por la busqueda
+// programada, que no se rastrea en el Map "tarjetas".
 function limpiarTarjetas() {
   for (const tarjeta of tarjetas.values()) {
     eliminarMapa(tarjeta.estadoMapa);
-    tarjeta.div.remove();
   }
   tarjetas.clear();
-  if (mensajeVacio) {
-    mensajeVacio.remove();
-    mensajeVacio = null;
-  }
+  mensajeVacio = null;
+  resultDiv.innerHTML = "";
 }
 
 function mostrarErrorCarga(status) {
