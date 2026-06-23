@@ -1,0 +1,25 @@
+{
+  "name": "Trenes Argentinos - Horarios en tiempo real",
+  "short_name": "Trenes Arg",
+  "description": "Consultá en tiempo real cuándo llega tu tren y cuánto dura el viaje.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#66a6ff",
+  "theme_color": "#0056b3",
+  "lang": "es-AR",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "tren.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

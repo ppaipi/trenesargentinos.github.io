@@ -367,10 +367,14 @@ function buscarProgramado() {
   }
 
   resultDiv.innerHTML = '<p class="mensaje-vacio"><span class="spinner"></span> Buscando...</p>';
+  solicitarHorariosProgramados(origenSeleccionado.id, destinoSeleccionado.id, 2);
+}
 
-  const origin = origenSeleccionado.id;
-  const destination = destinoSeleccionado.id;
-
+// El endpoint de horarios programados a veces responde 500 por una falla
+// transitoria de su base de datos (confirmado: la misma consulta repetida
+// inmediatamente después funciona bien) — por eso reintentamos antes de
+// mostrar error.
+function solicitarHorariosProgramados(origin, destination, intentosRestantes) {
   const xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
@@ -388,8 +392,11 @@ function buscarProgramado() {
         } catch (error) {
           console.error("Error al parsear JSON:", error);
         }
+      } else if (xhr.status >= 500 && intentosRestantes > 0) {
+        setTimeout(() => solicitarHorariosProgramados(origin, destination, intentosRestantes - 1), 1000);
       } else {
-        mostrarErrorCarga(xhr.status);
+        resultDiv.innerHTML =
+          '<p class="mensaje-vacio">El servicio de horarios programados de Trenes Argentinos no está disponible en este momento. Probá de nuevo en un minuto.</p>';
       }
     }
   };

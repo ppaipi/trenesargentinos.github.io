@@ -12,6 +12,12 @@ export const COLOR_LINEA = {
 
 export const LINEAS_PRINCIPALES = ["Mitre", "San Martín", "Sarmiento", "Roca", "Tren de la Costa", "Belgrano Sur"];
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch((error) => console.error("Error registrando service worker:", error));
+  });
+}
+
 let estaciones = [];
 let rutaIndice = new Map(); // "linea|||ramal" -> estaciones[]
 
