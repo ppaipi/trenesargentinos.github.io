@@ -1,4 +1,5 @@
 import { cargarEstaciones, crearBuscadorEstacion, compartenRuta, login } from "./buscador.js";
+import { actualizarMapa, eliminarMapa } from "./mapa.js";
 
 let token = "";
 let buscandoHorarios = false;
@@ -16,13 +17,6 @@ const resultDiv = document.getElementById("result");
 // (eso era lo que causaba el titileo y el reinicio del mapa).
 const tarjetas = new Map();
 let mensajeVacio = null;
-
-const iconoTren = L.icon({
-  iconUrl: "tren.png",
-  iconSize: [40, 40],
-  iconAnchor: [20, 40],
-  popupAnchor: [0, -32],
-});
 
 function actualizarBotonBuscar() {
   buscarBtn.disabled = !(origenSeleccionado && destinoSeleccionado);
@@ -134,25 +128,8 @@ function crearTarjeta(idFormacion) {
       restante: div.querySelector(".campo-restante"),
       mapaDiv: div.querySelector(".mapa"),
     },
-    map: null,
-    marker: null,
+    estadoMapa: { map: null, marker: null },
   };
-}
-
-function actualizarMapa(tarjeta, lat, lon) {
-  tarjeta.campos.mapaDiv.classList.remove("ocultar");
-
-  if (!tarjeta.map) {
-    tarjeta.map = L.map(tarjeta.campos.mapaDiv).setView([lat, lon], 14);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap contributors",
-    }).addTo(tarjeta.map);
-    tarjeta.marker = L.marker([lat, lon], { icon: iconoTren }).addTo(tarjeta.map);
-  } else {
-    // solo se mueve el marcador: no se recrea el mapa ni se vuelven a pedir las
-    // teselas, por eso ya no titila ni se reinicia el zoom/posicion del usuario.
-    tarjeta.marker.setLatLng([lat, lon]);
-  }
 }
 
 function actualizarTarjetas(results, destination) {
@@ -192,14 +169,15 @@ function actualizarTarjetas(results, destination) {
       tarjeta.campos.restante.textContent = `Llegando en: ${tiempoRestante}`;
 
       if (ubicacion?.lat && ubicacion?.long) {
-        actualizarMapa(tarjeta, ubicacion.lat, ubicacion.long);
+        tarjeta.campos.mapaDiv.classList.remove("ocultar");
+        actualizarMapa(tarjeta.estadoMapa, tarjeta.campos.mapaDiv, ubicacion.lat, ubicacion.long);
       }
     });
   });
 
   for (const [clave, tarjeta] of tarjetas) {
     if (!vistos.has(clave)) {
-      if (tarjeta.map) tarjeta.map.remove();
+      eliminarMapa(tarjeta.estadoMapa);
       tarjeta.div.remove();
       tarjetas.delete(clave);
     }
@@ -224,7 +202,7 @@ function actualizarMensajeVacio() {
 
 function limpiarTarjetas() {
   for (const tarjeta of tarjetas.values()) {
-    if (tarjeta.map) tarjeta.map.remove();
+    eliminarMapa(tarjeta.estadoMapa);
     tarjeta.div.remove();
   }
   tarjetas.clear();

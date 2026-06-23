@@ -7,15 +7,41 @@
   <meta name="geo.placename" content="Buenos Aires" />
   <meta name="geo.position" content="-34.6037;-58.3816" />
   <meta name="google-site-verification" content="pgIVSgq4strcU9SEKpVIDdnZhGr3G9i1tDci9Un9KUU" />
-  <meta name="description" content="Obten los Horarios en Tiempo Real de los Trenes Argentinos. Planifica tus viajes. Mira cuando llega el tren y cuanto tiempo de viaje tienes. Muy facil de usar. Trenes Buenos Aires, CABA, bsas, bs as. Horario Tren.">
+  <meta name="description" content="Consultá en tiempo real cuándo llega tu tren y cuánto dura el viaje. Horarios actualizados de Mitre, Sarmiento, Roca, San Martín, Belgrano Sur y Tren de la Costa.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Consulta de horarios Trenes Argentinos</title>
+  <link rel="canonical" href="https://tapia.chiqui.ar/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:url" content="https://tapia.chiqui.ar/">
+  <meta property="og:title" content="¿Cuándo llega tu tren? | Trenes Argentinos">
+  <meta property="og:description" content="Horarios en tiempo real para todas las líneas del Gran Buenos Aires: cuándo llega tu tren y cuánto dura el viaje.">
+  <meta property="og:image" content="https://tapia.chiqui.ar/tren.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="¿Cuándo llega tu tren? | Trenes Argentinos">
+  <meta name="twitter:description" content="Horarios en tiempo real para todas las líneas del Gran Buenos Aires.">
+
+  <title>¿Cuándo llega tu tren? Horarios en vivo - Trenes Argentinos</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Trenes Argentinos - Horarios en tiempo real",
+    "url": "https://tapia.chiqui.ar/",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Web",
+    "description": "Consultá en tiempo real cuándo llega tu tren y cuánto dura el viaje, para todas las líneas del Gran Buenos Aires."
+  }
+  </script>
 </head>
 
 <body>
   <header>
-    <h1>Consulta de horarios Trenes Argentinos</h1>
+    <h1>¿Cuándo llega tu tren?</h1>
+    <p class="subtitulo">Horarios en tiempo real de Mitre, Sarmiento, Roca, San Martín, Belgrano Sur y Tren de la Costa.</p>
   </header>
 
   <main>
@@ -25,6 +51,11 @@
       <div id="ultimaBusqueda" class="ocultar"></div>
 
       <div class="tarjeta-busqueda">
+        <div class="modo-busqueda">
+          <button type="button" class="modo-chip activo" data-modo="vivo">En vivo</button>
+          <button type="button" class="modo-chip" data-modo="programada">Programar viaje</button>
+        </div>
+
         <div class="campo-busqueda">
           <label for="origin-input">Estación de Origen</label>
           <input type="text" id="origin-input" autocomplete="off" placeholder="Escribí o elegí por línea...">
@@ -47,6 +78,17 @@
           </div>
         </div>
 
+        <div id="fechaHora" class="fila-fecha-hora ocultar">
+          <div>
+            <label for="fecha-input">Fecha</label>
+            <input type="date" id="fecha-input">
+          </div>
+          <div>
+            <label for="hora-input">Hora</label>
+            <input type="time" id="hora-input">
+          </div>
+        </div>
+
         <button id="buscarBtn" type="button" disabled>Buscar Horarios</button>
       </div>
     </div>
@@ -54,6 +96,7 @@
 
   <div id="result" class="ocultar"></div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

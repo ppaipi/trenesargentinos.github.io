@@ -40,7 +40,16 @@ h1 {
   text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
   font-size: 1.7rem;
   text-align: center;
-  margin: 0 0 22px;
+  margin: 0;
+}
+
+.subtitulo {
+  color: rgba(255, 255, 255, 0.92);
+  text-align: center;
+  font-size: 0.95rem;
+  max-width: 360px;
+  margin: 8px auto 22px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 main {
@@ -90,6 +99,51 @@ main {
   border-radius: var(--radio);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
   padding: 20px;
+}
+
+.modo-busqueda {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.modo-chip {
+  flex: 1;
+  width: auto;
+  padding: 9px;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  background: #eef4ff;
+  color: var(--azul);
+}
+
+.modo-chip:hover {
+  background: #dbe7ff;
+}
+
+.modo-chip.activo {
+  background: var(--azul);
+  color: #fff;
+}
+
+.fila-fecha-hora {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.fila-fecha-hora > div {
+  flex: 1;
+}
+
+.fila-fecha-hora input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #dfe5ee;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: #f8fafc;
 }
 
 /* Banner de ultima busqueda */
@@ -382,6 +436,19 @@ button:disabled {
   margin-top: 12px;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.boton-mapa {
+  margin-top: 10px;
+  padding: 8px 14px;
+  width: auto;
+  font-size: 0.85rem;
+  background: #e9eef5;
+  color: var(--azul);
+}
+
+.boton-mapa:hover {
+  background: #dbe4f0;
 }
 
 .ocultar {
